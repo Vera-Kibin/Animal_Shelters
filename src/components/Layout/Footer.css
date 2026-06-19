@@ -1,0 +1,22 @@
+.site-footer {
+  margin-top: 64px;
+  background: var(--bg-dark);
+  color: var(--on-dark);
+  padding: 56px 0 26px;
+}
+.site-footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
+.site-footer__brand p { color: var(--on-dark-soft); font-size: .9rem; max-width: 38ch; margin: 12px 0 14px; }
+.site-footer__ah { color: var(--accent); font-weight: 600; text-decoration: none; font-size: .9rem; }
+.site-footer__ah:hover { text-decoration: underline; }
+.site-footer__col h4 {
+  font-family: var(--font-display); font-size: .72rem; font-weight: 600; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--on-dark-soft); margin: 0 0 14px;
+}
+.site-footer__col a { display: block; text-decoration: none; color: var(--on-dark); font-size: .92rem; margin-bottom: 9px; }
+.site-footer__col a:hover { color: var(--accent); }
+.site-footer__bottom {
+  display: flex; justify-content: space-between; margin-top: 38px; padding-top: 20px;
+  border-top: 1px solid var(--border-dark);
+  font-family: var(--font-mono); font-size: .75rem; color: var(--on-dark-soft);
+}
+@media (max-width: 760px) { .site-footer__grid { grid-template-columns: 1fr 1fr; } }

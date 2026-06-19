@@ -1,21 +1,16 @@
-import shelters from "./data/shelters.json";
-// import Header from "./components/Header.jsx";
-import ShelterList from "./components/ShelterList.jsx";
-import MapPanel from "./components/MapPanel.jsx";
-// import Footer from "./components/Footer.jsx";
-import "./App.css";
+import "./styles/tokens.css";
+import Header from "./components/Layout/Header";
+import Footer from "./components/Layout/Footer";
+import HomePage from "./pages/HomePage";
 
-function App() {
+export default function App() {
   return (
-    <div className="app">
-      {/* <Header /> */}
-      <main className="main-layout">
-        <ShelterList shelters={shelters} />
-        <MapPanel />
+    <>
+      <Header />
+      <main>
+        <HomePage />
       </main>
-      {/* <Footer /> */}
-    </div>
+      <Footer />
+    </>
   );
 }
-
-export default App;
