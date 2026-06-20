@@ -1,4 +1,4 @@
-.shelter-card {
+/* .shelter-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -63,4 +63,218 @@
 .comment-form__hint { font-size: .76rem; color: var(--ink-faint); max-width: 30ch; }
 .comment-form .btn { font-size: .85rem; padding: 9px 18px; }
 .comment-form__thanks { color: var(--accent-2); font-size: .9rem; margin: 0; }
-.shelter-card__nip { margin: 0; font-size: .72rem; color: var(--ink-faint); font-family: var(--font-mono); }
+.shelter-card__nip { margin: 0; font-size: .72rem; color: var(--ink-faint); font-family: var(--font-mono); } */
+.shelter-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  cursor: pointer;
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
+}
+.shelter-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+  border-color: var(--border);
+}
+.shelter-card--selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.shelter-card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.shelter-card__name {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.shelter-card__name mark,
+.shelter-card__city mark {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.shelter-card__city {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.shelter-card__addr {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.shelter-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.shelter-card__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.74rem;
+  padding: 3px 9px;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--green);
+  border: 1px solid var(--green);
+  opacity: 0.92;
+}
+.shelter-card__tagicon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+}
+
+.shelter-card__phones {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.phone-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.phone-row__call {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.phone-row__call:hover {
+  color: var(--accent);
+}
+.phone-row__call svg {
+  color: var(--ink-faint);
+}
+.phone-row__copy {
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--ink-soft);
+  cursor: pointer;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+.phone-row__copy:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.shelter-card__more {
+  align-self: flex-start;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.8rem;
+  padding: 0;
+}
+.shelter-card__more:hover {
+  text-decoration: underline;
+}
+
+.shelter-card__links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+.shelter-card__links a {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.shelter-card__links a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.shelter-card__comment {
+  margin-left: auto;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.shelter-card__comment:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.comment-form {
+  margin-top: 4px;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--ink);
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+.comment-form__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.comment-form__hint {
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+  max-width: 30ch;
+}
+.comment-form .btn {
+  font-size: 0.85rem;
+  padding: 9px 18px;
+}
+.comment-form__thanks {
+  color: var(--accent-2);
+  font-size: 0.9rem;
+  margin: 0;
+}
+.shelter-card__nip {
+  margin: 0;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+}
+.shelter-card__dist {
+  font-size: 0.78rem;
+  color: var(--accent-dark, var(--green));
+  font-weight: 600;
+}

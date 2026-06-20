@@ -51,9 +51,26 @@ function MapFocus({ point }) {
   return null;
 }
 
-export default function ShelterMap({ shelters, selectedId, onSelect }) {
+function userIcon() {
+  return L.divIcon({
+    className: "user-pin",
+    html: '<div class="user-dot"></div>',
+    iconSize: [18, 18],
+    iconAnchor: [9, 9],
+  });
+}
+
+export default function ShelterMap({
+  shelters,
+  selectedId,
+  onSelect,
+  userPos,
+}) {
   const points = toMapPoints(shelters);
   const selectedPoint = points.find((p) => p.shelter.id === selectedId);
+  // dokąd lecieć: do zaznaczonego schroniska, a jeśli nie ma — do użytkownika
+  const focus =
+    selectedPoint || (userPos ? { lat: userPos.lat, lng: userPos.lng } : null);
 
   return (
     <div className="shelter-map">
@@ -67,7 +84,12 @@ export default function ShelterMap({ shelters, selectedId, onSelect }) {
           attribution="&copy; OpenStreetMap"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MapFocus point={selectedPoint} />
+        <MapFocus point={focus} />
+        {userPos && (
+          <Marker position={[userPos.lat, userPos.lng]} icon={userIcon()}>
+            <Popup>Twoja lokalizacja</Popup>
+          </Marker>
+        )}
         {points.map((p) => (
           <Marker
             key={p.key}
