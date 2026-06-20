@@ -43,6 +43,11 @@
 //     count: filtered.length,
 //   };
 // }
+// ============================================================
+// useShelterFilters — CAŁA logika filtrowania W JEDNYM miejscu.
+// Teraz też: geolokalizacja użytkownika + sortowanie wg odległości.
+// ============================================================
+
 import { useState, useMemo } from "react";
 
 function matchesCategory(shelter, category) {
@@ -55,8 +60,9 @@ function matchesCategory(shelter, category) {
   return true;
 }
 
+// odległość między dwoma punktami na Ziemi (wzór haversine), w km
 function distanceKm(lat1, lng1, lat2, lng2) {
-  const R = 6371;
+  const R = 6371; // promień Ziemi w km
   const toRad = (d) => (d * Math.PI) / 180;
   const dLat = toRad(lat2 - lat1);
   const dLng = toRad(lng2 - lng1);
@@ -66,6 +72,7 @@ function distanceKm(lat1, lng1, lat2, lng2) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+// najmniejsza odległość od użytkownika do którejkolwiek lokalizacji schroniska
 function nearestDistance(shelter, pos) {
   let best = Infinity;
   for (const l of shelter.locations || []) {
@@ -82,7 +89,8 @@ export default function useShelterFilters(shelters) {
   const [category, setCategory] = useState("all");
   const [activeOnly, setActiveOnly] = useState(true);
 
-  const [userPos, setUserPos] = useState(null);
+  // geolokalizacja
+  const [userPos, setUserPos] = useState(null); // {lat, lng, accuracy} albo null
   const [locating, setLocating] = useState(false);
   const [geoError, setGeoError] = useState(null);
 
@@ -95,14 +103,19 @@ export default function useShelterFilters(shelters) {
     setGeoError(null);
     navigator.geolocation.getCurrentPosition(
       (p) => {
-        setUserPos({ lat: p.coords.latitude, lng: p.coords.longitude });
+        setUserPos({
+          lat: p.coords.latitude,
+          lng: p.coords.longitude,
+          accuracy: p.coords.accuracy, // promień niepewności w metrach
+        });
         setLocating(false);
       },
       () => {
         setGeoError("Nie udało się ustalić lokalizacji.");
         setLocating(false);
       },
-      { enableHighAccuracy: false, timeout: 8000 },
+      // dokładniej + nie używaj starej, zcache'owanej pozycji
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 },
     );
   }
 
@@ -127,6 +140,7 @@ export default function useShelterFilters(shelters) {
       return true;
     });
 
+    // jeśli znamy pozycję użytkownika: dołącz odległość i posortuj rosnąco
     if (userPos) {
       list = list
         .map((s) => ({ ...s, _distanceKm: nearestDistance(s, userPos) }))
@@ -146,6 +160,7 @@ export default function useShelterFilters(shelters) {
     activeOnly,
     setActiveOnly,
     count: filtered.length,
+    // geolokalizacja na zewnątrz:
     userPos,
     locating,
     geoError,

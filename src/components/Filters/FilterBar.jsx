@@ -121,6 +121,9 @@ export default function FilterBar({
       </button>
 
       <span className="filterbar__count">{count} wyników</span>
+      {userPos && userPos.accuracy > 50000 && (
+        <span className="filterbar__geonote">lokalizacja przybliżona</span>
+      )}
       {geoError && <span className="filterbar__geoerr">{geoError}</span>}
     </div>
   );

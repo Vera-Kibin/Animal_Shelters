@@ -133,3 +133,7 @@
   color: #c0492f;
   width: 100%;
 }
+.filterbar__geonote {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
