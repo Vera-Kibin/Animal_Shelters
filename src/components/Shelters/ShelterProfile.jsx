@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import CommentModal from "./CommentModal";
 import {
@@ -117,6 +117,13 @@ export default function ShelterProfile({ shelter, onClose }) {
   const [localReviews, setLocalReviews] = useState(() =>
     getLocalReviews(shelter.id),
   );
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   const demo = getDemoReviews(shelter.id);
   const reviews = [...localReviews, ...demo];
