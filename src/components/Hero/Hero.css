@@ -35,6 +35,7 @@
 .hero__btn {
   text-decoration: none;
   font-weight: 600;
+  font-size: 0.95rem;
   padding: 14px 26px;
   border-radius: var(--radius-pill);
   transition: transform 0.15s;
@@ -93,5 +94,19 @@
     width: 240px;
     right: -40px;
     opacity: 0.05;
+  }
+}
+@media (max-width: 560px) {
+  .hero__inner {
+    align-items: center;
+    text-align: center;
+  }
+  .hero__cta {
+    justify-content: center;
+  }
+  .hero__btn {
+    font-size: 0.85rem;
+    padding: 12px 20px;
+    white-space: nowrap;
   }
 }

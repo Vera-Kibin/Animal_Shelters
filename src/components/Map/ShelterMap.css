@@ -10,6 +10,10 @@
 .shelter-map .leaflet-container {
   font-family: var(--font-body);
 }
+.shelter-map .leaflet-top,
+.shelter-map .leaflet-bottom {
+  z-index: auto !important;
+}
 .paw-pin {
   background: none;
   border: none;

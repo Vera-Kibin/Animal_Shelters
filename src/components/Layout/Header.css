@@ -32,4 +32,13 @@
 .btn-yellow:hover { transform: translateY(-1px); }
 @media (max-width: 760px) {
   .site-nav, .btn-ghost { display: none; }
+  .site-header__inner { gap: 12px; height: 60px; padding: 0 16px; }
+  .brand__mark { width: 30px; height: 30px; }
+  .brand__mark svg { width: 16px; height: 16px; }
+  .brand__text { font-size: 1rem; }
+  .brand__text small { font-size: 0.5rem; }
+  .btn-yellow { padding: 8px 12px; font-size: 0.75rem; white-space: nowrap; }
+}
+@media (max-width: 420px) {
+  .btn-yellow { padding: 8px 10px; font-size: 0.7rem; }
 }
