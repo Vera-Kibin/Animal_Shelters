@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import useShelters from "../hooks/useShelters";
 import useShelterFilters from "../hooks/useShelterFilters";
 import Hero from "../components/Hero/Hero";
 import FilterBar from "../components/Filters/FilterBar";
 import ShelterList from "../components/Shelters/ShelterList";
-import ShelterMap from "../components/Map/ShelterMap";
 import ShelterProfile from "../components/Shelters/ShelterProfile";
 import About from "../components/About/About";
 import "./HomePage.css";
+
+const ShelterMap = lazy(() => import("../components/Map/ShelterMap"));
 
 export default function HomePage() {
   const { shelters, loading } = useShelters();
@@ -41,12 +42,14 @@ export default function HomePage() {
             onSelect={setSelectedId}
             onOpenProfile={setProfileShelter}
           />
-          <ShelterMap
-            shelters={filters.filtered}
-            selectedId={selectedId}
-            onSelect={setSelectedId}
-            userPos={filters.userPos}
-          />
+          <Suspense fallback={null}>
+            <ShelterMap
+              shelters={filters.filtered}
+              selectedId={selectedId}
+              onSelect={setSelectedId}
+              userPos={filters.userPos}
+            />
+          </Suspense>
         </div>
       </section>
 

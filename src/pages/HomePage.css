@@ -20,7 +20,7 @@
   display: grid;
   grid-template-columns: 420px 1fr;
   gap: var(--gap);
-  align-items: start;
+  align-items: stretch;
 }
 
 @media (max-width: 900px) {
