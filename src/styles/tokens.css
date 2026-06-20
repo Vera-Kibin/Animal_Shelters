@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
-
 :root {
   --bg: #f6f5f1;
   --bg-dark: #141414;
@@ -97,4 +96,10 @@ html {
 #about,
 #owner {
   scroll-margin-top: 88px;
+}
+
+@media (max-width: 560px) {
+  .container {
+    padding: 0 16px;
+  }
 }

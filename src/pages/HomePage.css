@@ -29,10 +29,23 @@
   }
   .browse__split > .shelter-map {
     order: -1;
-    min-height: 360px;
+    position: static;
+    height: 58vh;
+    min-height: 320px;
+    max-height: 460px;
   }
   .shelter-list {
     max-height: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .browse__head h2 {
+    font-size: 1.5rem;
+  }
+  .browse__split > .shelter-map {
+    height: 50vh;
+    min-height: 280px;
   }
 }
 

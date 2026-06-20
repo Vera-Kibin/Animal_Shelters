@@ -51,6 +51,24 @@ function MapFocus({ point }) {
   return null;
 }
 
+function MapResizer() {
+  const map = useMap();
+  useEffect(() => {
+    const fix = () => map.invalidateSize();
+    const t1 = setTimeout(fix, 200);
+    const t2 = setTimeout(fix, 600);
+    window.addEventListener("resize", fix);
+    window.addEventListener("orientationchange", fix);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("resize", fix);
+      window.removeEventListener("orientationchange", fix);
+    };
+  }, [map]);
+  return null;
+}
+
 function userIcon() {
   return L.divIcon({
     className: "user-pin",
@@ -84,6 +102,7 @@ export default function ShelterMap({
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <MapFocus point={focus} />
+        <MapResizer />
         {userPos && (
           <Marker position={[userPos.lat, userPos.lng]} icon={userIcon()}>
             <Popup>Twoja lokalizacja</Popup>
