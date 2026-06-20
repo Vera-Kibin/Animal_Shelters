@@ -60,13 +60,14 @@ function Stars({ value, onChange, disabled }) {
   );
 }
 
-export default function CommentModal({ shelter, onClose }) {
+export default function CommentModal({ shelter, onClose, onSubmit }) {
   const [visited, setVisited] = useState(null);
   const [mode, setMode] = useState("quick");
   const [sentiment, setSentiment] = useState(null);
   const [ratings, setRatings] = useState({});
   const [skipped, setSkipped] = useState({});
   const [openHint, setOpenHint] = useState(null);
+  const [text, setText] = useState("");
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
@@ -82,6 +83,24 @@ export default function CommentModal({ shelter, onClose }) {
     setSkipped((s) => ({ ...s, [id]: false }));
   };
   const toggleSkip = (id) => setSkipped((s) => ({ ...s, [id]: !s[id] }));
+
+  function handleSend() {
+    if (onSubmit) {
+      onSubmit({
+        author: "Ty",
+        verified: true,
+        type: mode,
+        visited: visited || "indirect",
+        sentiment: mode === "quick" ? sentiment : undefined,
+        ratings: mode === "detailed" ? ratings : undefined,
+        text: text.trim(),
+        likes: 0,
+        replies: [],
+      });
+      return;
+    }
+    setSent(true);
+  }
 
   return createPortal(
     <div className="modal__backdrop" onClick={onClose}>
@@ -185,7 +204,12 @@ export default function CommentModal({ shelter, onClose }) {
                     👎 Negatywna
                   </button>
                 </div>
-                <textarea rows={2} placeholder="Kilka słów o Twoim wrażeniu…" />
+                <textarea
+                  rows={2}
+                  placeholder="Kilka słów o Twoim wrażeniu…"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
+                />
               </>
             ) : (
               <>
@@ -257,6 +281,8 @@ export default function CommentModal({ shelter, onClose }) {
                 <textarea
                   rows={4}
                   placeholder="Opisz swoimi słowami, co zauważyłaś/eś na miejscu…"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
                 />
 
                 <label className="upload">
@@ -274,7 +300,7 @@ export default function CommentModal({ shelter, onClose }) {
               </>
             )}
 
-            <button className="modal__send" onClick={() => setSent(true)}>
+            <button className="modal__send" onClick={handleSend}>
               Wyślij opinię
             </button>
           </>

@@ -27,7 +27,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -78,7 +81,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -129,7 +135,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -180,7 +189,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -231,7 +243,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -282,7 +297,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -342,7 +360,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["horses"],
+      "animalTypes": [
+        "horses"
+      ],
       "services": [],
       "description": null
     },
@@ -393,7 +413,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -444,7 +466,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -495,7 +520,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt schroniska dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -546,7 +574,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -597,7 +628,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -648,7 +682,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -699,7 +736,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -750,7 +790,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -801,7 +843,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -852,7 +897,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -903,7 +950,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -954,7 +1003,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1005,7 +1057,11 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "rabbits"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rabbits"
+      ],
       "services": [],
       "description": null
     },
@@ -1056,7 +1112,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1107,7 +1165,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1158,7 +1219,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1209,7 +1272,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1260,7 +1325,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1311,7 +1378,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1362,7 +1431,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1413,7 +1484,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1464,7 +1538,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1515,7 +1591,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1566,7 +1645,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1617,7 +1698,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Schronisko dla bezdomnych zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1668,7 +1752,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1719,7 +1806,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1770,7 +1860,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1821,7 +1913,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1872,7 +1967,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -1923,7 +2020,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -1974,7 +2074,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -2025,7 +2127,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -2076,7 +2180,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2127,7 +2234,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2178,7 +2288,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2229,7 +2342,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2280,7 +2396,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2331,7 +2450,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2382,7 +2504,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2433,7 +2558,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2484,7 +2612,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2535,7 +2666,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2586,7 +2720,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2637,7 +2774,12 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "rabbits", "small_mammals"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rabbits",
+        "small_mammals"
+      ],
       "services": [],
       "description": null
     },
@@ -2688,7 +2830,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2739,7 +2884,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2790,7 +2938,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2841,7 +2992,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -2892,7 +3046,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -2943,7 +3099,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Prowadzenie schroniska dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -2994,7 +3152,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -3045,7 +3205,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3096,7 +3259,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3147,7 +3313,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt;",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -3198,7 +3366,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3249,7 +3420,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3300,7 +3474,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3351,7 +3528,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Schronisko dla zwierząt bezdomnych",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3402,7 +3582,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3453,7 +3636,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3504,7 +3690,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Prowadzenie Schronisk dla zwierząt (RMRiRW Z dnia 16 października 2008r. z pózn. zm.)",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -3555,7 +3743,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt schronisko dla psw i kotów",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3666,7 +3857,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -3717,7 +3910,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -3768,7 +3963,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -3819,7 +4016,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -3870,7 +4070,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -3921,7 +4123,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -3972,7 +4176,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt prowadzenie schroniska dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4087,7 +4294,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4138,7 +4348,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4189,7 +4402,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4240,7 +4456,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4291,7 +4510,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4342,7 +4564,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4393,7 +4618,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt prowadzenie schroniska dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4444,7 +4672,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt prowadzenie schroniska dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4495,7 +4726,12 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "farm_animals", "wild_animals"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "farm_animals",
+        "wild_animals"
+      ],
       "services": [],
       "description": null
     },
@@ -4546,7 +4782,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4597,7 +4836,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -4648,7 +4889,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -4699,7 +4942,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4809,7 +5055,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -4918,7 +5167,11 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "horses"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "horses"
+      ],
       "services": [],
       "description": null
     },
@@ -4969,7 +5222,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5020,7 +5276,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5071,7 +5330,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -5122,7 +5383,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -5173,7 +5436,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -5224,7 +5489,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -5275,7 +5542,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5326,7 +5596,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5377,7 +5650,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5428,7 +5704,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5479,7 +5758,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Schronisko dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -5530,7 +5811,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -5581,7 +5864,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -5632,7 +5917,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -5683,7 +5970,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5734,7 +6024,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5785,7 +6078,11 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "wild_animals"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "wild_animals"
+      ],
       "services": [],
       "description": null
     },
@@ -5836,7 +6133,11 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "birds"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "birds"
+      ],
       "services": [],
       "description": null
     },
@@ -5887,7 +6188,12 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "rodents", "horses"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rodents",
+        "horses"
+      ],
       "services": [],
       "description": null
     },
@@ -5938,7 +6244,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -5989,7 +6298,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -6040,7 +6351,13 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "goats", "pigs", "cows"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "goats",
+        "pigs",
+        "cows"
+      ],
       "services": [],
       "description": null
     },
@@ -6091,7 +6408,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6142,7 +6462,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6193,7 +6516,13 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Schronisko dla zwierząt bezdomnych",
-      "animalTypes": ["dogs", "cats", "cows", "horses", "goats"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "cows",
+        "horses",
+        "goats"
+      ],
       "services": [],
       "description": null
     },
@@ -6244,7 +6573,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6295,7 +6627,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6346,7 +6681,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6397,7 +6735,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -6448,7 +6788,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6499,7 +6842,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6550,7 +6896,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6601,7 +6950,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6652,7 +7004,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6703,7 +7058,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6754,7 +7112,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6805,7 +7166,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Schronisko dla bezdomnych psów",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -6856,7 +7219,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -6907,7 +7273,13 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt bezdomnych",
-      "animalTypes": ["dogs", "cats", "rodents", "turtles", "exotic_animals"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rodents",
+        "turtles",
+        "exotic_animals"
+      ],
       "services": [],
       "description": null
     },
@@ -6958,7 +7330,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7009,7 +7384,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt Miejskie Schronisko dla Zwierząt w Tychach",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7060,7 +7438,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7111,7 +7492,13 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "horses", "goats", "donkeys"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "horses",
+        "goats",
+        "donkeys"
+      ],
       "services": [],
       "description": null
     },
@@ -7162,7 +7549,11 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "others"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "others"
+      ],
       "services": [],
       "description": null
     },
@@ -7213,7 +7604,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7264,7 +7658,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7315,7 +7712,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -7366,7 +7765,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -7417,7 +7818,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7468,7 +7872,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -7519,7 +7925,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7570,7 +7979,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7621,7 +8033,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7672,7 +8087,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7723,7 +8141,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7774,7 +8195,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7825,7 +8249,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7876,7 +8303,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -7927,7 +8356,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -7978,7 +8410,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8029,7 +8464,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -8080,7 +8517,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8131,7 +8571,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8182,7 +8625,11 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "rabbits"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rabbits"
+      ],
       "services": [],
       "description": null
     },
@@ -8233,7 +8680,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8284,7 +8734,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8335,7 +8788,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -8386,7 +8841,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -8437,7 +8894,13 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "rabbits", "guinea_pigs", "turtles"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rabbits",
+        "guinea_pigs",
+        "turtles"
+      ],
       "services": [],
       "description": null
     },
@@ -8488,7 +8951,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8539,7 +9005,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8590,7 +9059,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8641,7 +9113,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8692,7 +9167,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8743,7 +9221,11 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "farm_animals"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "farm_animals"
+      ],
       "services": [],
       "description": null
     },
@@ -8794,7 +9276,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["unknown"],
+      "animalTypes": [
+        "unknown"
+      ],
       "services": [],
       "description": null
     },
@@ -8845,7 +9329,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8896,7 +9383,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8947,7 +9437,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -8998,7 +9491,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -9049,7 +9545,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -9100,7 +9599,12 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "rodents", "horses"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rodents",
+        "horses"
+      ],
       "services": [],
       "description": null
     },
@@ -9151,7 +9655,12 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats", "rabbits", "hamsters"],
+      "animalTypes": [
+        "dogs",
+        "cats",
+        "rabbits",
+        "hamsters"
+      ],
       "services": [],
       "description": null
     },
@@ -9202,7 +9711,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -9253,7 +9764,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -9304,7 +9818,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -9355,7 +9871,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -9469,7 +9987,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -9520,7 +10041,9 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs"],
+      "animalTypes": [
+        "dogs"
+      ],
       "services": [],
       "description": null
     },
@@ -9571,7 +10094,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -9622,7 +10148,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },
@@ -9673,7 +10202,10 @@
     },
     "details": {
       "activity": "prowadzenie schronisk dla zwierząt prowadzenie schroniska dla bezdomnych zwierząt",
-      "animalTypes": ["dogs", "cats"],
+      "animalTypes": [
+        "dogs",
+        "cats"
+      ],
       "services": [],
       "description": null
     },

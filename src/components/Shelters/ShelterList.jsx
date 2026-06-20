@@ -1,7 +1,13 @@
 import ShelterCard from "./ShelterCard";
 import "./ShelterList.css";
 
-export default function ShelterList({ shelters, query, selectedId, onSelect }) {
+export default function ShelterList({
+  shelters,
+  query,
+  selectedId,
+  onSelect,
+  onOpenProfile,
+}) {
   if (shelters.length === 0) {
     return (
       <div className="shelter-list__empty">
@@ -19,6 +25,7 @@ export default function ShelterList({ shelters, query, selectedId, onSelect }) {
           query={query}
           selected={shelter.id === selectedId}
           onSelect={onSelect}
+          onOpenProfile={onOpenProfile}
         />
       ))}
     </div>

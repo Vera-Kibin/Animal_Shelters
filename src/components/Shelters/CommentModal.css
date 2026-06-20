@@ -15,8 +15,8 @@
   border-radius: var(--radius-lg);
   padding: 26px;
   box-shadow: var(--shadow);
-  max-height: 90vh; /* nie wyżej niż ekran */
-  overflow-y: auto; /* przewijanie WEWNĄTRZ modala */
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .modal__x {
   position: absolute;

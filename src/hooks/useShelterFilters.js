@@ -1,53 +1,3 @@
-// import { useState, useMemo } from "react";
-
-// function matchesCategory(shelter, category) {
-//   if (category === "all") return true;
-//   const types = shelter.details?.animalTypes || [];
-//   if (category === "dogs") return types.includes("dogs");
-//   if (category === "cats") return types.includes("cats");
-//   if (category === "other")
-//     return types.some((t) => t !== "dogs" && t !== "cats");
-//   return true;
-// }
-
-// export default function useShelterFilters(shelters) {
-//   const [query, setQuery] = useState("");
-//   const [category, setCategory] = useState("all"); // all | dogs | cats | other
-//   const [activeOnly, setActiveOnly] = useState(true);
-
-//   const filtered = useMemo(() => {
-//     const q = query.trim().toLowerCase();
-//     return shelters.filter((s) => {
-//       if (activeOnly && s.status?.value !== "active") return false;
-//       if (!matchesCategory(s, category)) return false;
-//       if (q) {
-//         const name = (s.name || "").toLowerCase();
-//         const cities = (s.locations || []).map((l) =>
-//           (l.city || "").toLowerCase(),
-//         );
-//         const hit = name.includes(q) || cities.some((c) => c.includes(q));
-//         if (!hit) return false;
-//       }
-//       return true;
-//     });
-//   }, [shelters, query, category, activeOnly]);
-
-//   return {
-//     filtered,
-//     query,
-//     setQuery,
-//     category,
-//     setCategory,
-//     activeOnly,
-//     setActiveOnly,
-//     count: filtered.length,
-//   };
-// }
-// ============================================================
-// useShelterFilters — CAŁA logika filtrowania W JEDNYM miejscu.
-// Teraz też: geolokalizacja użytkownika + sortowanie wg odległości.
-// ============================================================
-
 import { useState, useMemo } from "react";
 
 function matchesCategory(shelter, category) {
@@ -60,7 +10,6 @@ function matchesCategory(shelter, category) {
   return true;
 }
 
-// odległość między dwoma punktami na Ziemi (wzór haversine), w km
 function distanceKm(lat1, lng1, lat2, lng2) {
   const R = 6371; // promień Ziemi w km
   const toRad = (d) => (d * Math.PI) / 180;
@@ -72,7 +21,6 @@ function distanceKm(lat1, lng1, lat2, lng2) {
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
-// najmniejsza odległość od użytkownika do którejkolwiek lokalizacji schroniska
 function nearestDistance(shelter, pos) {
   let best = Infinity;
   for (const l of shelter.locations || []) {
@@ -89,8 +37,7 @@ export default function useShelterFilters(shelters) {
   const [category, setCategory] = useState("all");
   const [activeOnly, setActiveOnly] = useState(true);
 
-  // geolokalizacja
-  const [userPos, setUserPos] = useState(null); // {lat, lng, accuracy} albo null
+  const [userPos, setUserPos] = useState(null);
   const [locating, setLocating] = useState(false);
   const [geoError, setGeoError] = useState(null);
 
@@ -106,7 +53,7 @@ export default function useShelterFilters(shelters) {
         setUserPos({
           lat: p.coords.latitude,
           lng: p.coords.longitude,
-          accuracy: p.coords.accuracy, // promień niepewności w metrach
+          accuracy: p.coords.accuracy,
         });
         setLocating(false);
       },
@@ -114,7 +61,6 @@ export default function useShelterFilters(shelters) {
         setGeoError("Nie udało się ustalić lokalizacji.");
         setLocating(false);
       },
-      // dokładniej + nie używaj starej, zcache'owanej pozycji
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 },
     );
   }
@@ -140,7 +86,6 @@ export default function useShelterFilters(shelters) {
       return true;
     });
 
-    // jeśli znamy pozycję użytkownika: dołącz odległość i posortuj rosnąco
     if (userPos) {
       list = list
         .map((s) => ({ ...s, _distanceKm: nearestDistance(s, userPos) }))
@@ -160,7 +105,6 @@ export default function useShelterFilters(shelters) {
     activeOnly,
     setActiveOnly,
     count: filtered.length,
-    // geolokalizacja na zewnątrz:
     userPos,
     locating,
     geoError,

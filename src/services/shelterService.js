@@ -1,8 +1,6 @@
-// JSON -> fetch
 import sheltersData from "../data/shelters-clean.json";
 
 export async function getAllShelters() {
-  // const res = await fetch("/api/shelters"); return res.json();
   return sheltersData;
 }
 

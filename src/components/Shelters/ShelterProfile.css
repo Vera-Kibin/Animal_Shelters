@@ -1,0 +1,238 @@
+.profile {
+  position: fixed;
+  inset: 0;
+  z-index: 1500;
+  background: var(--bg);
+  overflow-y: auto;
+}
+.profile__bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-dark);
+  padding: 14px 24px;
+}
+.profile__back {
+  background: none;
+  border: 1px solid var(--border-dark);
+  color: var(--on-dark);
+  padding: 9px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.profile__back:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.profile__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 28px 24px 80px;
+}
+
+.profile__top {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+}
+.profile__info h2 {
+  font-size: 1.9rem;
+  margin: 0 0 6px;
+}
+.profile__addr {
+  color: var(--ink-soft);
+  margin: 0 0 14px;
+}
+.profile__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.profile__tag {
+  font-size: 0.74rem;
+  padding: 3px 9px;
+  border-radius: var(--radius);
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+.profile__facts {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 0.92rem;
+  color: var(--ink);
+}
+.profile__facts a {
+  color: var(--green);
+}
+.profile__muted {
+  color: var(--ink-faint);
+  font-size: 0.8rem;
+}
+.profile__photo {
+  border-radius: var(--radius-lg);
+  min-height: 200px;
+  display: grid;
+  place-items: center;
+  color: var(--ink-faint);
+  font-size: 0.85rem;
+  background: repeating-linear-gradient(
+    45deg,
+    #e9e6dd,
+    #e9e6dd 10px,
+    #e1ddd2 10px,
+    #e1ddd2 20px
+  );
+}
+
+.profile__score {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin: 28px 0;
+  padding: 18px 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.profile__big {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2rem;
+  display: block;
+}
+.profile__score small {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+}
+.profile__score p {
+  margin: 0;
+  flex: 1 1 240px;
+}
+
+.profile__rvhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile__rvhead h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.profile__add {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.profile__empty {
+  color: var(--ink-soft);
+  padding: 20px 0;
+}
+
+.rv {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-top: 12px;
+  background: var(--surface);
+}
+.rv--reply {
+  margin: 10px 0 0 24px;
+  background: var(--bg);
+}
+.rv__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.rv__author {
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.rv__badge {
+  font-size: 0.68rem;
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: var(--radius-pill);
+  padding: 1px 7px;
+  font-weight: 500;
+}
+.rv__date {
+  font-size: 0.76rem;
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+}
+.rv__crits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 8px 0;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+.rv__stars span {
+  color: var(--border);
+  font-size: 0.85rem;
+}
+.rv__stars span.on {
+  color: var(--accent);
+}
+.rv__sent {
+  display: inline-block;
+  font-size: 0.82rem;
+  margin: 6px 0;
+}
+.rv__sent.pos {
+  color: var(--green);
+}
+.rv__sent.neg {
+  color: #c0492f;
+}
+.rv__hear {
+  display: inline-block;
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-left: 8px;
+}
+.rv__text {
+  margin: 8px 0;
+  font-size: 0.92rem;
+}
+.rv__actions {
+  display: flex;
+  gap: 14px;
+}
+.rv__like,
+.rv__reply {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  padding: 0;
+}
+.rv__like.is-on {
+  color: #c0492f;
+  font-weight: 600;
+}
+.rv__reply:disabled {
+  color: var(--ink-faint);
+  cursor: default;
+}
+
+@media (max-width: 720px) {
+  .profile__top {
+    grid-template-columns: 1fr;
+  }
+}

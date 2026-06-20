@@ -68,7 +68,6 @@ export default function ShelterMap({
 }) {
   const points = toMapPoints(shelters);
   const selectedPoint = points.find((p) => p.shelter.id === selectedId);
-  // dokąd lecieć: do zaznaczonego schroniska, a jeśli nie ma — do użytkownika
   const focus =
     selectedPoint || (userPos ? { lat: userPos.lat, lng: userPos.lng } : null);
 
