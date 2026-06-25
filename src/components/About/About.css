@@ -143,6 +143,36 @@
   color: var(--ink-soft);
   font-size: 0.92rem;
 }
+.about__law {
+  margin: 18px 0;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-soft);
+}
+.about__law-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+.about__law p {
+  margin: 0 0 8px;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+.about__law-link {
+  font-weight: 600;
+  color: var(--green);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.about__law-link:hover {
+  text-decoration: underline;
+}
 @media (max-width: 760px) {
   .about__grid {
     grid-template-columns: 1fr;

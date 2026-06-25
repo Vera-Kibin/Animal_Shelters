@@ -23,6 +23,21 @@ export default function About() {
             było widać, komu można zaufać. Pomagać można za darmo. Wystarczy
             podzielić się szczerą opinią.
           </p>
+          <div className="about__law">
+            <span className="about__law-label">Podstawa prawna</span>
+            <p>
+              Warunki, jakie powinny spełniać schroniska, określa rozporządzenie
+              w sprawie warunków bytowych zwierząt.
+            </p>
+            <a
+              className="about__law-link"
+              href="https://isap.sejm.gov.pl/isap.nsf/download.xsp/WDU20260000154/O/D20260154.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Otwórz dokument (PDF) →
+            </a>
+          </div>
           <p className="about__contact">
             Coś nie działa albo masz uwagi? Napisz:{" "}
             <a href="mailto:kontakt@example.com">kontakt@example.com</a>
