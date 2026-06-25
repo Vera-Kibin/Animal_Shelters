@@ -12,18 +12,20 @@ export default function About() {
           <span className="eyebrow">O projekcie</span>
           <h2>Mapa, której można zaufać</h2>
           <p>
-            Mapa Schronisk to projekt studencki powiązany z fundacją Animal Helper, kolejny sposób, by pomagać
-            zwierzętom. Zamiast danych pobieranych
-            automatycznie z Google Maps, zbieramy je ręcznie i na bieżąco aktualizujemy.
+            Mapa Schronisk to projekt studencki powiązany z projektem Animal
+            Helper, czyli pierwszym w Polsce 112 dla zwierząt. Zamiast danych
+            pobieranych automatycznie z Google Maps, zbieramy je ręcznie i na
+            bieżąco aktualizujemy.
           </p>
           <p>
-            Pracujemy też nad wskaźnikiem wiarygodności. Wylicza się go z ocen i opinii
-            ludzi, którzy naprawdę odwiedzili schronisko, żeby od razu było widać,
-            komu można zaufać. Pomagać można za darmo. Wystarczy podzielić się
-            szczerą opinią.
+            Pracujemy też nad wskaźnikiem wiarygodności. Wylicza się go z ocen i
+            opinii ludzi, którzy naprawdę odwiedzili schronisko, żeby od razu
+            było widać, komu można zaufać. Pomagać można za darmo. Wystarczy
+            podzielić się szczerą opinią.
           </p>
           <p className="about__contact">
-            Coś nie działa albo masz uwagi? Napisz: <a href="mailto:kontakt@example.com">kontakt@example.com</a>
+            Coś nie działa albo masz uwagi? Napisz:{" "}
+            <a href="mailto:kontakt@example.com">kontakt@example.com</a>
           </p>
         </div>
 
@@ -31,13 +33,16 @@ export default function About() {
           <span className="eyebrow">Dla schronisk</span>
           <h3>Reprezentujesz schronisko?</h3>
           <p>
-            Zgłoś się jako oficjalny przedstawiciel. Publikuj aktualności i wydarzenia,
-            buduj zaufanie i status schroniska, i spraw, by znalazło je więcej osób.
+            Zgłoś się jako oficjalny przedstawiciel. Publikuj aktualności i
+            wydarzenia, buduj zaufanie i status schroniska, i spraw, by znalazło
+            je więcej osób.
           </p>
           <button className="about__btn" onClick={() => setShowRep(true)}>
             Jestem przedstawicielem schroniska
           </button>
-          <small>Rejestracja wymaga weryfikacji (m.in. numerem telefonu).</small>
+          <small>
+            Rejestracja wymaga weryfikacji (m.in. numerem telefonu).
+          </small>
         </aside>
       </div>
 

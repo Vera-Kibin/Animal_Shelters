@@ -9,18 +9,25 @@ export default function Footer() {
         <div className="site-footer__brand">
           <div className="brand">
             <span className="brand__mark" aria-hidden>
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                <ellipse cx="12" cy="16" rx="5" ry="4"/><circle cx="5.5" cy="9.5" r="2"/>
-                <circle cx="9.5" cy="6" r="2"/><circle cx="14.5" cy="6" r="2"/><circle cx="18.5" cy="9.5" r="2"/>
-              </svg>
+              <img
+                src="animal-helper-72.png"
+                alt="Animal Helper Logo"
+                className="logo"
+              ></img>
             </span>
             <span className="brand__text">Mapa Schronisk</span>
           </div>
           <p>
-            Projekt studencki powiązany z fundacją Animal Helper. Niezależny katalog
-            schronisk, bez reklam i prowizji. Dane zbierane i aktualizowane ręcznie.
+            Projekt studencki powiązany z fundacją Animal Helper. Niezależny
+            katalog schronisk, bez reklam i prowizji. Dane zbierane i
+            aktualizowane ręcznie.
           </p>
-          <a className="site-footer__ah" href={AH} target="_blank" rel="noreferrer">
+          <a
+            className="site-footer__ah"
+            href={AH}
+            target="_blank"
+            rel="noreferrer"
+          >
             Poznaj Animal Helper ↗
           </a>
         </div>
@@ -35,9 +42,15 @@ export default function Footer() {
         <div className="site-footer__col">
           <h4>Animal Helper</h4>
           {/* TODO: podmień na dokładne adresy z ich strony */}
-          <a href={AH} target="_blank" rel="noreferrer">Facebook</a>
-          <a href={AH} target="_blank" rel="noreferrer">Instagram</a>
-          <a href={AH} target="_blank" rel="noreferrer">animalhelper.pl</a>
+          <a href={AH} target="_blank" rel="noreferrer">
+            Facebook
+          </a>
+          <a href={AH} target="_blank" rel="noreferrer">
+            Instagram
+          </a>
+          <a href={AH} target="_blank" rel="noreferrer">
+            animalhelper.pl
+          </a>
         </div>
 
         <div className="site-footer__col">
