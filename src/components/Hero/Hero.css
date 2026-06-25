@@ -1,9 +1,15 @@
 .hero {
   position: relative;
   overflow: hidden;
-  background: var(--bg-dark);
-  color: var(--on-dark);
+  /* background: var(--bg-dark);
+  color: var(--on-dark); */
   padding: 88px 0 60px;
+
+  background-image:
+    linear-gradient(to right, rgba(20, 18, 15, 0.95), rgba(20, 18, 15, 0.55)),
+    url("/dogs.jpg");
+  background-size: cover;
+  background-position: center;
 }
 .hero__inner {
   display: flex;

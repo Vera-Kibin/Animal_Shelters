@@ -5,21 +5,20 @@ const REPORT_URL = "https://zglos.animalhelper.pl";
 
 export default function Hero({ shelters }) {
   const total = shelters.length;
-  const active = shelters.filter((s) => s.status?.value === "active").length;
-  const onMap = shelters.filter((s) =>
-    (s.locations || []).some((l) => l.latitude != null),
-  ).length;
-  const cities = new Set(
-    shelters.flatMap((s) =>
-      (s.locations || []).map((l) => l.city).filter(Boolean),
-    ),
-  ).size;
+  // const active = shelters.filter((s) => s.status?.value === "active").length;
+  // const onMap = shelters.filter((s) =>
+  //   (s.locations || []).some((l) => l.latitude != null),
+  // ).length;
+  // const cities = new Set(
+  //   shelters.flatMap((s) =>
+  //     (s.locations || []).map((l) => l.city).filter(Boolean),
+  //   ),
+  // ).size;
 
   const stats = [
     { value: total, label: "schronisk w bazie" },
-    { value: active, label: "aktywnych" },
-    { value: onMap, label: "na mapie" },
-    { value: "—", label: "zweryfikowanych" },
+    { value: "-", label: "inne placówki" },
+    { value: "-", label: "liczba zwierząt" },
   ];
 
   return (
@@ -27,9 +26,9 @@ export default function Hero({ shelters }) {
       <div className="container hero__inner">
         <span className="eyebrow">Niezależny katalog · cała Polska</span>
         <h1 className="hero__title">
-          Schroniska, którym
+          Stwórzmy razem bazę schronisk, którym
           <br />
-          możesz <span>zaufać.</span>
+          można <span>zaufać.</span>
         </h1>
         <p className="hero__lead">
           To nie jest zwykła mapa. To miejsce, w którym ludzie pomagają

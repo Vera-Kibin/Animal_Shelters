@@ -8,11 +8,11 @@ export default function Header() {
       <div className="container site-header__inner">
         <a className="brand" href="/">
           <span className="brand__mark" aria-hidden>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-              <ellipse cx="12" cy="16" rx="5" ry="4"/>
-              <circle cx="5.5" cy="9.5" r="2"/><circle cx="9.5" cy="6" r="2"/>
-              <circle cx="14.5" cy="6" r="2"/><circle cx="18.5" cy="9.5" r="2"/>
-            </svg>
+            <img
+              src="animal-helper-72.png"
+              alt="Animal Helper Logo"
+              className="logo"
+            ></img>
           </span>
           <span className="brand__text">Mapa Schronisk</span>
         </a>
@@ -23,8 +23,15 @@ export default function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <a className="btn-ghost" href="#owner">Jesteś schroniskiem?</a>
-          <a className="btn-yellow" href={REPORT_URL} target="_blank" rel="noreferrer">
+          <a className="btn-ghost" href="#owner">
+            Prowadzisz schronisko?
+          </a>
+          <a
+            className="btn-yellow"
+            href={REPORT_URL}
+            target="_blank"
+            rel="noreferrer"
+          >
             Znalazłeś zwierzę?
           </a>
         </div>
