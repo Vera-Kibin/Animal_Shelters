@@ -82,10 +82,12 @@ export default function ShelterMap({
   shelters,
   selectedId,
   onSelect,
+  onOpenProfile,
   userPos,
 }) {
   const points = toMapPoints(shelters);
   const selectedPoint = points.find((p) => p.shelter.id === selectedId);
+  // dokąd lecieć: do zaznaczonego schroniska, a jeśli nie ma — do użytkownika
   const focus =
     selectedPoint || (userPos ? { lat: userPos.lat, lng: userPos.lng } : null);
 
@@ -135,6 +137,17 @@ export default function ShelterMap({
                   >
                     Strona
                   </a>
+                </>
+              )}
+              {onOpenProfile && (
+                <>
+                  <br />
+                  <button
+                    className="map-popup__profile"
+                    onClick={() => onOpenProfile(p.shelter)}
+                  >
+                    Zobacz profil →
+                  </button>
                 </>
               )}
             </Popup>

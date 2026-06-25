@@ -10,10 +10,6 @@
 .shelter-map .leaflet-container {
   font-family: var(--font-body);
 }
-.shelter-map .leaflet-top,
-.shelter-map .leaflet-bottom {
-  z-index: auto !important;
-}
 .paw-pin {
   background: none;
   border: none;
@@ -43,4 +39,36 @@
   background: #2b6cff;
   border: 3px solid #fff;
   box-shadow: 0 0 0 4px rgba(43, 108, 255, 0.25);
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px;
+  line-height: 1.5;
+}
+.leaflet-popup-content strong {
+  font-size: 0.95rem;
+}
+.leaflet-popup-content a {
+  color: var(--green);
+  font-weight: 600;
+  text-decoration: none;
+}
+.leaflet-popup-content a:hover {
+  text-decoration: underline;
+}
+
+.map-popup__profile {
+  display: block;
+  margin-top: 10px;
+  border: none;
+  background: var(--green);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+.map-popup__profile:hover {
+  filter: brightness(1.05);
 }
