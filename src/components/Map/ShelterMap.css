@@ -45,6 +45,7 @@
   margin: 12px 14px;
   line-height: 1.5;
 }
+.leaflet-popup-close-button { display: none !important; }
 .leaflet-popup-content strong {
   font-size: 0.95rem;
 }
@@ -72,3 +73,21 @@
 .map-popup__profile:hover {
   filter: brightness(1.05);
 }
+
+.map-popup__body { position: relative; }
+
+.map-popup__close {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: none;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+}
+.map-popup__close:hover { color: #333; }

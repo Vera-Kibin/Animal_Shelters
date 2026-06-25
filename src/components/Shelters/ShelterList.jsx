@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import useIsMobile from "../../hooks/useIsMobile";
 import ShelterCard from "./ShelterCard";
 import "./ShelterList.css";
@@ -14,6 +14,17 @@ export default function ShelterList({
 }) {
   const isMobile = useIsMobile();
   const [page, setPage] = useState(0);
+  const listRef = useRef(null);
+
+  useEffect(() => {
+    if (!selectedId) return;
+    const el = listRef.current?.querySelector(
+      `[data-shelter-id="${selectedId}"]`,
+    );
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+  }, [selectedId]);
 
   const totalPages = Math.ceil(shelters.length / PER_PAGE);
 
@@ -32,7 +43,7 @@ export default function ShelterList({
 
   return (
     <>
-      <div className="shelter-list">
+      <div className="shelter-list" ref={listRef}>
         {visible.map((shelter) => (
           <ShelterCard
             key={shelter.id}
