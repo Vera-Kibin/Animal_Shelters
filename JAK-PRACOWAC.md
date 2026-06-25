@@ -182,8 +182,6 @@ Najprościej przez GitHub (zalecane):
 
 ## CZĘŚĆ 10. Przydatne komendy Git (ściąga)
 
-## CZĘŚĆ 10. Przydatne komendy Git (ściąga)
-
 ```
 git status              ← co się zmieniło, na jakiej gałęzi jesteś
 git branch              ← lista Twoich gałęzi (gwiazdka = aktualna)

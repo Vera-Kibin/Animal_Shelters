@@ -1,59 +1,62 @@
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import "./CommentModal.css";
+import {
+  PYTANIA_OGOLNE,
+  KATEGORIE_OCENY,
+  PYTANIA_SZCZEGOLOWE,
+  LEGENDA_OCEN,
+  INFO_ANKIETY,
+  KLAUZULA_ZDJECIA,
+} from "../../data/surveyData";
 
-const CRITERIA = [
-  {
-    id: "clean_rooms",
-    label: "Czystość pomieszczeń",
-    good: "Posprzątane, brak odoru, suche posłania.",
-    bad: "Brud, mocny zapach, zaniedbane kąty.",
-  },
-  {
-    id: "clean_cages",
-    label: "Czystość klatek / kojców",
-    good: "Czyste boksy, świeża woda i miski.",
-    bad: "Zabrudzenia, puste miski.",
-  },
-  {
-    id: "animal_state",
-    label: "Stan i kondycja zwierząt",
-    good: "Zwierzęta czyste, spokojne, zadbane.",
-    bad: "Widoczne zaniedbanie, lęk, problemy zdrowotne.",
-  },
-  {
-    id: "space",
-    label: "Warunki i przestrzeń",
-    good: "Dość miejsca, wybiegi, ogrzewanie.",
-    bad: "Ciasnota, brak wybiegu.",
-  },
-  {
-    id: "staff",
-    label: "Podejście i liczba opiekunów",
-    good: "Zaangażowani, znają zwierzęta.",
-    bad: "Za mało rąk, obojętność.",
-  },
-  {
-    id: "openness",
-    label: "Otwartość schroniska",
-    good: "Wpuszczają, pokazują, odpowiadają.",
-    bad: "Unikają kontaktu, nie wpuszczają.",
-  },
+const OPCJE = ["tak", "nie", "nie wiem"];
+const KOLORY = [
+  "#c0392b",
+  "#e67e22",
+  "#f1c40f",
+  "#cddc39",
+  "#7cb342",
+  "#3f7d57",
 ];
 
-function Stars({ value, onChange, disabled }) {
+// pojedyncze pytanie tak/nie/nie wiem
+function PytanieTak({ pytanie, value, onChange }) {
   return (
-    <div className={"stars" + (disabled ? " is-disabled" : "")}>
-      {[1, 2, 3, 4, 5].map((n) => (
+    <div className="pyt">
+      <p className="pyt__q">{pytanie}</p>
+      <div className="pyt__opts">
+        {OPCJE.map((o) => (
+          <button
+            type="button"
+            key={o}
+            className={
+              "pyt__btn" + ((value || "nie wiem") === o ? " is-on" : "")
+            }
+            onClick={() => onChange(o)}
+          >
+            {o.toUpperCase()}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// skala oceny 1–6 — pasek "gąsienica": 6 części, blade kolory, wybrana wyraźna
+function SkalaOceny({ value, onChange }) {
+  return (
+    <div className="skala">
+      {[1, 2, 3, 4, 5, 6].map((n) => (
         <button
-          key={n}
           type="button"
-          disabled={disabled}
-          className={"stars__s" + (n <= value ? " is-on" : "")}
+          key={n}
+          className={"skala__seg" + (value === n ? " is-on" : "")}
+          style={{ background: KOLORY[n - 1] }}
           onClick={() => onChange(n)}
-          aria-label={n + " z 5"}
+          aria-label={n + " z 6"}
         >
-          ★
+          {value === n ? n : ""}
         </button>
       ))}
     </div>
@@ -61,13 +64,12 @@ function Stars({ value, onChange, disabled }) {
 }
 
 export default function CommentModal({ shelter, onClose, onSubmit }) {
-  const [visited, setVisited] = useState(null);
-  const [mode, setMode] = useState("quick");
-  const [sentiment, setSentiment] = useState(null);
-  const [ratings, setRatings] = useState({});
-  const [skipped, setSkipped] = useState({});
-  const [openHint, setOpenHint] = useState(null);
+  const [krok, setKrok] = useState(1);
+  const [ogolne, setOgolne] = useState({});
+  const [oceny, setOceny] = useState({});
+  const [szczegolowe, setSzczegolowe] = useState({});
   const [text, setText] = useState("");
+  const [openHint, setOpenHint] = useState(null);
   const [sent, setSent] = useState(false);
 
   useEffect(() => {
@@ -78,21 +80,20 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
     };
   }, []);
 
-  const setRate = (id, n) => {
-    setRatings((r) => ({ ...r, [id]: n }));
-    setSkipped((s) => ({ ...s, [id]: false }));
-  };
-  const toggleSkip = (id) => setSkipped((s) => ({ ...s, [id]: !s[id] }));
+  // jeden setter, klucz = numer pytania
+  const setOgolneOdp = (i, val) => setOgolne((o) => ({ ...o, [i]: val }));
+  const setOcena = (i, val) => setOceny((o) => ({ ...o, [i]: val }));
+  const setSzczeg = (i, val) => setSzczegolowe((o) => ({ ...o, [i]: val }));
 
   function handleSend() {
     if (onSubmit) {
       onSubmit({
         author: "Ty",
         verified: true,
-        type: mode,
-        visited: visited || "indirect",
-        sentiment: mode === "quick" ? sentiment : undefined,
-        ratings: mode === "detailed" ? ratings : undefined,
+        type: "ankieta",
+        ogolne,
+        oceny,
+        szczegolowe,
         text: text.trim(),
         likes: 0,
         replies: [],
@@ -113,9 +114,9 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
           <div className="modal__thanks">
             <h3>Dziękujemy!</h3>
             <p>
-              Twoja opinia pomaga budować zaufanie do schronisk. Zostawiając ją,
-              realnie pomagasz, nawet bez żadnej wpłaty. Jeśli możesz, dodaj
-              dłuższy opis i zdjęcia. Krótka opinia też się liczy, choć mniej.
+              Twoja opinia pomaga budować obraz dobrostanu zwierząt w tej
+              placówce. Zostawiając ją, realnie pomagasz, nawet bez żadnej
+              wpłaty.
             </p>
             <button className="modal__send" onClick={onClose}>
               Zamknij
@@ -123,160 +124,107 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
           </div>
         ) : (
           <>
-            <span className="eyebrow">Opinia o schronisku</span>
+            <span className="eyebrow">Ankieta o schronisku</span>
             <h3 className="modal__title">{shelter.name}</h3>
-            <p className="modal__intro">
-              Zostawienie opinii jest ważne, bo to z nich budujemy wskaźnik
-              zaufania. Możesz pomóc po prostu dzieląc się tym, co wiesz.
-            </p>
+            <p className="modal__intro">{INFO_ANKIETY}</p>
 
-            <div className="visited">
-              <span className="visited__q">
-                Czy miałaś/eś bezpośredni kontakt z tym schroniskiem?
-              </span>
-              <div className="visited__opts">
+            <div className="kroki">
+              {["1. Ogólne", "2. Oceny", "3. Szczegóły"].map((etk, idx) => (
                 <button
-                  className={"chip2" + (visited === "yes" ? " is-on" : "")}
-                  onClick={() => setVisited("yes")}
+                  type="button"
+                  key={etk}
+                  className={"kroki__k" + (krok === idx + 1 ? " is-on" : "")}
+                  onClick={() => setKrok(idx + 1)}
                 >
-                  Tak, byłam/em na miejscu
+                  {etk}
                 </button>
-                <button
-                  className={"chip2" + (visited === "indirect" ? " is-on" : "")}
-                  onClick={() => setVisited("indirect")}
-                >
-                  Pośrednio
-                </button>
-                <button
-                  className={"chip2" + (visited === "no" ? " is-on" : "")}
-                  onClick={() => setVisited("no")}
-                >
-                  Tylko ze słyszenia
-                </button>
+              ))}
+            </div>
+
+            {krok === 1 && (
+              <div className="krok">
+                {PYTANIA_OGOLNE.map((p, i) => (
+                  <PytanieTak
+                    key={i}
+                    pytanie={p}
+                    value={ogolne[i]}
+                    onChange={(v) => setOgolneOdp(i, v)}
+                  />
+                ))}
               </div>
-              {visited === "no" && (
-                <p className="visited__note">
-                  Opinie „ze słyszenia" oznaczamy osobno i liczą się najmniej.
-                </p>
-              )}
-            </div>
+            )}
 
-            <div className="modal__modes">
-              <button
-                className={
-                  "modal__mode" + (mode === "quick" ? " is-active" : "")
-                }
-                onClick={() => setMode("quick")}
-              >
-                <strong>Szybka opinia</strong>
-                <small>kilka słów, liczy się mniej</small>
-              </button>
-              <button
-                className={
-                  "modal__mode" + (mode === "detailed" ? " is-active" : "")
-                }
-                onClick={() => setMode("detailed")}
-              >
-                <strong>Szczegółowa opinia</strong>
-                <small>ze zdjęciami, liczy się bardziej</small>
-              </button>
-            </div>
-
-            {mode === "quick" ? (
-              <>
-                <div className="sentiment">
-                  <button
-                    className={
-                      "sentiment__btn pos" +
-                      (sentiment === "pos" ? " is-on" : "")
-                    }
-                    onClick={() => setSentiment("pos")}
-                  >
-                    👍 Pozytywna
-                  </button>
-                  <button
-                    className={
-                      "sentiment__btn neg" +
-                      (sentiment === "neg" ? " is-on" : "")
-                    }
-                    onClick={() => setSentiment("neg")}
-                  >
-                    👎 Negatywna
-                  </button>
+            {krok === 2 && (
+              <div className="krok">
+                <div className="legenda">
+                  <span>
+                    <b>1</b> dramat
+                  </span>
+                  <span>
+                    <b>3</b> dostatecznie
+                  </span>
+                  <span>
+                    <b>6</b> doskonale
+                  </span>
                 </div>
-                <textarea
-                  rows={2}
-                  placeholder="Kilka słów o Twoim wrażeniu…"
-                  value={text}
-                  onChange={(e) => setText(e.target.value)}
-                />
-              </>
-            ) : (
-              <>
-                <div className="dims">
-                  {CRITERIA.map((d) => (
-                    <div
-                      key={d.id}
-                      className={
-                        "dims__row" + (skipped[d.id] ? " is-skipped" : "")
-                      }
-                    >
-                      <div className="dims__head">
-                        <span className="dims__label">
-                          {d.label}
-                          <button
-                            type="button"
-                            className="dims__info"
-                            onClick={() =>
-                              setOpenHint(openHint === d.id ? null : d.id)
-                            }
-                            aria-label="Przykład"
-                          >
-                            ?
-                          </button>
-                        </span>
-                        <div className="dims__controls">
-                          <Stars
-                            value={ratings[d.id] || 0}
-                            onChange={(n) => setRate(d.id, n)}
-                            disabled={skipped[d.id]}
-                          />
-                          <button
-                            type="button"
-                            className={
-                              "dims__skip" + (skipped[d.id] ? " is-on" : "")
-                            }
-                            onClick={() => toggleSkip(d.id)}
-                          >
-                            nie umiem ocenić
-                          </button>
+                {KATEGORIE_OCENY.map((k, i) => (
+                  <div className="ocena" key={i}>
+                    <span className="ocena__label">
+                      {k.label}
+                      <button
+                        type="button"
+                        className="ocena__info"
+                        onClick={() => setOpenHint(openHint === i ? null : i)}
+                        aria-label="Przykład"
+                      >
+                        ?
+                      </button>
+                    </span>
+                    <SkalaOceny
+                      value={oceny[i] || 0}
+                      onChange={(v) => setOcena(i, v)}
+                    />
+
+                    {openHint === i && (
+                      <div className="ocena__examples">
+                        <div className="ex ex--good">
+                          <div className="ex__ph" aria-hidden>
+                            przykładowe zdjęcie
+                          </div>
+                          <span className="ex__tag">
+                            na co zwracać uwagę (okej)
+                          </span>
+                          <p>{k.good}</p>
+                        </div>
+                        <div className="ex ex--bad">
+                          <div className="ex__ph" aria-hidden>
+                            przykładowe zdjęcie
+                          </div>
+                          <span className="ex__tag">
+                            sygnały ostrzegawcze (nie okej)
+                          </span>
+                          <p>{k.bad}</p>
                         </div>
                       </div>
-                      {openHint === d.id && (
-                        <div className="dims__examples">
-                          <div className="ex ex--good">
-                            <div className="ex__ph" aria-hidden>
-                              zdjęcie
-                            </div>
-                            <span className="ex__tag">
-                              na co zwracać uwagę (okej)
-                            </span>
-                            <p>{d.good}</p>
-                          </div>
-                          <div className="ex ex--bad">
-                            <div className="ex__ph" aria-hidden>
-                              zdjęcie
-                            </div>
-                            <span className="ex__tag">
-                              sygnały ostrzegawcze (nie okej)
-                            </span>
-                            <p>{d.bad}</p>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                    )}
+                  </div>
+                ))}
+                <p className="ocena__photonote">
+                  Zdjęcia w przykładach są poglądowe (do uzupełnienia).
+                </p>
+              </div>
+            )}
+
+            {krok === 3 && (
+              <div className="krok">
+                {PYTANIA_SZCZEGOLOWE.map((p, i) => (
+                  <PytanieTak
+                    key={i}
+                    pytanie={p}
+                    value={szczegolowe[i]}
+                    onChange={(v) => setSzczeg(i, v)}
+                  />
+                ))}
 
                 <textarea
                   rows={4}
@@ -289,20 +237,39 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                   <input type="file" multiple accept="image/*" />
                   Dodaj zdjęcia ze schroniska (opcjonalnie, ale bardzo pomagają)
                 </label>
-                <p className="upload__warn">
-                  Uwaga: zdjęcia ze schroniska dołączaj tylko za zgodą placówki.
-                  Jeśli schronisko zgłosi sprzeciw, opinia ze zdjęciami może
-                  zostać usunięta.
-                </p>
-                <p className="modal__hint">
-                  Szczegółowe opinie ze zdjęciami liczą się najbardziej.
-                </p>
-              </>
+                <div className="upload__warn">
+                  Zdjęcia zazwyczaj można publikować, o ile:
+                  <ul>
+                    {KLAUZULA_ZDJECIA.map((z, i) => (
+                      <li key={i}>{z}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             )}
 
-            <button className="modal__send" onClick={handleSend}>
-              Wyślij opinię
-            </button>
+            <div className="krok__nav">
+              {krok > 1 && (
+                <button
+                  className="krok__back"
+                  onClick={() => setKrok(krok - 1)}
+                >
+                  ← Wstecz
+                </button>
+              )}
+              {krok < 3 ? (
+                <button
+                  className="modal__send"
+                  onClick={() => setKrok(krok + 1)}
+                >
+                  Dalej →
+                </button>
+              ) : (
+                <button className="modal__send" onClick={handleSend}>
+                  Wyślij ankietę
+                </button>
+              )}
+            </div>
           </>
         )}
       </div>
