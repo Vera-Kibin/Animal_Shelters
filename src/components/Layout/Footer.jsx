@@ -10,7 +10,7 @@ export default function Footer() {
           <div className="brand">
             <span className="brand__mark" aria-hidden>
               <img
-                src="animal-helper-72.png"
+                src="favicona-zolta.png"
                 alt="Animal Helper Logo"
                 className="logo"
               ></img>
