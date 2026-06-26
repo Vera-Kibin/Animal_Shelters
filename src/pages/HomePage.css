@@ -29,17 +29,29 @@
   isolation: isolate;
 }
 
-#root::before {
+#root::before,
+#root::after {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  width: max(24px, calc((100% - var(--maxw)) / 2));
 
-  background-image: url("/animal-helper-watermark.png");
+  background-image: url("/ah-wathermark-offset.png");
   background-repeat: repeat;
+  background-size: 259px 220px;
 
   opacity: 0.03;
   pointer-events: none;
   z-index: -1;
+}
+
+#root::before {
+  left: 0;
+}
+
+#root::after {
+  right: 0;
 }
 
 @media (max-width: 900px) {
@@ -59,6 +71,10 @@
 }
 
 @media (max-width: 560px) {
+  #root::before,
+  #root::after {
+    display: none;
+  }
   .browse__head h2 {
     font-size: 1.5rem;
   }
