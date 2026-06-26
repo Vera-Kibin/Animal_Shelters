@@ -43,10 +43,17 @@ function PytanieTak({ pytanie, value, onChange }) {
   );
 }
 
-// skala oceny 1–6 — pasek "gąsienica": 6 części, blade kolory, wybrana wyraźna
 function SkalaOceny({ value, onChange }) {
   return (
     <div className="skala">
+      <button
+        type="button"
+        className={"skala__seg skala__seg--nw" + (!value ? " is-on" : "")}
+        onClick={() => onChange(0)}
+        aria-label="nie wiem"
+      >
+        nie wiem
+      </button>
       {[1, 2, 3, 4, 5, 6].map((n) => (
         <button
           type="button"
