@@ -60,6 +60,11 @@
   color: var(--on-accent);
   border-color: var(--accent);
 }
+.chip--active:hover {
+  background: #e6ca09;
+  border-color: #e6ca09;
+  color: var(--on-accent);
+}
 .filterbar__toggle {
   display: flex;
   align-items: center;
@@ -96,6 +101,10 @@
   color: var(--accent-ink);
   border-color: var(--accent);
   font-weight: 600;
+}
+.filterbar__geo.is-on:hover {
+  background: #e6ca09;
+  border-color: #e6ca09;
 }
 .filterbar__geo:disabled {
   opacity: 0.6;

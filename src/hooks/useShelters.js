@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { getAllShelters } from "../services/shelterService";
 
 export default function useShelters() {
-  const [shelters, setShelters] = useState([]); // start: pusto
-  const [loading, setLoading] = useState(true); // start: ładuje się
+  const [shelters, setShelters] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function loadShelters() {
@@ -12,7 +12,7 @@ export default function useShelters() {
       setLoading(false);
     }
     loadShelters();
-  }, []); // [] = jeden raz, po pierwszym renderze
+  }, []);
 
   return { shelters, loading };
 }

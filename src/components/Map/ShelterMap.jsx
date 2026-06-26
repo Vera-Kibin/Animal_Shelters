@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useMemo, useCallback, memo } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -8,6 +8,8 @@ import "./ShelterMap.css";
 const POLAND_CENTER = [52.0, 19.3];
 const START_ZOOM = 6;
 
+const ICON_CACHE = new Map();
+
 function colorFor(shelter) {
   const t = shelter.details?.animalTypes || [];
   if (t.includes("dogs")) return "#f5d90a";
@@ -16,6 +18,8 @@ function colorFor(shelter) {
 }
 
 function pinIcon(color, active) {
+  const cacheKey = color + (active ? "_a" : "");
+  if (ICON_CACHE.has(cacheKey)) return ICON_CACHE.get(cacheKey);
   const s = active ? 38 : 28;
   const paw = s * 0.55;
   const html =
@@ -35,20 +39,51 @@ function pinIcon(color, active) {
     '<ellipse cx="12" cy="16" rx="5" ry="4"/>' +
     '<circle cx="5.5" cy="9.5" r="2"/><circle cx="9.5" cy="6" r="2"/>' +
     '<circle cx="14.5" cy="6" r="2"/><circle cx="18.5" cy="9.5" r="2"/></svg></div>';
-  return L.divIcon({
+  const icon = L.divIcon({
     className: "paw-pin",
     html,
     iconSize: [s, s],
     iconAnchor: [s / 2, s / 2],
   });
+  ICON_CACHE.set(cacheKey, icon);
+  return icon;
 }
 
-function MapFocus({ point }) {
+const USER_ICON = L.divIcon({
+  className: "user-pin",
+  html: '<div class="user-dot"></div>',
+  iconSize: [18, 18],
+  iconAnchor: [9, 9],
+});
+
+function MapFocus({ point, resetVersion }) {
   const map = useMap();
   useEffect(() => {
-    if (point) map.flyTo([point.lat, point.lng], 13, { duration: 0.8 });
+    if (point) {
+      map.flyTo([point.lat, point.lng], 13, { duration: 0.8 });
+    }
   }, [point, map]);
+  useEffect(() => {
+    if (resetVersion > 0 && !point) {
+      map.flyTo(POLAND_CENTER, START_ZOOM, { duration: 0.8 });
+    }
+  }, [resetVersion, point, map]);
   return null;
+}
+
+function PopupCloseButton({ onClick }) {
+  const map = useMap();
+  return (
+    <button
+      className="map-popup__close"
+      onClick={() => {
+        map.closePopup();
+        onClick?.();
+      }}
+    >
+      ×
+    </button>
+  );
 }
 
 function MapResizer() {
@@ -69,27 +104,30 @@ function MapResizer() {
   return null;
 }
 
-function userIcon() {
-  return L.divIcon({
-    className: "user-pin",
-    html: '<div class="user-dot"></div>',
-    iconSize: [18, 18],
-    iconAnchor: [9, 9],
-  });
-}
-
-export default function ShelterMap({
+const ShelterMap = memo(function ShelterMap({
   shelters,
   selectedId,
   onSelect,
   onOpenProfile,
   userPos,
 }) {
-  const points = toMapPoints(shelters);
-  const selectedPoint = points.find((p) => p.shelter.id === selectedId);
-  // dokąd lecieć: do zaznaczonego schroniska, a jeśli nie ma — do użytkownika
-  const focus =
-    selectedPoint || (userPos ? { lat: userPos.lat, lng: userPos.lng } : null);
+  const points = useMemo(() => toMapPoints(shelters), [shelters]);
+  const selectedPoint = useMemo(
+    () => points.find((p) => p.shelter.id === selectedId) ?? null,
+    [points, selectedId],
+  );
+  const [resetVersion, setResetVersion] = useState(0);
+  const focus = useMemo(
+    () =>
+      selectedPoint ||
+      (userPos ? { lat: userPos.lat, lng: userPos.lng } : null),
+    [selectedPoint, userPos],
+  );
+
+  const handlePopupClose = useCallback(() => {
+    onSelect?.(null);
+    setResetVersion((v) => v + 1);
+  }, [onSelect]);
 
   return (
     <div className="shelter-map">
@@ -103,10 +141,10 @@ export default function ShelterMap({
           attribution="&copy; OpenStreetMap"
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <MapFocus point={focus} />
+        <MapFocus point={focus} resetVersion={resetVersion} />
         <MapResizer />
         {userPos && (
-          <Marker position={[userPos.lat, userPos.lng]} icon={userIcon()}>
+          <Marker position={[userPos.lat, userPos.lng]} icon={USER_ICON}>
             <Popup>Twoja lokalizacja</Popup>
           </Marker>
         )}
@@ -115,45 +153,52 @@ export default function ShelterMap({
             key={p.key}
             position={[p.lat, p.lng]}
             icon={pinIcon(colorFor(p.shelter), p.shelter.id === selectedId)}
-            eventHandlers={{ click: () => onSelect?.(p.shelter.id) }}
+            eventHandlers={{
+              click: () => onSelect?.(p.shelter.id),
+            }}
           >
             <Popup>
-              <strong>{p.shelter.name}</strong>
-              <br />
-              {p.location.city}
-              {p.shelter.contact?.phone && (
-                <>
-                  <br />
-                  {p.shelter.contact.phone.split(",")[0].trim()}
-                </>
-              )}
-              {p.shelter.contact?.website && (
-                <>
-                  <br />
-                  <a
-                    href={p.shelter.contact.website}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Strona
-                  </a>
-                </>
-              )}
-              {onOpenProfile && (
-                <>
-                  <br />
-                  <button
-                    className="map-popup__profile"
-                    onClick={() => onOpenProfile(p.shelter)}
-                  >
-                    Zobacz profil →
-                  </button>
-                </>
-              )}
+              <div className="map-popup__body">
+                <PopupCloseButton onClick={handlePopupClose} />
+                <strong>{p.shelter.name}</strong>
+                <br />
+                {p.location.city}
+                {p.shelter.contact?.phone && (
+                  <>
+                    <br />
+                    {p.shelter.contact.phone.split(",")[0].trim()}
+                  </>
+                )}
+                {p.shelter.contact?.website && (
+                  <>
+                    <br />
+                    <a
+                      href={p.shelter.contact.website}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Strona
+                    </a>
+                  </>
+                )}
+                {onOpenProfile && (
+                  <>
+                    <br />
+                    <button
+                      className="map-popup__profile"
+                      onClick={() => onOpenProfile(p.shelter)}
+                    >
+                      Zobacz profil →
+                    </button>
+                  </>
+                )}
+              </div>
             </Popup>
           </Marker>
         ))}
       </MapContainer>
     </div>
   );
-}
+});
+
+export default ShelterMap;
