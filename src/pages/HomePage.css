@@ -23,6 +23,25 @@
   align-items: stretch;
 }
 
+#root {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+}
+
+#root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/animal-helper-watermark.png");
+  background-repeat: repeat;
+
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}
+
 @media (max-width: 900px) {
   .browse__split {
     grid-template-columns: 1fr;
