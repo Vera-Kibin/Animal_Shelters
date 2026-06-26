@@ -51,6 +51,7 @@ export default function ShelterCard({ shelter, query, selected, onSelect, onOpen
   return (
     <article
       className={"shelter-card" + (selected ? " shelter-card--selected" : "")}
+      data-shelter-id={shelter.id}
       onClick={() => onSelect?.(shelter.id)}
     >
       <div className="shelter-card__head">
