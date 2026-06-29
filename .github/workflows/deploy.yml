@@ -22,7 +22,7 @@ jobs:
       - run: npm run build
 
       - name: Zaszyfruj hasłem
-        run: npx staticrypt dist/index.html --short -p "${{ secrets.PREVIEW_PASSWORD }}" -o dist/index.html
+        run: npx staticrypt@2 dist/index.html "${{ secrets.PREVIEW_PASSWORD }}" -o dist/index.html
 
       - name: Publikuj na GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
