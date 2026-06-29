@@ -24,12 +24,13 @@ jobs:
       - name: Zaszyfruj hasłem
         run: |
           npx staticrypt dist/index.html \
-            --in-place \
             -p "${{ secrets.PREVIEW_PASSWORD }}" \
             --short
 
-          echo "==== sprawdzam wynik ===="
-          head -20 dist/index.html
+          cp encrypted/index.html dist/index.html
+
+          echo "=== sprawdzam ==="
+          head -10 dist/index.html
 
       - name: Publikuj na GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
