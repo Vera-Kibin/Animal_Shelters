@@ -140,7 +140,6 @@ export const PYTANIA_SZCZEGOLOWE = [
   "Czy boksy posiadają oznakowanie oraz dane dotyczące znajdujących się tam zwierząt?",
   "Czy zapewniono ujętą w rozporządzeniu minimalną powierzchnię bytową dla psów?",
   "Czy zapewniono ujętą w rozporządzeniu minimalną powierzchnię bytową dla kotów?",
-  "Czy schronisko znajduje się w odległości co najmniej 150 m od budynków mieszkalnych?",
   "Czy placówka prowadzi aktywną kampanię adopcyjną (m.in. social media, strona www)?",
 ];
 

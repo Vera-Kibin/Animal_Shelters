@@ -9,6 +9,8 @@ import {
   INFO_ANKIETY,
   KLAUZULA_ZDJECIA,
 } from "../../data/surveyData";
+import { useAuth } from "../../context/AuthContext";
+import LoginForm from "../Auth/LoginForm";
 
 const OPCJE = ["tak", "nie", "nie wiem"];
 const KOLORY = [
@@ -71,6 +73,7 @@ function SkalaOceny({ value, onChange }) {
 }
 
 export default function CommentModal({ shelter, onClose, onSubmit }) {
+  const { isLoggedIn } = useAuth();
   const [krok, setKrok] = useState(1);
   const [ogolne, setOgolne] = useState({});
   const [oceny, setOceny] = useState({});
@@ -78,6 +81,9 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   const [text, setText] = useState("");
   const [openHint, setOpenHint] = useState(null);
   const [sent, setSent] = useState(false);
+  const [pokazOstrzezenie, setPokazOstrzezenie] = useState(false);
+  const [zaakceptowanoOstrzezenie, setZaakceptowanoOstrzezenie] =
+    useState(false);
 
   useEffect(() => {
     const prev = document.body.style.overflow;
@@ -128,6 +134,40 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             <button className="modal__send" onClick={onClose}>
               Zamknij
             </button>
+          </div>
+        ) : !isLoggedIn ? (
+          <LoginForm />
+        ) : pokazOstrzezenie ? (
+          <div className="modal__thanks">
+            <span className="eyebrow">Ankieta o schronisku</span>
+            <h3 className="modal__title">Bardziej szczegółowe pytania</h3>
+            <p className="modal__intro">
+              Kolejny segment zawiera bardziej szczegółowe i fachowe pytania o
+              placówkę (m.in. o izolatki, kwarantannę, dokumentację). Jeśli nie
+              masz takiej wiedzy możesz spokojnie wysłać ankietę teraz, a te
+              pytania zostaną potraktowane jako neutralne.
+            </p>
+            <div className="krok__nav">
+              <button
+                className="krok__back"
+                onClick={() => {
+                  setPokazOstrzezenie(false);
+                  handleSend();
+                }}
+              >
+                Wyślij teraz
+              </button>
+              <button
+                className="modal__send"
+                onClick={() => {
+                  setPokazOstrzezenie(false);
+                  setZaakceptowanoOstrzezenie(true);
+                  setKrok(3);
+                }}
+              >
+                Przejdź dalej →
+              </button>
+            </div>
           </div>
         ) : (
           <>
@@ -267,7 +307,13 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
               {krok < 3 ? (
                 <button
                   className="modal__send"
-                  onClick={() => setKrok(krok + 1)}
+                  onClick={() => {
+                    if (krok === 2 && !zaakceptowanoOstrzezenie) {
+                      setPokazOstrzezenie(true);
+                    } else {
+                      setKrok(krok + 1);
+                    }
+                  }}
                 >
                   Dalej →
                 </button>
