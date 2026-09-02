@@ -7,6 +7,7 @@ import {
   handleDeleteUser,
 } from "../controllers/users.js";
 import validate from "../middleware/validate.js";
+import { authenticate, requireRole } from "../middleware/auth.js";
 import {
   idParam,
 } from "../schemas/common.js";
@@ -22,8 +23,10 @@ const router = Router();
  *   get:
  *     tags: [Users]
  *     summary: List users
- *     description: Returns a paginated list of users with optional role filter.
+ *     description: Returns a paginated list of users with optional role filter. Requires authentication.
  *     operationId: listUsers
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: query
  *         name: role
@@ -49,21 +52,10 @@ const router = Router();
  *     responses:
  *       200:
  *         description: Paginated list of users
- *         content:
- *           application/json:
- *             schema:
- *               allOf:
- *                 - $ref: '#/components/schemas/SuccessResponse'
- *                 - type: object
- *                   properties:
- *                     data:
- *                       type: array
- *                       items:
- *                         $ref: '#/components/schemas/User'
- *                     meta:
- *                       $ref: '#/components/schemas/PaginationMeta'
- * */
-router.get("/", validate(listUsersSchema, "query"), handleListUsers);
+ *       401:
+ *         description: Authentication required
+ */
+router.get("/", authenticate, validate(listUsersSchema, "query"), handleListUsers);
 
 /**
  * @openapi
@@ -71,8 +63,10 @@ router.get("/", validate(listUsersSchema, "query"), handleListUsers);
  *   get:
  *     tags: [Users]
  *     summary: Get user by ID
- *     description: Returns a single user by their unique ID.
+ *     description: Returns a single user by their unique ID. Requires authentication.
  *     operationId: getUserById
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -83,19 +77,12 @@ router.get("/", validate(listUsersSchema, "query"), handleListUsers);
  *     responses:
  *       200:
  *         description: User found
- *         content:
- *           application/json:
- *             schema:
- *               allOf:
- *                 - $ref: '#/components/schemas/SuccessResponse'
- *                 - type: object
- *                   properties:
- *                     data:
- *                       $ref: '#/components/schemas/User'
+ *       401:
+ *         description: Authentication required
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.get("/:id", validate(idParam, "params"), handleGetUserById);
+router.get("/:id", authenticate, validate(idParam, "params"), handleGetUserById);
 
 /**
  * @openapi
@@ -103,8 +90,10 @@ router.get("/:id", validate(idParam, "params"), handleGetUserById);
  *   post:
  *     tags: [Users]
  *     summary: Create a new user
- *     description: Creates a new user with the provided data. Email must be unique.
+ *     description: Creates a new user. Requires admin role.
  *     operationId: createUser
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -114,21 +103,16 @@ router.get("/:id", validate(idParam, "params"), handleGetUserById);
  *     responses:
  *       201:
  *         description: User created successfully
- *         content:
- *           application/json:
- *             schema:
- *               allOf:
- *                 - $ref: '#/components/schemas/SuccessResponse'
- *                 - type: object
- *                   properties:
- *                     data:
- *                       $ref: '#/components/schemas/User'
  *       400:
  *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
+ *       403:
+ *         description: Insufficient permissions
  *       409:
  *         $ref: '#/components/responses/Conflict'
  */
-router.post("/", validate(createUserSchema), handleCreateUser);
+router.post("/", authenticate, requireRole("admin"), validate(createUserSchema), handleCreateUser);
 
 /**
  * @openapi
@@ -136,8 +120,10 @@ router.post("/", validate(createUserSchema), handleCreateUser);
  *   put:
  *     tags: [Users]
  *     summary: Update a user
- *     description: Updates an existing user. At least one field must be provided. If email is changed, it must be unique.
+ *     description: Updates an existing user. Requires admin role.
  *     operationId: updateUser
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -154,23 +140,18 @@ router.post("/", validate(createUserSchema), handleCreateUser);
  *     responses:
  *       200:
  *         description: User updated successfully
- *         content:
- *           application/json:
- *             schema:
- *               allOf:
- *                 - $ref: '#/components/schemas/SuccessResponse'
- *                 - type: object
- *                   properties:
- *                     data:
- *                       $ref: '#/components/schemas/User'
  *       400:
  *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
+ *       403:
+ *         description: Insufficient permissions
  *       404:
  *         $ref: '#/components/responses/NotFound'
  *       409:
  *         $ref: '#/components/responses/Conflict'
  */
-router.put("/:id", validate(idParam, "params"), validate(updateUserSchema), handleUpdateUser);
+router.put("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), validate(updateUserSchema), handleUpdateUser);
 
 /**
  * @openapi
@@ -178,8 +159,10 @@ router.put("/:id", validate(idParam, "params"), validate(updateUserSchema), hand
  *   delete:
  *     tags: [Users]
  *     summary: Delete a user
- *     description: Permanently deletes a user by their ID.
+ *     description: Permanently deletes a user. Requires admin role.
  *     operationId: deleteUser
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -190,19 +173,14 @@ router.put("/:id", validate(idParam, "params"), validate(updateUserSchema), hand
  *     responses:
  *       200:
  *         description: User deleted successfully
- *         content:
- *           application/json:
- *             schema:
- *               allOf:
- *                 - $ref: '#/components/schemas/SuccessResponse'
- *                 - type: object
- *                   properties:
- *                     data:
- *                       $ref: '#/components/schemas/User'
+ *       401:
+ *         description: Authentication required
+ *       403:
+ *         description: Insufficient permissions
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.delete("/:id", validate(idParam, "params"), handleDeleteUser);
+router.delete("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), handleDeleteUser);
 
 export default router;
 export { handleListUsers, handleGetUserById, handleCreateUser, handleUpdateUser, handleDeleteUser };
