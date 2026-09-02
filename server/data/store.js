@@ -50,7 +50,7 @@ export async function findUserByEmail(email) {
   return users.find((u) => u.email === email);
 }
 
-export async function createUser({ email, password, name }) {
+export async function createUser({ email, password, name, role = "volunteer" }) {
   await acquireLock();
   try {
     const users = await readUsers();
@@ -64,7 +64,7 @@ export async function createUser({ email, password, name }) {
       email,
       password: hashedPassword,
       name,
-      role: "volunteer",
+      role,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
     };
