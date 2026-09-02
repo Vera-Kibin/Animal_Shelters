@@ -55,7 +55,7 @@ const router = Router();
  *       401:
  *         description: Authentication required
  */
-router.get("/", authenticate, validate(listUsersSchema, "query"), handleListUsers);
+router.get("/", authenticate, requireRole("admin"), validate(listUsersSchema, "query"), handleListUsers);
 
 /**
  * @openapi
@@ -82,7 +82,7 @@ router.get("/", authenticate, validate(listUsersSchema, "query"), handleListUser
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.get("/:id", authenticate, validate(idParam, "params"), handleGetUserById);
+router.get("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), handleGetUserById);
 
 /**
  * @openapi
