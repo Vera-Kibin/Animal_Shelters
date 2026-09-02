@@ -38,15 +38,23 @@ app.use(
   })
 );
 
-app.use(
-  rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 100,
-    standardHeaders: true,
-    legacyHeaders: false,
-    message: { success: false, error: { message: "Too many requests, please try again later", statusCode: 429 } },
-  })
-);
+const authRateLimit = rateLimit({
+  windowMs: 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { message: "Too many authentication attempts, please try again later", statusCode: 429 } },
+});
+
+const generalRateLimit = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, error: { message: "Too many requests, please try again later", statusCode: 429 } },
+});
+
+app.use(generalRateLimit);
 
 // --- Body Parsing & Logging ---
 app.use(express.json({ limit: "100kb" }));
@@ -67,7 +75,7 @@ if (process.env.NODE_ENV !== "production") {
 // --- API Routes ---
 app.use("/api", healthRoutes);
 app.use("/api", userRoutes);
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRateLimit, authRoutes);
 app.use("/api/animals", animalRoutes);
 app.use("/api/shelters", shelterRoutes);
 app.use("/api/adoptions", adoptionRoutes);
