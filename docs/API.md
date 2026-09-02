@@ -18,6 +18,22 @@ echo '[]' > data/users.json
 node index.js
 ```
 
+## 🐳 Docker
+
+```bash
+# Build image
+docker build -t animal-shelters-api .
+
+# Run container
+docker run -d -p 3000:3000 --name animal-shelters-api animal-shelters-api
+
+# Check logs
+docker logs animal-shelters-api
+
+# Stop
+docker stop animal-shelters-api
+```
+
 ## 🌐 API Base URL
 
 All endpoints: `http://localhost:3000/api`
