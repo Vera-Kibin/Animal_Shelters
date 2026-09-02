@@ -27,7 +27,7 @@ export async function handleListUsers(req, res, next) {
 export async function handleGetUserById(req, res, next) {
   try {
     const { id } = req.params;
-    const user = findUser(id);
+    const user = await findUser(id);
     if (!user) {
       return res.status(404).json({
         success: false,
