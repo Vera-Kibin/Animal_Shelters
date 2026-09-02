@@ -8,10 +8,13 @@ let animals = [
 
 export async function handleListAnimals(req, res, next) {
   try {
-    const { species, limit, offset } = req.query;
+    const { species, shelter_id, limit, offset } = req.query;
     let result = [...animals];
     if (species) {
       result = result.filter((a) => a.species === species);
+    }
+    if (shelter_id) {
+      result = result.filter((a) => a.shelter_id === shelter_id);
     }
     const limitNum = parseInt(limit) || 20;
     const offsetNum = parseInt(offset) || 0;
