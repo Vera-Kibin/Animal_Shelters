@@ -54,8 +54,8 @@ export async function handleUpdateAnimal(req, res, next) {
     if (index === -1) {
       return res.status(404).json({ success: false, error: { message: "Animal not found", statusCode: 404 } });
     }
-    const { name, species, breed, age, shelter_id } = req.body;
-    animals[index] = { ...animals[index], name, species, breed, age, shelter_id };
+    const updates = { ...req.body, updatedAt: new Date().toISOString() };
+    animals[index] = { ...animals[index], ...updates };
     res.json({ success: true, data: animals[index] });
   } catch (err) {
     next(err);
