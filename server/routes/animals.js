@@ -7,6 +7,7 @@ import {
   handleDeleteAnimal,
 } from "../controllers/animals.js";
 import validate from "../middleware/validate.js";
+import { authenticate, requireRole } from "../middleware/auth.js";
 import {
   idParam,
 } from "../schemas/common.js";
@@ -70,8 +71,10 @@ router.get("/:id", validate(idParam, "params"), handleGetAnimalById);
  *   post:
  *     tags: [Animals]
  *     summary: Create animal
- *     description: Creates a new animal record.
+ *     description: Creates a new animal record. Requires authentication.
  *     operationId: createAnimal
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -83,8 +86,10 @@ router.get("/:id", validate(idParam, "params"), handleGetAnimalById);
  *         description: Animal created
  *       400:
  *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
  */
-router.post("/", validate(createAnimalSchema), handleCreateAnimal);
+router.post("/", authenticate, validate(createAnimalSchema), handleCreateAnimal);
 
 /**
  * @openapi
@@ -92,8 +97,10 @@ router.post("/", validate(createAnimalSchema), handleCreateAnimal);
  *   put:
  *     tags: [Animals]
  *     summary: Update animal
- *     description: Updates an existing animal. At least one field must be provided.
+ *     description: Updates an existing animal. Requires authentication.
  *     operationId: updateAnimal
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -110,10 +117,12 @@ router.post("/", validate(createAnimalSchema), handleCreateAnimal);
  *         description: Animal updated
  *       400:
  *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.put("/:id", validate(idParam, "params"), validate(updateAnimalSchema), handleUpdateAnimal);
+router.put("/:id", authenticate, validate(idParam, "params"), validate(updateAnimalSchema), handleUpdateAnimal);
 
 /**
  * @openapi
@@ -121,8 +130,10 @@ router.put("/:id", validate(idParam, "params"), validate(updateAnimalSchema), ha
  *   delete:
  *     tags: [Animals]
  *     summary: Delete animal
- *     description: Deletes an animal by ID.
+ *     description: Deletes an animal by ID. Requires admin role.
  *     operationId: deleteAnimal
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -131,10 +142,14 @@ router.put("/:id", validate(idParam, "params"), validate(updateAnimalSchema), ha
  *     responses:
  *       200:
  *         description: Animal deleted
+ *       401:
+ *         description: Authentication required
+ *       403:
+ *         description: Insufficient permissions
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.delete("/:id", validate(idParam, "params"), handleDeleteAnimal);
+router.delete("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), handleDeleteAnimal);
 
 export default router;
 export { handleListAnimals, handleGetAnimalById, handleCreateAnimal, handleUpdateAnimal, handleDeleteAnimal };
