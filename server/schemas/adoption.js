@@ -8,9 +8,7 @@ const idParam = Joi.object({
 });
 
 const requestAdoption = Joi.object({
-  user_id: Joi.string().required().messages({
-    "any.required": "User ID is required",
-  }),
+  user_id: Joi.string().optional(),
   animal_id: Joi.string().required().messages({
     "any.required": "Animal ID is required",
   }),
