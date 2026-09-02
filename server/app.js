@@ -20,12 +20,24 @@ const app = express();
 
 // --- Security ---
 app.use(helmet());
+
+const allowedOrigins = process.env.CORS_ORIGIN
+  ? process.env.CORS_ORIGIN.split(",").map((o) => o.trim())
+  : ["http://localhost:5173"];
+
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "http://localhost:5173",
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
     credentials: true,
   })
 );
+
 app.use(
   rateLimit({
     windowMs: 15 * 60 * 1000,
@@ -37,18 +49,20 @@ app.use(
 );
 
 // --- Body Parsing & Logging ---
-app.use(express.json());
+app.use(express.json({ limit: "100kb" }));
 app.use(requestLogger);
 
-// --- Swagger UI ---
-app.use(
-  "/api/docs",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerSpec, {
-    customCss: ".swagger-ui .topbar { display: none }",
-    customSiteTitle: "Animal Shelters API — Swagger",
-  })
-);
+// --- Swagger UI (disabled in production) ---
+if (process.env.NODE_ENV !== "production") {
+  app.use(
+    "/api/docs",
+    swaggerUi.serve,
+    swaggerUi.setup(swaggerSpec, {
+      customCss: ".swagger-ui .topbar { display: none }",
+      customSiteTitle: "Animal Shelters API — Swagger",
+    })
+  );
+}
 
 // --- API Routes ---
 app.use("/api", healthRoutes);
@@ -60,11 +74,13 @@ app.use("/api/adoptions", adoptionRoutes);
 app.use("/api/consent", consentRoutes);
 app.use("/api/surveys", surveyRoutes);
 
-// --- OpenAPI JSON ---
-app.get("/api/openapi.json", (req, res) => {
-  res.setHeader("Content-Type", "application/json");
-  res.send(swaggerSpec);
-});
+// --- OpenAPI JSON (only in non-production) ---
+if (process.env.NODE_ENV !== "production") {
+  app.get("/api/openapi.json", (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.send(swaggerSpec);
+  });
+}
 
 // --- 404 & Error Handling ---
 app.use(notFound);
