@@ -5,7 +5,7 @@ import {
   submitSurvey,
 } from "../controllers/surveys.js";
 import validate from "../middleware/validate.js";
-import { authenticate, requireRole } from "../middleware/auth.js";
+import { authenticate } from "../middleware/auth.js";
 import {
   idParam,
   submitSurvey as submitSurveySchema,
