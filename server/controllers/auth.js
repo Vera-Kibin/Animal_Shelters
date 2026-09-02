@@ -1,9 +1,13 @@
 import { Router } from "express";
+import jwt from "jsonwebtoken";
 import validate from "../middleware/validate.js";
 import { register as registerSchema, login as loginSchema } from "../schemas/auth.js";
-import { createUser, getUsers } from "../data/store.js";
+import { createUser, findUserByEmail, verifyPassword } from "../data/store.js";
 
 const router = Router();
+
+const JWT_SECRET = process.env.JWT_SECRET || "animal-shelters-dev-secret-key-change-in-production";
+const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "24h";
 
 /**
  * @openapi
@@ -65,15 +69,29 @@ router.post("/register", validate(registerSchema), async (req, res, next) => {
 router.post("/login", validate(loginSchema), async (req, res, next) => {
   try {
     const { email, password } = req.body;
-    const users = await getUsers();
-    const user = users.find((u) => u.email === email);
+    const user = await findUserByEmail(email);
     if (!user) {
       return res.status(401).json({ success: false, error: { message: "Invalid email or password", statusCode: 401 } });
     }
-    if (user.password !== password) {
+
+    const valid = await verifyPassword(password, user.password);
+    if (!valid) {
       return res.status(401).json({ success: false, error: { message: "Invalid email or password", statusCode: 401 } });
     }
-    res.json({ success: true, data: { token: "jwt-token-" + user.id, user: { id: user.id, email: user.email, name: user.name } } });
+
+    const token = jwt.sign(
+      { id: user.id, email: user.email, role: user.role },
+      JWT_SECRET,
+      { expiresIn: JWT_EXPIRES_IN }
+    );
+
+    res.json({
+      success: true,
+      data: {
+        token,
+        user: { id: user.id, email: user.email, name: user.name, role: user.role },
+      },
+    });
   } catch (err) {
     next(err);
   }
@@ -87,6 +105,8 @@ router.post("/login", validate(loginSchema), async (req, res, next) => {
  *     summary: Get current user
  *     description: Returns the current user profile from the Bearer token.
  *     operationId: getMe
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
  *         description: Current user
@@ -100,9 +120,16 @@ router.get("/me", async (req, res, next) => {
       return res.status(401).json({ success: false, error: { message: "Missing or invalid Authorization header", statusCode: 401 } });
     }
 
-    const users = await getUsers();
-    const user = users[0];
+    const token = authHeader.split(" ")[1];
+    let decoded;
+    try {
+      decoded = jwt.verify(token, JWT_SECRET);
+    } catch (err) {
+      return res.status(401).json({ success: false, error: { message: "Invalid or expired token", statusCode: 401 } });
+    }
 
+    const { findUser } = await import("../data/store.js");
+    const user = await findUser(decoded.id);
     if (!user) {
       return res.status(404).json({ success: false, error: { message: "User not found", statusCode: 404 } });
     }
@@ -114,4 +141,3 @@ router.get("/me", async (req, res, next) => {
 });
 
 export default router;
-export { createUser, getUsers };
