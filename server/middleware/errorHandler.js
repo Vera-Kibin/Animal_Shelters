@@ -7,17 +7,22 @@ function errorHandler(err, req, res, _next) {
   const message = err.message || "Internal Server Error";
 
   if (statusCode === 500) {
-    console.error("[500] Internal error:", err);
+    console.error("[500] Internal error:", err.message);
   }
 
-  res.status(statusCode).json({
+  const response = {
     success: false,
     error: {
       message,
       statusCode,
-      ...(process.env.NODE_ENV !== "production" && { stack: err.stack }),
     },
-  });
+  };
+
+  if (process.env.NODE_ENV !== "production") {
+    response.error.stack = err.stack;
+  }
+
+  res.status(statusCode).json(response);
 }
 
 export default errorHandler;
