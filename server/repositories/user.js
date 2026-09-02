@@ -1,5 +1,9 @@
 import { getUsers, findUser, createUser, updateUser, deleteUser } from "../data/store.js";
 
+function sanitizeUser({ password, ...safe }) {
+  return safe;
+}
+
 export async function handleListUsers(req, res, next) {
   try {
     const { role, limit, offset } = req.query;
@@ -16,7 +20,7 @@ export async function handleListUsers(req, res, next) {
 
     res.json({
       success: true,
-      data: paginated,
+      data: paginated.map(sanitizeUser),
       meta: { total, limit: limitNum, offset: offsetNum },
     });
   } catch (err) {
@@ -34,7 +38,7 @@ export async function handleGetUserById(req, res, next) {
         error: { message: `User with id "${id}" not found`, statusCode: 404 },
       });
     }
-    res.json({ success: true, data: user });
+    res.json({ success: true, data: sanitizeUser(user) });
   } catch (err) {
     next(err);
   }
@@ -44,7 +48,7 @@ export async function handleCreateUser(req, res, next) {
   try {
     const { email, password, name, role } = req.body;
     const user = await createUser({ email, password, name, role });
-    res.status(201).json({ success: true, data: user });
+    res.status(201).json({ success: true, data: sanitizeUser(user) });
   } catch (err) {
     next(err);
   }
@@ -55,7 +59,7 @@ export async function handleUpdateUser(req, res, next) {
     const { id } = req.params;
     const updates = { ...req.body, updatedAt: new Date().toISOString() };
     const user = await updateUser(id, updates);
-    res.json({ success: true, data: user });
+    res.json({ success: true, data: sanitizeUser(user) });
   } catch (err) {
     next(err);
   }
