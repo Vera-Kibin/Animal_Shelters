@@ -1,9 +1,7 @@
 import Joi from "joi";
 
 const recordConsent = Joi.object({
-  user_id: Joi.string().required().messages({
-    "any.required": "User ID is required",
-  }),
+  user_id: Joi.string().optional(),
   consent_type: Joi.string()
     .valid("cookies", "analytics", "marketing", "data_processing")
     .required()

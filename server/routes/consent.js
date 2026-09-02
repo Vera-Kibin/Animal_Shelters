@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { recordConsent } from "../controllers/consent.js";
 import validate from "../middleware/validate.js";
+import { authenticate } from "../middleware/auth.js";
 import { recordConsent as recordConsentSchema } from "../schemas/consent.js";
 
 const router = Router();
@@ -11,8 +12,10 @@ const router = Router();
  *   post:
  *     tags: [Consent]
  *     summary: Record user consent
- *     description: Records a user's consent decision (cookies, analytics, etc.).
+ *     description: Records a user's consent decision (cookies, analytics, etc.). Requires authentication.
  *     operationId: recordConsent
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -24,7 +27,9 @@ const router = Router();
  *         description: Consent recorded
  *       400:
  *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
  */
-router.post("/", validate(recordConsentSchema), recordConsent);
+router.post("/", authenticate, validate(recordConsentSchema), recordConsent);
 
 export default router;
