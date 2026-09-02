@@ -9,7 +9,7 @@ import notFound from "./middleware/notFound.js";
 import errorHandler from "./middleware/errorHandler.js";
 import healthRoutes from "./routes/health.js";
 import userRoutes from "./routes/users.js";
-import authRoutes from "./routes/auth.js";
+import authRoutes from "./controllers/auth.js";
 import animalRoutes from "./routes/animals.js";
 import shelterRoutes from "./routes/shelters.js";
 import adoptionRoutes from "./routes/adoptions.js";
