@@ -7,9 +7,7 @@ const idParam = Joi.object({
 });
 
 const submitSurvey = Joi.object({
-  user_id: Joi.string().required().messages({
-    "any.required": "User ID is required",
-  }),
+  user_id: Joi.string().optional(),
   shelter_id: Joi.string().required().messages({
     "any.required": "Shelter ID is required",
   }),

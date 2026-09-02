@@ -5,6 +5,7 @@ import {
   submitSurvey,
 } from "../controllers/surveys.js";
 import validate from "../middleware/validate.js";
+import { authenticate, requireRole } from "../middleware/auth.js";
 import {
   idParam,
   submitSurvey as submitSurveySchema,
@@ -19,8 +20,10 @@ const router = Router();
  *   get:
  *     tags: [Surveys]
  *     summary: List surveys
- *     description: Returns a paginated list of surveys with optional filters.
+ *     description: Returns a paginated list of surveys with optional filters. Requires authentication.
  *     operationId: listSurveys
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: query
  *         name: shelter_id
@@ -37,8 +40,10 @@ const router = Router();
  *     responses:
  *       200:
  *         description: List of surveys
+ *       401:
+ *         description: Authentication required
  */
-router.get("/", validate(listSurveysSchema, "query"), listSurveys);
+router.get("/", authenticate, validate(listSurveysSchema, "query"), listSurveys);
 
 /**
  * @openapi
@@ -46,8 +51,10 @@ router.get("/", validate(listSurveysSchema, "query"), listSurveys);
  *   get:
  *     tags: [Surveys]
  *     summary: Get survey by ID
- *     description: Returns a single survey by its unique ID.
+ *     description: Returns a single survey by its unique ID. Requires authentication.
  *     operationId: getSurveyById
+ *     security:
+ *       - bearerAuth: []
  *     parameters:
  *       - in: path
  *         name: id
@@ -56,10 +63,12 @@ router.get("/", validate(listSurveysSchema, "query"), listSurveys);
  *     responses:
  *       200:
  *         description: Survey found
+ *       401:
+ *         description: Authentication required
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.get("/:id", validate(idParam, "params"), getSurveyById);
+router.get("/:id", authenticate, validate(idParam, "params"), getSurveyById);
 
 /**
  * @openapi
@@ -67,8 +76,10 @@ router.get("/:id", validate(idParam, "params"), getSurveyById);
  *   post:
  *     tags: [Surveys]
  *     summary: Submit a survey
- *     description: Submits a new survey with ratings for a shelter.
+ *     description: Submits a new survey with ratings for a shelter. Requires authentication.
  *     operationId: submitSurvey
+ *     security:
+ *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -80,7 +91,9 @@ router.get("/:id", validate(idParam, "params"), getSurveyById);
  *         description: Survey submitted
  *       400:
  *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
  */
-router.post("/", validate(submitSurveySchema), submitSurvey);
+router.post("/", authenticate, validate(submitSurveySchema), submitSurvey);
 
 export default router;
