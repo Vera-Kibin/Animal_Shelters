@@ -74,7 +74,7 @@ if (process.env.NODE_ENV !== "production") {
 
 // --- API Routes ---
 app.use("/api", healthRoutes);
-app.use("/api", userRoutes);
+app.use("/api/users", userRoutes);
 app.use("/api/auth", authRateLimit, authRoutes);
 app.use("/api/animals", animalRoutes);
 app.use("/api/shelters", shelterRoutes);
