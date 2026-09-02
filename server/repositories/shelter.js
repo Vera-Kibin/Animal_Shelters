@@ -49,8 +49,8 @@ export async function handleUpdateShelter(req, res, next) {
     if (index === -1) {
       return res.status(404).json({ success: false, error: { message: "Shelter not found", statusCode: 404 } });
     }
-    const { name, city, country, contact_email, contact_phone } = req.body;
-    shelters[index] = { ...shelters[index], name, city, country, contact_email, contact_phone };
+    const updates = { ...req.body, updatedAt: new Date().toISOString() };
+    shelters[index] = { ...shelters[index], ...updates };
     res.json({ success: true, data: shelters[index] });
   } catch (err) {
     next(err);
