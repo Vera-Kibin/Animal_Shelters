@@ -20,6 +20,10 @@ RUN chown -R appuser:appgroup ./data
 
 EXPOSE 3000
 
+# Resource limits for the container
+# Set via docker run --memory=256m --cpus=0.5
+# Or via docker-compose deploy.resources.limits
+
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD wget -qO- http://localhost:3000/api/health || exit 1
 
