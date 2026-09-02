@@ -410,7 +410,7 @@ const options = {
             },
             comment: { type: "string" },
           },
-          required: ["user_id", "shelter_id", "ratings"],
+          required: ["shelter_id", "ratings"],
         },
         PaginationMeta: {
           type: "object",
