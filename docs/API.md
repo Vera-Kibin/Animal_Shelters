@@ -1,6 +1,6 @@
 # Animal Shelters API — Quick Start
 
-## 📦 Installation
+## Installation
 
 ```bash
 # From project root
@@ -18,7 +18,7 @@ echo '[]' > data/users.json
 node index.js
 ```
 
-## 🐳 Docker
+## Docker
 
 ```bash
 # Build image
@@ -34,11 +34,11 @@ docker logs animal-shelters-api
 docker stop animal-shelters-api
 ```
 
-## 🌐 API Base URL
+## API Base URL
 
 All endpoints: `http://localhost:3000/api`
 
-## 📋 API Endpoints
+## API Endpoints
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
@@ -62,13 +62,13 @@ All endpoints: `http://localhost:3000/api`
 | PUT | `/api/adoptions/:id` | Bearer | Update adoption status |
 | DELETE | `/api/adoptions/:id` | Bearer | Delete adoption request |
 
-## 🔐 Authentication
+## Authentication
 
 1. Register → `POST /api/auth/register`
 2. Login → `POST /api/auth/login` (returns token)
 3. Use token: `Authorization: Bearer <token>`
 
-## 📁 Server Structure — Brief Folder Guide
+## Server Structure — Brief Folder Guide
 
 | Folder | Contains |
 |--------|----------|
@@ -82,7 +82,7 @@ All endpoints: `http://localhost:3000/api`
 | `server/repositories/` | Per-entity repos: user, animal, shelter, adoption |
 | `server/schemas/` | `common.js` — shared `idParam` and `pagination` schemas |
 
-## ⌨️ Commands Cheat Sheet
+## Commands Cheat Sheet
 
 ```bash
 # Start server
