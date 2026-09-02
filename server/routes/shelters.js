@@ -7,6 +7,7 @@ import {
   handleDeleteShelter,
 } from "../controllers/shelters.js";
 import validate from "../middleware/validate.js";
+import { authenticate, requireRole } from "../middleware/auth.js";
 import {
   idParam,
 } from "../schemas/common.js";
@@ -31,16 +32,16 @@ const router = Router();
  *       - in: query
  *         name: country
  *         schema: { type: string }
-*       - in: query
+ *       - in: query
  *         name: limit
  *         schema: { type: integer, minimum: 1, maximum: 100, default: 10 }
-*       - in: query
+ *       - in: query
  *         name: offset
  *         schema: { type: integer, minimum: 0, default: 0 }
-*     responses:
-*       200:
-*         description: List of shelters
-*/
+ *     responses:
+ *       200:
+ *         description: List of shelters
+ */
 router.get("/", validate(listSheltersSchema, "query"), handleListShelters);
 
 /**
@@ -49,19 +50,19 @@ router.get("/", validate(listSheltersSchema, "query"), handleListShelters);
  *   get:
  *     tags: [Shelters]
  *     summary: Get shelter by ID
-*     description: Returns a single shelter by their unique ID.
-*     operationId: getShelterById
-*     parameters:
-*       - in: path
-*         name: id
-*         required: true
-*         schema: { type: string }
-*     responses:
-*       200:
-*         description: Shelter found
-*       404:
-*         $ref: '#/components/responses/NotFound'
-*/
+ *     description: Returns a single shelter by their unique ID.
+ *     operationId: getShelterById
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema: { type: string }
+ *     responses:
+ *       200:
+ *         description: Shelter found
+ *       404:
+ *         $ref: '#/components/responses/NotFound'
+ */
 router.get("/:id", validate(idParam, "params"), handleGetShelterById);
 
 /**
@@ -70,21 +71,25 @@ router.get("/:id", validate(idParam, "params"), handleGetShelterById);
  *   post:
  *     tags: [Shelters]
  *     summary: Create shelter
-*     description: Creates a new shelter record.
-*     operationId: createShelter
-*     requestBody:
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             $ref: '#/components/schemas/ShelterCreate'
-*     responses:
-*       201:
-*         description: Shelter created
-*       400:
-*         $ref: '#/components/responses/ValidationError'
-*/
-router.post("/", validate(createShelterSchema), handleCreateShelter);
+ *     description: Creates a new shelter record. Requires authentication.
+ *     operationId: createShelter
+ *     security:
+ *       - bearerAuth: []
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ShelterCreate'
+ *     responses:
+ *       201:
+ *         description: Shelter created
+ *       400:
+ *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
+ */
+router.post("/", authenticate, validate(createShelterSchema), handleCreateShelter);
 
 /**
  * @openapi
@@ -92,28 +97,32 @@ router.post("/", validate(createShelterSchema), handleCreateShelter);
  *   put:
  *     tags: [Shelters]
  *     summary: Update shelter
-*     description: Updates an existing shelter. At least one field must be provided.
-*     operationId: updateShelter
-*     parameters:
-*       - in: path
-*         name: id
-*         required: true
-*         schema: { type: string }
-*     requestBody:
-*       required: true
-*       content:
-*         application/json:
-*           schema:
-*             $ref: '#/components/schemas/ShelterUpdate'
-*     responses:
-*       200:
-*         description: Shelter updated
-*       400:
-*         $ref: '#/components/responses/ValidationError'
-*       404:
-*         $ref: '#/components/responses/NotFound'
-*/
-router.put("/:id", validate(idParam, "params"), validate(updateShelterSchema), handleUpdateShelter);
+ *     description: Updates an existing shelter. Requires authentication.
+ *     operationId: updateShelter
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema: { type: string }
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/ShelterUpdate'
+ *     responses:
+ *       200:
+ *         description: Shelter updated
+ *       400:
+ *         $ref: '#/components/responses/ValidationError'
+ *       401:
+ *         description: Authentication required
+ *       404:
+ *         $ref: '#/components/responses/NotFound'
+ */
+router.put("/:id", authenticate, validate(idParam, "params"), validate(updateShelterSchema), handleUpdateShelter);
 
 /**
  * @openapi
@@ -121,20 +130,26 @@ router.put("/:id", validate(idParam, "params"), validate(updateShelterSchema), h
  *   delete:
  *     tags: [Shelters]
  *     summary: Delete shelter
-*     description: Deletes a shelter by ID.
-*     operationId: deleteShelter
-*     parameters:
-*       - in: path
-*         name: id
-*         required: true
-*         schema: { type: string }
-*     responses:
-*       200:
-*         description: Shelter deleted
-*       404:
-*         $ref: '#/components/responses/NotFound'
-*/
-router.delete("/:id", validate(idParam, "params"), handleDeleteShelter);
+ *     description: Deletes a shelter by ID. Requires admin role.
+ *     operationId: deleteShelter
+ *     security:
+ *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema: { type: string }
+ *     responses:
+ *       200:
+ *         description: Shelter deleted
+ *       401:
+ *         description: Authentication required
+ *       403:
+ *         description: Insufficient permissions
+ *       404:
+ *         $ref: '#/components/responses/NotFound'
+ */
+router.delete("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), handleDeleteShelter);
 
 export default router;
 export { handleListShelters, handleGetShelterById, handleCreateShelter, handleUpdateShelter, handleDeleteShelter };
