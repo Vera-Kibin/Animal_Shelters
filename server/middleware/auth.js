@@ -1,9 +1,9 @@
 import jwt from "jsonwebtoken";
 
-const JWT_SECRET = process.env.JWT_SECRET || "animal-shelters-dev-secret-key-change-in-production";
+const JWT_SECRET = process.env.JWT_SECRET;
 
-if (process.env.NODE_ENV === "production" && !process.env.JWT_SECRET) {
-  console.warn("[SECURITY] JWT_SECRET not set in production! Using default secret - this is insecure!");
+if (!JWT_SECRET) {
+  throw new Error("JWT_SECRET environment variable is required. Set it in .env or environment.");
 }
 
 export function authenticate(req, res, next) {

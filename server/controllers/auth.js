@@ -6,11 +6,11 @@ import { createUser, findUserByEmail, verifyPassword } from "../data/store.js";
 
 const router = Router();
 
-const JWT_SECRET = process.env.JWT_SECRET || "animal-shelters-dev-secret-key-change-in-production";
-const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || "24h";
+const JWT_SECRET = process.env.JWT_SECRET;
+const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
 
-if (process.env.NODE_ENV === "production" && !process.env.JWT_SECRET) {
-  console.warn("[SECURITY] JWT_SECRET not set in production! Using default secret - this is insecure!");
+if (!JWT_SECRET) {
+  throw new Error("JWT_SECRET environment variable is required. Set it in .env or environment.");
 }
 
 /**
