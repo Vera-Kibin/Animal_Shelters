@@ -128,7 +128,7 @@ router.get("/me", async (req, res, next) => {
     let decoded;
     try {
       decoded = jwt.verify(token, JWT_SECRET);
-    } catch (err) {
+    } catch {
       return res.status(401).json({ success: false, error: { message: "Invalid or expired token", statusCode: 401 } });
     }
 
