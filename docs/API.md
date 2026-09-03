@@ -4,15 +4,12 @@
 
 ```bash
 # From project root
-cd /home/kravchenski/Projects/own/animal-shelters
-npm install
-
-# Go to server directory
 cd server
 npm install
 
-# Initialize data store
-echo '[]' > data/users.json
+# Create .env from template
+cp .env.example .env
+# Edit .env — set JWT_SECRET and JWT_EXPIRES_IN
 
 # Start server
 node index.js
@@ -21,11 +18,15 @@ node index.js
 ## Docker
 
 ```bash
-# Build image
+# Build from server/ directory
+cd server
 docker build -t animal-shelters-api .
 
-# Run container
-docker run -d -p 3000:3000 --name animal-shelters-api animal-shelters-api
+# Run container (pass required env vars)
+docker run -d -p 3000:3000 \
+  -e JWT_SECRET=your-secret-key-min-32-chars \
+  -e JWT_EXPIRES_IN=24h \
+  --name animal-shelters-api animal-shelters-api
 
 # Check logs
 docker logs animal-shelters-api
@@ -83,7 +84,7 @@ All endpoints: `http://localhost:3000/api`
 
 **Security notes:**
 - Passwords hashed with bcrypt (12 rounds) before storage
-- JWT secret defaults to dev value; in production **must** set `JWT_SECRET` env var (server warns if using default in production)
+- JWT_SECRET and JWT_EXPIRES_IN are **required** env vars — server throws on startup if missing
 - Auth endpoints rate-limited to 10 req/min; general endpoints 100 req/15min
 - Helmet security headers, strict CORS, 100kb body limit
 
@@ -100,12 +101,16 @@ All endpoints: `http://localhost:3000/api`
 | `server/middleware/` | `auth.js` (JWT verify + requireRole), `validate.js` (Joi factory), `errorHandler.js`, `notFound.js`, `logger.js` |
 | `server/repositories/` | Per-entity repos: user (uses `data/store.js`), animal, shelter, adoption (in-memory arrays) |
 | `server/schemas/` | Joi validation: auth, common (idParam, pagination), animal, shelter, adoption, user, consent, survey |
+| `server/Dockerfile` | Multi-stage build (deps → runner), non-root user, healthcheck |
+| `server/.dockerignore` | Excludes node_modules, .env, .git from build context |
+| `server/.env.example` | Template for required env vars |
 
 **Key architectural notes:**
 - `controllers/auth.js` is the **real JWT implementation** (mounted at `/api/auth`)
 - `controllers/{users,animals,shelters,adoptions}.js` are Router files that import from repositories
 - `routes/*.js` import handlers from controllers and apply middleware (auth, validate, role checks)
 - In-memory repos for animals/shelters/adoptions — suitable for demo; replace with DB for production
+- Docker build context is `server/` — all paths in Dockerfile are relative to it
 
 ## Commands Cheat Sheet
 
@@ -168,11 +173,15 @@ curl http://localhost:3000/api/openapi.json
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `PORT` | `3000` | HTTP server port |
-| `NODE_ENV` | `development` | Set to `production` for production mode (hides stack traces, enables JWT warning) |
-| `JWT_SECRET` | `animal-shelters-dev-secret-key-change-in-production` | **Must change in production** |
-| `JWT_EXPIRES_IN` | `24h` | JWT token expiry (e.g., `1h`, `7d`) |
+| `NODE_ENV` | `development` | Set to `production` for production mode |
+| `JWT_SECRET` | **(required)** | Secret key for JWT signing — no default, server throws if missing |
+| `JWT_EXPIRES_IN` | **(required)** | JWT token expiry (e.g., `1h`, `24h`, `7d`) — server throws if missing |
 | `CORS_ORIGIN` | `http://localhost:5173` | Comma-separated allowed origins |
 | `DATA_FILE` | `data/users.json` | Path to users JSON store |
+
+**Required env vars (server won't start without):**
+- `JWT_SECRET`
+- `JWT_EXPIRES_IN`
 
 ## Error Response Format
 
