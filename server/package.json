@@ -1,0 +1,26 @@
+{
+  "name": "animal-shelters-server",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "REST API for Animal Shelters application",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "helmet": "^8.3.0",
+    "joi": "^18.2.6",
+    "jsonwebtoken": "^9.0.3",
+    "swagger-jsdoc": "^6.3.0",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^14.0.2"
+  },
+  "allowScripts": {
+    "bcrypt@6.0.0": true
+  }
+}
