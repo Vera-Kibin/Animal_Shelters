@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 
 const __filename = import.meta.url;
 const __dirname = path.dirname(new URL(__filename).pathname);
-const DATA_FILE = path.join(__dirname, "data", "users.json");
+const DATA_FILE = path.join(__dirname, "users.json");
 
 const SALT_ROUNDS = 12;
 

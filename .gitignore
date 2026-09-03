@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # Runtime data
-server/data/data/
+server/data/users.json
 
 # Environment files (keep .env.example tracked)
 .env

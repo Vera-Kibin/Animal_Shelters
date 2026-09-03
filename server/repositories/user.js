@@ -1,11 +1,11 @@
-import { findUser, createUser, updateUser, deleteUser } from "../data/store.js";
+import { getUsers, findUser, createUser, updateUser, deleteUser } from "../data/store.js";
 
 export async function handleListUsers(req, res, next) {
   try {
     const { role, limit, offset } = req.query;
     const limitNum = parseInt(limit) || 20;
     const offsetNum = parseInt(offset) || 0;
-    let users = getUsers();
+    let users = await getUsers();
 
     if (role) {
       users = users.filter((u) => u.role === role);
