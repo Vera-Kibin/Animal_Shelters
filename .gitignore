@@ -30,3 +30,4 @@ server/data/data/
 .env
 .env.local
 .env.*.local
+!server/.env.example
