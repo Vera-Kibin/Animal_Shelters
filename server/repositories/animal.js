@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
 
-// In-memory store — in production would use a database
 let animals = [
   { id: "1", name: "Burek", species: "dog", breed: "Labrador", age: 3, shelter_id: "1" },
   { id: "2", name: "Mruczek", species: "cat", breed: "Maine Coon", age: 2, shelter_id: "2" },

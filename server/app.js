@@ -18,7 +18,6 @@ import surveyRoutes from "./routes/surveys.js";
 
 const app = express();
 
-// --- Security ---
 app.use(helmet());
 
 const allowedOrigins = process.env.CORS_ORIGIN
@@ -56,11 +55,9 @@ const generalRateLimit = rateLimit({
 
 app.use(generalRateLimit);
 
-// --- Body Parsing & Logging ---
 app.use(express.json({ limit: "100kb" }));
 app.use(requestLogger);
 
-// --- Swagger UI (disabled in production) ---
 if (process.env.NODE_ENV !== "production") {
   app.use(
     "/api/docs",
@@ -72,7 +69,6 @@ if (process.env.NODE_ENV !== "production") {
   );
 }
 
-// --- API Routes ---
 app.use("/api", healthRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRateLimit, authRoutes);
@@ -82,7 +78,6 @@ app.use("/api/adoptions", adoptionRoutes);
 app.use("/api/consent", consentRoutes);
 app.use("/api/surveys", surveyRoutes);
 
-// --- OpenAPI JSON (only in non-production) ---
 if (process.env.NODE_ENV !== "production") {
   app.get("/api/openapi.json", (req, res) => {
     res.setHeader("Content-Type", "application/json");
@@ -90,7 +85,6 @@ if (process.env.NODE_ENV !== "production") {
   });
 }
 
-// --- 404 & Error Handling ---
 app.use(notFound);
 app.use(errorHandler);
 
