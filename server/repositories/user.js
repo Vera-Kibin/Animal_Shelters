@@ -1,6 +1,6 @@
 import { getUsers, findUser, createUser, updateUser, deleteUser } from "../data/store.js";
 
-function sanitizeUser({ password, ...safe }) {
+function sanitizeUser({ password: _password, ...safe }) {
   return safe;
 }
 
@@ -50,27 +50,36 @@ export async function handleCreateUser(req, res, next) {
     const user = await createUser({ email, password, name, role });
     res.status(201).json({ success: true, data: sanitizeUser(user) });
   } catch (err) {
+    if (err.message === "Duplicate email") {
+      return res.status(409).json({ success: false, error: { message: "Email already exists", statusCode: 409 } });
+    }
     next(err);
   }
 }
 
 export async function handleUpdateUser(req, res, next) {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     const updates = { ...req.body, updatedAt: new Date().toISOString() };
     const user = await updateUser(id, updates);
     res.json({ success: true, data: sanitizeUser(user) });
   } catch (err) {
+    if (err.message === "User not found") {
+      return res.status(404).json({ success: false, error: { message: `User with id "${id}" not found`, statusCode: 404 } });
+    }
     next(err);
   }
 }
 
 export async function handleDeleteUser(req, res, next) {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
     await deleteUser(id);
     res.json({ success: true, data: { id } });
   } catch (err) {
+    if (err.message === "User not found") {
+      return res.status(404).json({ success: false, error: { message: `User with id "${id}" not found`, statusCode: 404 } });
+    }
     next(err);
   }
 }
