@@ -1,7 +1,8 @@
 import { existsSync } from "node:fs";
+
 if (existsSync(".env")) process.loadEnvFile();
 
-import app from "./app.js";
+const { default: app } = await import("./app.js");
 
 const PORT = process.env.PORT || 3000;
 

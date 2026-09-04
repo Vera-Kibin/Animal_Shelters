@@ -5,7 +5,7 @@ const options = {
     openapi: "3.0.3",
     info: {
       title: "Animal Shelters API",
-      version: "1.0.0",
+      version: "0.0.1",
       description:
         "REST API for Animal Shelters application. Provides CRUD operations for user management and health monitoring.",
       contact: {

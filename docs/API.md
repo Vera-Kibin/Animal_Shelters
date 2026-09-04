@@ -149,8 +149,9 @@ curl http://localhost:3000/api/openapi.json
 | `NODE_ENV` | `development` | Set to `production` to disable Swagger UI |
 | `CORS_ORIGIN` | `http://localhost:5173,http://localhost:3000` | Comma-separated allowed origins |
 
-All env vars are optional — the server starts with defaults. `.env` files
-(`server/.env`, root `.env`) are loaded automatically if present.
+All env vars are optional — the server starts with defaults. A `.env` file in the
+working directory (i.e. `server/.env` when started from `server/`) is loaded
+automatically if present.
 
 ## Error Response Format
 
