@@ -3,7 +3,6 @@ import cors from "cors";
 import helmet from "helmet";
 import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./config/swagger.js";
-import { requestLogger } from "./middleware/logger.js";
 import notFound from "./middleware/notFound.js";
 import errorHandler from "./middleware/errorHandler.js";
 import healthRoutes from "./routes/health.js";
@@ -37,7 +36,6 @@ app.use(
 );
 
 app.use(express.json({ limit: "100kb" }));
-app.use(requestLogger);
 
 if (process.env.NODE_ENV !== "production") {
   app.use(

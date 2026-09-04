@@ -92,11 +92,10 @@ stub version; they will be reintroduced together with SSO.
 
 | Folder / File | Contains |
 |--------|----------|
-| `server/index.js` | Entry point — loads `.env`, starts Express on port 3000 |
+| `server/index.js` | Entry point — loads `.env` if present, starts Express on port 3000 |
 | `server/app.js` | Express config — helmet, CORS, routes, Swagger |
-| `server/env.js` | `.env` loading (optional, defaults work without it) |
 | `server/routes/` | One file per entity: inline stub handlers + OpenAPI annotations |
-| `server/middleware/` | `logger.js`, `notFound.js`, `errorHandler.js` |
+| `server/middleware/` | `notFound.js`, `errorHandler.js` |
 | `server/config/` | `swagger.js` — OpenAPI 3.0.3 spec |
 | `server/Dockerfile` | Multi-stage build (deps → runner), non-root user, healthcheck |
 | `server/.dockerignore` | Excludes node_modules, .env, data from build context |
