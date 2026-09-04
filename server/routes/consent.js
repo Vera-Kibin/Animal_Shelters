@@ -1,10 +1,9 @@
 import { Router } from "express";
-import { recordConsent } from "../controllers/consent.js";
-import validate from "../middleware/validate.js";
-import { authenticate } from "../middleware/auth.js";
-import { recordConsent as recordConsentSchema } from "../schemas/consent.js";
+import { randomUUID } from "node:crypto";
 
 const router = Router();
+
+const consents = [];
 
 /**
  * @openapi
@@ -30,6 +29,23 @@ const router = Router();
  *       401:
  *         description: Authentication required
  */
-router.post("/", authenticate, validate(recordConsentSchema), recordConsent);
+router.post("/", (req, res) => {
+  const { consent_type, granted } = req.body;
+  if (!consent_type || typeof granted !== "boolean") {
+    return res.status(400).json({
+      success: false,
+      error: { message: "consent_type and granted (boolean) are required", statusCode: 400 },
+    });
+  }
+  const consent = {
+    id: randomUUID(),
+    user_id: "stub-user-1",
+    consent_type,
+    granted,
+    recordedAt: new Date().toISOString(),
+  };
+  consents.push(consent);
+  res.status(201).json({ success: true, data: consent });
+});
 
 export default router;

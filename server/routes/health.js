@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { getHealth } from "../controllers/health.js";
+import os from "node:os";
 
 const router = Router();
 
@@ -24,6 +24,24 @@ const router = Router();
  *                     data:
  *                       $ref: '#/components/schemas/HealthResponse'
  */
-router.get("/health", getHealth);
+router.get("/health", (req, res) => {
+  res.status(200).json({
+    success: true,
+    data: {
+      status: "ok",
+      timestamp: new Date().toISOString(),
+      uptime: process.uptime(),
+      memoryUsage: {
+        rss: process.memoryUsage().rss,
+        heapUsed: process.memoryUsage().heapUsed,
+        heapTotal: process.memoryUsage().heapTotal,
+      },
+      system: {
+        platform: os.platform(),
+        nodeVersion: process.version,
+      },
+    },
+  });
+});
 
 export default router;

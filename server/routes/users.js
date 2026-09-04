@@ -1,21 +1,12 @@
 import { Router } from "express";
-import {
-  handleListUsers,
-  handleGetUserById,
-  handleCreateUser,
-  handleUpdateUser,
-  handleDeleteUser,
-} from "../controllers/users.js";
-import validate from "../middleware/validate.js";
-import { authenticate, requireRole } from "../middleware/auth.js";
-import {
-  idParam,
-} from "../schemas/common.js";
-import { createUser as createUserSchema } from "../schemas/user.js";
-import { updateUser as updateUserSchema } from "../schemas/user.js";
-import { listUsers as listUsersSchema } from "../schemas/user.js";
+import { randomUUID } from "node:crypto";
 
 const router = Router();
+
+let users = [
+  { id: "user-1", name: "Jan Kowalski", email: "jan@example.com", role: "admin", createdAt: "2025-01-15T10:30:00.000Z", updatedAt: "2025-01-15T10:30:00.000Z" },
+  { id: "user-2", name: "Anna Nowak", email: "anna@example.com", role: "volunteer", createdAt: "2025-02-20T12:00:00.000Z", updatedAt: "2025-02-20T12:00:00.000Z" },
+];
 
 /**
  * @openapi
@@ -55,7 +46,18 @@ const router = Router();
  *       401:
  *         description: Authentication required
  */
-router.get("/", authenticate, requireRole("admin"), validate(listUsersSchema, "query"), handleListUsers);
+router.get("/", (req, res) => {
+  const { role, limit, offset } = req.query;
+  let result = [...users];
+  if (role) result = result.filter((u) => u.role === role);
+  const limitNum = parseInt(limit) || 20;
+  const offsetNum = parseInt(offset) || 0;
+  res.json({
+    success: true,
+    data: result.slice(offsetNum, offsetNum + limitNum),
+    meta: { total: result.length, limit: limitNum, offset: offsetNum },
+  });
+});
 
 /**
  * @openapi
@@ -82,7 +84,16 @@ router.get("/", authenticate, requireRole("admin"), validate(listUsersSchema, "q
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.get("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), handleGetUserById);
+router.get("/:id", (req, res) => {
+  const user = users.find((u) => u.id === req.params.id);
+  if (!user) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `User with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  res.json({ success: true, data: user });
+});
 
 /**
  * @openapi
@@ -112,7 +123,25 @@ router.get("/:id", authenticate, requireRole("admin"), validate(idParam, "params
  *       409:
  *         $ref: '#/components/responses/Conflict'
  */
-router.post("/", authenticate, requireRole("admin"), validate(createUserSchema), handleCreateUser);
+router.post("/", (req, res) => {
+  const { name, email } = req.body;
+  if (!name || !email) {
+    return res.status(400).json({
+      success: false,
+      error: { message: "name and email are required", statusCode: 400 },
+    });
+  }
+  if (users.some((u) => u.email === email)) {
+    return res.status(409).json({
+      success: false,
+      error: { message: "Email already exists", statusCode: 409 },
+    });
+  }
+  const now = new Date().toISOString();
+  const user = { id: randomUUID(), name, email, role: req.body.role || "volunteer", createdAt: now, updatedAt: now };
+  users.push(user);
+  res.status(201).json({ success: true, data: user });
+});
 
 /**
  * @openapi
@@ -151,7 +180,17 @@ router.post("/", authenticate, requireRole("admin"), validate(createUserSchema),
  *       409:
  *         $ref: '#/components/responses/Conflict'
  */
-router.put("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), validate(updateUserSchema), handleUpdateUser);
+router.put("/:id", (req, res) => {
+  const idx = users.findIndex((u) => u.id === req.params.id);
+  if (idx === -1) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `User with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  users[idx] = { ...users[idx], ...req.body, id: users[idx].id, updatedAt: new Date().toISOString() };
+  res.json({ success: true, data: users[idx] });
+});
 
 /**
  * @openapi
@@ -180,7 +219,16 @@ router.put("/:id", authenticate, requireRole("admin"), validate(idParam, "params
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.delete("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), handleDeleteUser);
+router.delete("/:id", (req, res) => {
+  const idx = users.findIndex((u) => u.id === req.params.id);
+  if (idx === -1) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `User with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  const [removed] = users.splice(idx, 1);
+  res.json({ success: true, data: { id: removed.id } });
+});
 
 export default router;
-export { handleListUsers, handleGetUserById, handleCreateUser, handleUpdateUser, handleDeleteUser };

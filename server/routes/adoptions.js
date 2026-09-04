@@ -1,21 +1,12 @@
 import { Router } from "express";
-import {
-  handleListAdoptions,
-  handleGetAdoptionById,
-  handleRequestAdoption,
-  handleUpdateAdoptionStatus,
-  handleCancelAdoption,
-} from "../controllers/adoptions.js";
-import validate from "../middleware/validate.js";
-import { authenticate, requireRole } from "../middleware/auth.js";
-import {
-  idParam,
-} from "../schemas/common.js";
-import { requestAdoption as requestAdoptionSchema } from "../schemas/adoption.js";
-import { updateAdoptionStatus as updateAdoptionStatusSchema } from "../schemas/adoption.js";
-import { listAdoptions as listAdoptionsSchema } from "../schemas/adoption.js";
+import { randomUUID } from "node:crypto";
 
 const router = Router();
+
+let adoptions = [
+  { id: "1", user_id: "user-1", animal_id: "1", notes: "Mam domek z ogrodem", status: "pending" },
+  { id: "2", user_id: "user-2", animal_id: "2", notes: "", status: "approved" },
+];
 
 /**
  * @openapi
@@ -46,7 +37,19 @@ const router = Router();
  *       401:
  *         description: Authentication required
  */
-router.get("/", authenticate, validate(listAdoptionsSchema, "query"), handleListAdoptions);
+router.get("/", (req, res) => {
+  const { status, user_id, limit, offset } = req.query;
+  let result = [...adoptions];
+  if (status) result = result.filter((a) => a.status === status);
+  if (user_id) result = result.filter((a) => a.user_id === user_id);
+  const limitNum = parseInt(limit) || 20;
+  const offsetNum = parseInt(offset) || 0;
+  res.json({
+    success: true,
+    data: result.slice(offsetNum, offsetNum + limitNum),
+    meta: { total: result.length, limit: limitNum, offset: offsetNum },
+  });
+});
 
 /**
  * @openapi
@@ -71,7 +74,16 @@ router.get("/", authenticate, validate(listAdoptionsSchema, "query"), handleList
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.get("/:id", authenticate, validate(idParam, "params"), handleGetAdoptionById);
+router.get("/:id", (req, res) => {
+  const adoption = adoptions.find((a) => a.id === req.params.id);
+  if (!adoption) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `Adoption with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  res.json({ success: true, data: adoption });
+});
 
 /**
  * @openapi
@@ -97,7 +109,18 @@ router.get("/:id", authenticate, validate(idParam, "params"), handleGetAdoptionB
  *       401:
  *         description: Authentication required
  */
-router.post("/", authenticate, validate(requestAdoptionSchema), handleRequestAdoption);
+router.post("/", (req, res) => {
+  const { animal_id } = req.body;
+  if (!animal_id) {
+    return res.status(400).json({
+      success: false,
+      error: { message: "animal_id is required", statusCode: 400 },
+    });
+  }
+  const adoption = { id: randomUUID(), user_id: "stub-user-1", status: "pending", notes: "", ...req.body };
+  adoptions.push(adoption);
+  res.status(201).json({ success: true, data: adoption });
+});
 
 /**
  * @openapi
@@ -132,7 +155,24 @@ router.post("/", authenticate, validate(requestAdoptionSchema), handleRequestAdo
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.put("/:id/status", authenticate, requireRole("admin", "moderator"), validate(idParam, "params"), validate(updateAdoptionStatusSchema), handleUpdateAdoptionStatus);
+router.put("/:id/status", (req, res) => {
+  const idx = adoptions.findIndex((a) => a.id === req.params.id);
+  if (idx === -1) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `Adoption with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  const { status } = req.body;
+  if (!["pending", "approved", "rejected", "cancelled"].includes(status)) {
+    return res.status(400).json({
+      success: false,
+      error: { message: "status must be one of: pending, approved, rejected, cancelled", statusCode: 400 },
+    });
+  }
+  adoptions[idx] = { ...adoptions[idx], status };
+  res.json({ success: true, data: adoptions[idx] });
+});
 
 /**
  * @openapi
@@ -157,7 +197,16 @@ router.put("/:id/status", authenticate, requireRole("admin", "moderator"), valid
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.delete("/:id", authenticate, validate(idParam, "params"), handleCancelAdoption);
+router.delete("/:id", (req, res) => {
+  const idx = adoptions.findIndex((a) => a.id === req.params.id);
+  if (idx === -1) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `Adoption with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  adoptions[idx] = { ...adoptions[idx], status: "cancelled" };
+  res.json({ success: true, data: adoptions[idx] });
+});
 
 export default router;
-export { handleListAdoptions, handleGetAdoptionById, handleRequestAdoption, handleUpdateAdoptionStatus, handleCancelAdoption };

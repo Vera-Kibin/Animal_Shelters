@@ -1,5 +1,10 @@
 # Animal Shelters API — Quick Start
 
+> **Status: stub backend.** All endpoints return mock data from in-memory arrays and
+> reset on server restart. Auth endpoints return mock tokens without verification.
+> The full implementation (JWT auth, bcrypt, file store, validation, RBAC) lives in
+> the `maks/api-full` branch and will return once SSO and database decisions are made.
+
 ## Installation
 
 ```bash
@@ -7,9 +12,8 @@
 cd server
 npm install
 
-# Create .env from template
+# Optional: create .env from template (defaults work out of the box)
 cp .env.example .env
-# Edit .env — set JWT_SECRET and JWT_EXPIRES_IN
 
 # Start server
 node index.js
@@ -22,11 +26,8 @@ node index.js
 cd server
 docker build -t animal-shelters-api .
 
-# Run container (pass required env vars)
-docker run -d -p 3000:3000 \
-  -e JWT_SECRET=your-secret-key-min-32-chars \
-  -e JWT_EXPIRES_IN=24h \
-  --name animal-shelters-api animal-shelters-api
+# Run container (no required env vars)
+docker run -d -p 3000:3000 --name animal-shelters-api animal-shelters-api
 
 # Check logs
 docker logs animal-shelters-api
@@ -43,74 +44,63 @@ All endpoints: `http://localhost:3000/api`
 
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| GET | `/api/health` | none | Server health check |
-| POST | `/api/auth/register` | none | Register new user (email, password, name) |
-| POST | `/api/auth/login` | none | Login, returns real JWT Bearer token |
-| GET | `/api/auth/me` | Bearer | Get current user profile from JWT |
-| POST | `/api/consent` | Bearer | Record GDPR consent (user_id from token) |
-| GET | `/api/surveys` | Bearer | List surveys (own only; admin/moderator see all) |
-| GET | `/api/surveys/:id` | Bearer | Get survey by ID (own only; admin/moderator see all) |
-| POST | `/api/surveys` | Bearer | Submit survey (user_id from token) |
-| GET | `/api/animals` | none | List animals (supports `?shelter_id=X&species=Y&limit=N&offset=N`) |
-| GET | `/api/animals/:id` | none | Get animal by UUID |
-| POST | `/api/animals` | Bearer | Create animal |
-| PUT | `/api/animals/:id` | Bearer | Update animal |
-| DELETE | `/api/animals/:id` | Bearer (admin) | Delete animal |
-| GET | `/api/shelters` | none | List shelters (supports `?city=X&country=Y&limit=N&offset=N`) |
-| GET | `/api/shelters/:id` | none | Get shelter by UUID |
-| POST | `/api/shelters` | Bearer | Create shelter |
-| PUT | `/api/shelters/:id` | Bearer | Update shelter |
-| DELETE | `/api/shelters/:id` | Bearer (admin) | Delete shelter |
-| GET | `/api/adoptions` | Bearer | List adoption requests (own only; admin/moderator can filter by user_id) |
-| GET | `/api/adoptions/:id` | Bearer | Get adoption by ID (own only; admin/moderator see all) |
-| POST | `/api/adoptions` | Bearer | Create adoption request (user_id from token) |
-| PUT | `/api/adoptions/:id/status` | Bearer (admin, moderator) | Update adoption status |
-| DELETE | `/api/adoptions/:id` | Bearer | Cancel own adoption (admin/moderator can cancel any) |
-| GET | `/api/users` | Bearer | List users (admin only) |
-| GET | `/api/users/:id` | Bearer | Get user by ID (admin only) |
-| POST | `/api/users` | Bearer (admin) | Create user |
-| PUT | `/api/users/:id` | Bearer (admin) | Update user |
-| DELETE | `/api/users/:id` | Bearer (admin) | Delete user |
+| GET | `/api/health` | none | Server health check (real) |
+| POST | `/api/auth/register` | none | Stub — returns mock user, no data stored |
+| POST | `/api/auth/login` | none | Stub — returns mock token for any credentials |
+| GET | `/api/auth/me` | none | Stub — returns fixed mock profile |
+| POST | `/api/consent` | none | Record consent stub (in-memory) |
+| GET | `/api/surveys` | none | List surveys stub |
+| GET | `/api/surveys/:id` | none | Get survey by ID stub |
+| POST | `/api/surveys` | none | Submit survey stub |
+| GET | `/api/animals` | none | List animals (in-memory, `?shelter_id=X&species=Y&limit=N&offset=N`) |
+| GET | `/api/animals/:id` | none | Get animal by ID |
+| POST | `/api/animals` | none | Create animal stub |
+| PUT | `/api/animals/:id` | none | Update animal stub |
+| DELETE | `/api/animals/:id` | none | Delete animal stub |
+| GET | `/api/shelters` | none | List shelters (in-memory, `?city=X&country=Y&limit=N&offset=N`) |
+| GET | `/api/shelters/:id` | none | Get shelter by ID |
+| POST | `/api/shelters` | none | Create shelter stub |
+| PUT | `/api/shelters/:id` | none | Update shelter stub |
+| DELETE | `/api/shelters/:id` | none | Delete shelter stub |
+| GET | `/api/adoptions` | none | List adoption requests stub |
+| GET | `/api/adoptions/:id` | none | Get adoption by ID stub |
+| POST | `/api/adoptions` | none | Create adoption request stub |
+| PUT | `/api/adoptions/:id/status` | none | Update adoption status stub |
+| DELETE | `/api/adoptions/:id` | none | Cancel adoption stub |
+| GET | `/api/users` | none | List users stub |
+| GET | `/api/users/:id` | none | Get user by ID stub |
+| POST | `/api/users` | none | Create user stub |
+| PUT | `/api/users/:id` | none | Update user stub |
+| DELETE | `/api/users/:id` | none | Delete user stub |
 
-## Authentication
+Authentication and role checks from the original design are **not enforced** in this
+stub version; they will be reintroduced together with SSO.
 
-1. **Register** → `POST /api/auth/register` with `{ email, password, name }`
-2. **Login** → `POST /api/auth/login` with `{ email, password }` → returns real JWT token
-3. **Use token** → `Authorization: Bearer <token>` header on protected endpoints
+## Authentication (stub)
 
-**Token payload:** `{ id, email, role, iat, exp }` (24h expiry by default, configurable via `JWT_EXPIRES_IN`)
+1. **Register** → `POST /api/auth/register` with `{ email, password, name }` → 201, mock user
+2. **Login** → `POST /api/auth/login` with `{ email, password }` → 200, `mock-token-<uuid>`
+3. The token is not verified anywhere — frontend can develop the auth flow against this contract
 
-**Roles:** `volunteer` (default), `admin`, `moderator`
+**Roles:** `volunteer` (default), `admin`, `moderator` — accepted in payloads, not enforced.
 
 **Security notes:**
-- Passwords hashed with bcrypt (12 rounds) before storage
-- JWT_SECRET and JWT_EXPIRES_IN are **required** env vars — server throws on startup if missing
-- Auth endpoints rate-limited to 10 req/min; general endpoints 100 req/15min
 - Helmet security headers, strict CORS, 100kb body limit
+- No real auth, no rate limiting, no persistence — do not deploy as-is
 
-## Server Structure — Folder Guide
+## Server Structure
 
-| Folder | Contains |
+| Folder / File | Contains |
 |--------|----------|
-| `server/index.js` | Entry point — starts Express server on port 3000 |
-| `server/app.js` | Express config — helmet, CORS, rate-limit (auth + general), Swagger, routes |
-| `server/data/` | `store.js` — JSON CRUD with bcrypt, file locking, UUID v4, auto timestamps<br>`users.json` — Data store (empty array `[]` on first run) |
-| `server/config/` | `swagger.js` — OpenAPI 3.0.3 spec with 8 tags, component schemas, security |
-| `server/routes/` | Mounted routers: health (`/api`), users (`/api/users`), auth (`/api/auth`), animals (`/api/animals`), shelters (`/api/shelters`), adoptions (`/api/adoptions`), consent (`/api/consent`), surveys (`/api/surveys`) |
-| `server/controllers/` | Route handlers: auth (JWT register/login/me), users, animals, shelters, adoptions, consent, surveys, health |
-| `server/middleware/` | `auth.js` (JWT verify + requireRole), `validate.js` (Joi factory), `errorHandler.js`, `notFound.js`, `logger.js` |
-| `server/repositories/` | Per-entity repos: user (uses `data/store.js`), animal, shelter, adoption (in-memory arrays) |
-| `server/schemas/` | Joi validation: auth, common (idParam, pagination), animal, shelter, adoption, user, consent, survey |
+| `server/index.js` | Entry point — loads `.env`, starts Express on port 3000 |
+| `server/app.js` | Express config — helmet, CORS, routes, Swagger |
+| `server/env.js` | `.env` loading (optional, defaults work without it) |
+| `server/routes/` | One file per entity: inline stub handlers + OpenAPI annotations |
+| `server/middleware/` | `logger.js`, `notFound.js`, `errorHandler.js` |
+| `server/config/` | `swagger.js` — OpenAPI 3.0.3 spec |
 | `server/Dockerfile` | Multi-stage build (deps → runner), non-root user, healthcheck |
-| `server/.dockerignore` | Excludes node_modules, .env, .git from build context |
-| `server/.env.example` | Template for required env vars |
-
-**Key architectural notes:**
-- `controllers/auth.js` is the **real JWT implementation** (mounted at `/api/auth`)
-- `controllers/{users,animals,shelters,adoptions}.js` are Router files that import from repositories
-- `routes/*.js` import handlers from controllers and apply middleware (auth, validate, role checks)
-- In-memory repos for animals/shelters/adoptions — suitable for demo; replace with DB for production
-- Docker build context is `server/` — all paths in Dockerfile are relative to it
+| `server/.dockerignore` | Excludes node_modules, .env, data from build context |
+| `server/.env.example` | Template for optional env vars |
 
 ## Commands Cheat Sheet
 
@@ -121,45 +111,29 @@ node index.js
 # Health check
 curl http://localhost:3000/api/health
 
-# Register
+# Register (stub)
 curl -s -X POST http://localhost:3000/api/auth/register \
   -H "Content-Type: application/json" -d '{"name":"Test","email":"test@test.com","password":"password123"}'
 
-# Login & get token
-TOKEN=$(curl -s -X POST http://localhost:3000/api/auth/login \
-  -H "Content-Type: application/json" -d '{"email":"test@test.com","password":"password123"}' | node -e "let d='';process.stdin.on('data',c=>d+=c);process.stdin.on('end',()=>{const j=JSON.parse(d);console.log(j.token)})")
+# Login (stub — returns mock token)
+curl -s -X POST http://localhost:3000/api/auth/login \
+  -H "Content-Type: application/json" -d '{"email":"test@test.com","password":"password123"}'
 
-# Use token
-curl -s http://localhost:3000/api/auth/me -H "Authorization: Bearer $TOKEN"
-
-# Public animals list (no auth)
+# Public animals list
 curl "http://localhost:3000/api/animals?limit=3&offset=0"
 
-# Public shelters list (no auth)
+# Public shelters list
 curl "http://localhost:3000/api/shelters?city=Warszawa"
 
-# Create animal (requires auth)
+# Create animal (stub)
 curl -s -X POST http://localhost:3000/api/animals \
-  -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
   -d '{"name":"Rex","species":"dog","breed":"German Shepherd","age":2,"shelter_id":"1"}'
 
-# Create adoption (user_id from token)
+# Create adoption (stub)
 curl -s -X POST http://localhost:3000/api/adoptions \
-  -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" \
+  -H "Content-Type: application/json" \
   -d '{"animal_id":"1","notes":"I have a garden"}'
-
-# Submit survey (user_id from token)
-curl -s -X POST http://localhost:3000/api/surveys \
-  -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" \
-  -d '{"shelter_id":"1","ratings":{"cleanliness":5,"animal_care":4,"staff_friendliness":5,"overall":4}}'
-
-# Record consent (user_id from token)
-curl -s -X POST http://localhost:3000/api/consent \
-  -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" \
-  -d '{"consent_type":"analytics","granted":true}'
-
-# List own adoptions
-curl -s http://localhost:3000/api/adoptions -H "Authorization: Bearer $TOKEN"
 
 # Swagger UI
 open http://localhost:3000/api/docs
@@ -173,15 +147,11 @@ curl http://localhost:3000/api/openapi.json
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `PORT` | `3000` | HTTP server port |
-| `NODE_ENV` | `development` | Set to `production` for production mode |
-| `JWT_SECRET` | **(required)** | Secret key for JWT signing — no default, server throws if missing |
-| `JWT_EXPIRES_IN` | **(required)** | JWT token expiry (e.g., `1h`, `24h`, `7d`) — server throws if missing |
-| `CORS_ORIGIN` | `http://localhost:5173` | Comma-separated allowed origins |
-| `DATA_FILE` | `data/users.json` | Path to users JSON store |
+| `NODE_ENV` | `development` | Set to `production` to disable Swagger UI |
+| `CORS_ORIGIN` | `http://localhost:5173,http://localhost:3000` | Comma-separated allowed origins |
 
-**Required env vars (server won't start without):**
-- `JWT_SECRET`
-- `JWT_EXPIRES_IN`
+All env vars are optional — the server starts with defaults. `.env` files
+(`server/.env`, root `.env`) are loaded automatically if present.
 
 ## Error Response Format
 
@@ -192,15 +162,10 @@ All errors return:
   "success": false,
   "error": {
     "message": "Human-readable error message",
-    "statusCode": 400,
-    "details": [
-      { "field": "email", "message": "Email must be a valid email address" }
-    ]
+    "statusCode": 400
   }
 }
 ```
-
-`details` only present on validation errors (400).
 
 ## Success Response Format
 

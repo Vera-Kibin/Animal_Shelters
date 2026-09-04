@@ -1,21 +1,12 @@
 import { Router } from "express";
-import {
-  handleListAnimals,
-  handleGetAnimalById,
-  handleCreateAnimal,
-  handleUpdateAnimal,
-  handleDeleteAnimal,
-} from "../controllers/animals.js";
-import validate from "../middleware/validate.js";
-import { authenticate, requireRole } from "../middleware/auth.js";
-import {
-  idParam,
-} from "../schemas/common.js";
-import { createAnimal as createAnimalSchema } from "../schemas/animal.js";
-import { updateAnimal as updateAnimalSchema } from "../schemas/animal.js";
-import { listAnimals as listAnimalsSchema } from "../schemas/animal.js";
+import { randomUUID } from "node:crypto";
 
 const router = Router();
+
+let animals = [
+  { id: "1", name: "Burek", species: "dog", breed: "Labrador", age: 3, shelter_id: "1" },
+  { id: "2", name: "Mruczek", species: "cat", breed: "Maine Coon", age: 2, shelter_id: "2" },
+];
 
 /**
  * @openapi
@@ -42,7 +33,19 @@ const router = Router();
  *       200:
  *         description: List of animals
  */
-router.get("/", validate(listAnimalsSchema, "query"), handleListAnimals);
+router.get("/", (req, res) => {
+  const { shelter_id, species, limit, offset } = req.query;
+  let result = [...animals];
+  if (shelter_id) result = result.filter((a) => a.shelter_id === shelter_id);
+  if (species) result = result.filter((a) => a.species === species);
+  const limitNum = parseInt(limit) || 20;
+  const offsetNum = parseInt(offset) || 0;
+  res.json({
+    success: true,
+    data: result.slice(offsetNum, offsetNum + limitNum),
+    meta: { total: result.length, limit: limitNum, offset: offsetNum },
+  });
+});
 
 /**
  * @openapi
@@ -63,7 +66,16 @@ router.get("/", validate(listAnimalsSchema, "query"), handleListAnimals);
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.get("/:id", validate(idParam, "params"), handleGetAnimalById);
+router.get("/:id", (req, res) => {
+  const animal = animals.find((a) => a.id === req.params.id);
+  if (!animal) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `Animal with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  res.json({ success: true, data: animal });
+});
 
 /**
  * @openapi
@@ -89,7 +101,18 @@ router.get("/:id", validate(idParam, "params"), handleGetAnimalById);
  *       401:
  *         description: Authentication required
  */
-router.post("/", authenticate, validate(createAnimalSchema), handleCreateAnimal);
+router.post("/", (req, res) => {
+  const { name, species, shelter_id } = req.body;
+  if (!name || !species || !shelter_id) {
+    return res.status(400).json({
+      success: false,
+      error: { message: "name, species and shelter_id are required", statusCode: 400 },
+    });
+  }
+  const animal = { id: randomUUID(), ...req.body };
+  animals.push(animal);
+  res.status(201).json({ success: true, data: animal });
+});
 
 /**
  * @openapi
@@ -122,7 +145,17 @@ router.post("/", authenticate, validate(createAnimalSchema), handleCreateAnimal)
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.put("/:id", authenticate, validate(idParam, "params"), validate(updateAnimalSchema), handleUpdateAnimal);
+router.put("/:id", (req, res) => {
+  const idx = animals.findIndex((a) => a.id === req.params.id);
+  if (idx === -1) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `Animal with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  animals[idx] = { ...animals[idx], ...req.body, id: animals[idx].id };
+  res.json({ success: true, data: animals[idx] });
+});
 
 /**
  * @openapi
@@ -149,7 +182,16 @@ router.put("/:id", authenticate, validate(idParam, "params"), validate(updateAni
  *       404:
  *         $ref: '#/components/responses/NotFound'
  */
-router.delete("/:id", authenticate, requireRole("admin"), validate(idParam, "params"), handleDeleteAnimal);
+router.delete("/:id", (req, res) => {
+  const idx = animals.findIndex((a) => a.id === req.params.id);
+  if (idx === -1) {
+    return res.status(404).json({
+      success: false,
+      error: { message: `Animal with id "${req.params.id}" not found`, statusCode: 404 },
+    });
+  }
+  const [removed] = animals.splice(idx, 1);
+  res.json({ success: true, data: { id: removed.id } });
+});
 
 export default router;
-export { handleListAnimals, handleGetAnimalById, handleCreateAnimal, handleUpdateAnimal, handleDeleteAnimal };
