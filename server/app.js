@@ -36,6 +36,10 @@ app.use(
 );
 
 app.use(express.json({ limit: "100kb" }));
+app.use((req, _res, next) => {
+  if (req.body === undefined) req.body = {};
+  next();
+});
 
 if (process.env.NODE_ENV !== "production") {
   app.use(

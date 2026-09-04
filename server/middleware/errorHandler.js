@@ -3,22 +3,16 @@ function errorHandler(err, req, res, _next) {
   const message = err.message || "Internal Server Error";
 
   if (statusCode === 500) {
-    console.error("[500] Internal error:", err.message);
+    console.error("[500] Internal error:", err.stack || err.message);
   }
 
-  const response = {
+  res.status(statusCode).json({
     success: false,
     error: {
       message,
       statusCode,
     },
-  };
-
-  if (process.env.NODE_ENV !== "production") {
-    response.error.stack = err.stack;
-  }
-
-  res.status(statusCode).json(response);
+  });
 }
 
 export default errorHandler;
