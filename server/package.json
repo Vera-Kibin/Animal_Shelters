@@ -1,7 +1,7 @@
 {
   "name": "animal-shelters-server",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "description": "REST API for Animal Shelters application",
   "scripts": {
