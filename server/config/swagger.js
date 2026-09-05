@@ -100,6 +100,50 @@ const options = {
           },
           required: ["id", "name", "email", "role", "createdAt", "updatedAt"],
         },
+        Register: {
+          type: "object",
+          properties: {
+            email: {
+              type: "string",
+              format: "email",
+              description: "User email address",
+              example: "marta@example.com",
+            },
+            password: {
+              type: "string",
+              format: "password",
+              minLength: 8,
+              description: "Password (min 8 characters, not verified in stub)",
+              example: "password123",
+            },
+            name: {
+              type: "string",
+              minLength: 2,
+              maxLength: 100,
+              description: "Full name of the user",
+              example: "Marta Zielińska",
+            },
+          },
+          required: ["email", "password", "name"],
+        },
+        Login: {
+          type: "object",
+          properties: {
+            email: {
+              type: "string",
+              format: "email",
+              description: "User email address",
+              example: "marta@example.com",
+            },
+            password: {
+              type: "string",
+              format: "password",
+              description: "Password (not verified in stub)",
+              example: "password123",
+            },
+          },
+          required: ["email", "password"],
+        },
         UserCreate: {
           type: "object",
           properties: {
