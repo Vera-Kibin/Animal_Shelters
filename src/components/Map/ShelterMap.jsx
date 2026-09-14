@@ -196,7 +196,7 @@ const ShelterMap = memo(function ShelterMap({
                     </a>
                   </>
                 )}
-                {onOpenProfile && (
+                {onOpenProfile && !p.shelter.category && (
                   <>
                     <br />
                     <button
