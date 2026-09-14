@@ -1,0 +1,4474 @@
+[
+  {
+    "id": 205,
+    "name": "Stowarzyszenie Ochrony Zwierząt EKOSTRAŻ Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Miłoszycka 67, 51-502 Wrocław"
+    },
+    "locations": [
+      {
+        "id": "205-1",
+        "address": "ul. Miłoszycka 67, 51-502 Wrocław",
+        "city": "Wrocław",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.1196749,
+        "longitude": 17.1223494
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "centrala 459 597 799",
+      "email": "info@ekostraz.pl",
+      "website": "https://ekostraz.pl/",
+      "facebook": "https://www.facebook.com/EKOSTRAZWRO",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki ; SMS interwencyjny 782 240 846 (pon.–pt. 10:00–20:00)",
+      "sourceId": 205,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 206,
+    "name": "Fundacja Ośrodek Leczenia i Rehabilitacji Dzikich Zwierząt „Puchaczówka” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Wyszonowice 36b, 57-120 Wiązów"
+    },
+    "locations": [
+      {
+        "id": "206-1",
+        "address": "Wyszonowice 36b, 57-120 Wiązów",
+        "city": "Wiązów",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.7728198,
+        "longitude": 17.1633346
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "534 997 955",
+      "email": "fundacjapuchaczowka@gmail.com",
+      "website": "http://www.fundacjapuchaczowka.pl/",
+      "facebook": "https://www.facebook.com/FundacjaPuchaczowka",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 206,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 207,
+    "name": "Fundacja Dzika Nadzieja – Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Noworudzka 12, 58-330 Jedlina Zdrój"
+    },
+    "locations": [
+      {
+        "id": "207-1",
+        "address": "ul. Noworudzka 12, 58-330 Jedlina Zdrój",
+        "city": "Jedlina Zdrój",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.7113165,
+        "longitude": 16.3614312
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "668 702 837",
+      "email": "dzikanadzieja@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/fundacjadzikanadzieja",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 207,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 208,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt – Klekusiowo (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Tomaszów Bolesławiecki 165A, 59-720 Tomaszów Bolesławiecki"
+    },
+    "locations": [
+      {
+        "id": "208-1",
+        "address": "Tomaszów Bolesławiecki 165A, 59-720 Tomaszów Bolesławiecki",
+        "city": "Tomaszów Bolesławiecki",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.269618,
+        "longitude": 15.684959
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "508 260 452, 519 778 899",
+      "email": "info@klekusiowo.pl",
+      "website": "https://klekusiowo.pl/",
+      "facebook": "https://www.facebook.com/Klekusiowo",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 208,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 209,
+    "name": "Fundacja Ochrony Przyrody I Rozwoju Turystyki „FOPIT-GOBI” Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Raczkowa 2B, 59-241 Legnickie Pole"
+    },
+    "locations": [
+      {
+        "id": "209-1",
+        "address": "Raczkowa 2B, 59-241 Legnickie Pole",
+        "city": "Legnickie Pole",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.1388532,
+        "longitude": 16.1948796
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "603 844 977",
+      "email": "k.strynkowski@poczta.onet.pl",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/FOPiT-GOBI-100068406889499",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 209,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 210,
+    "name": "Ośrodek Rehabilitacji Zwierząt w Kątnej (status ośrodka GDOŚ) lek. wet. Tomasz Grabiński",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Leśna 13, 55-093 Kątna"
+    },
+    "locations": [
+      {
+        "id": "210-1",
+        "address": "ul. Leśna 13, 55-093 Kątna",
+        "city": "Kątna",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.1321453,
+        "longitude": 17.286054
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "502 518 855",
+      "email": "grabinski@katna.pl",
+      "website": "https://katna.pl/",
+      "facebook": "https://www.facebook.com/profile.php?id=100027949162016",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 210,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 211,
+    "name": "Ośrodek rehabilitacji Dzikich Zwierząt przy Parku Krajobrazowym „Chełmy” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Myślibórz 11, 59-411 Paszowice"
+    },
+    "locations": [
+      {
+        "id": "211-1",
+        "address": "Myślibórz 11, 59-411 Paszowice",
+        "city": "Paszowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.0250921,
+        "longitude": 16.1181788
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(76) 870 80 02 (tylko do godz. 16)",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i małe ssaki",
+      "sourceId": 211,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 212,
+    "name": "Ośrodek Rehabilitacji Jeży w Kłodzku „Jerzy dla Jeży” Jerzy Gara (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Lutycka 14 A/2, 57–300 Kłodzko"
+    },
+    "locations": [
+      {
+        "id": "212-1",
+        "address": "ul. Lutycka 14 A/2, 57–300 Kłodzko",
+        "city": "57–300 Kłodzko",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.4352933,
+        "longitude": 16.6600647
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "505 140 960",
+      "email": "jerzy.gara@wp.pl",
+      "website": "https://jerzydlajezy.com/",
+      "facebook": "https://www.facebook.com/JerzyDlaJezy/?locale=pl_PL",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["hedgehogs"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): jeże",
+      "sourceId": 212,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 213,
+    "name": "Ośrodek Rehabilitacji Ptaków Chronionych przy Gostyńsko-Włocławskim Parku Krajobrazowym (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Dębniaki 33A, 87-820 Kowal"
+    },
+    "locations": [
+      {
+        "id": "213-1",
+        "address": "Dębniaki 33A, 87-820 Kowal",
+        "city": "Kowal",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.5556606,
+        "longitude": 19.1808236
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "605 100 613, (54) 284 22 26, (54) 444 76 83",
+      "email": "biuro@gwpk.pl",
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki chronione",
+      "sourceId": 213,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 214,
+    "name": "Animal Patrol Ośrodek Rehabilitacji Dzikich Zwierząt w Olimpinie (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Wierzbowa 2, 86-061 Kobylarnia"
+    },
+    "locations": [
+      {
+        "id": "214-1",
+        "address": "ul. Wierzbowa 2, 86-061 Kobylarnia",
+        "city": "Kobylarnia",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.0139502,
+        "longitude": 17.9942469
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "603 846 708",
+      "email": "animalpatrol@wp.pl",
+      "website": null,
+      "facebook": "https://www.facebook.com/AnimalPatrolORDZ",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 214,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 215,
+    "name": "Spółka Partnerska „Czapla” - Gabinet Lekarzy Weterynarii K. Żywna i Partnerzy Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Centralna 108, 86-005 Białe Błota"
+    },
+    "locations": [
+      {
+        "id": "215-1",
+        "address": "ul. Centralna 108, 86-005 Białe Błota",
+        "city": "Białe Błota",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.0897696,
+        "longitude": 17.9034844
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(52) 349 49 10",
+      "email": null,
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Czapla-Gabinet-Lekarzy-Weterynarii-100063538331332",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 215,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 216,
+    "name": "Fundacja JeKo – Ośrodek Rehabilitacji Zwierząt „Azyl dla Jeży” w Solcu Kujawskim (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Sosnowa 31, 86-050 Solec Kujawski"
+    },
+    "locations": [
+      {
+        "id": "216-1",
+        "address": "ul. Sosnowa 31, 86-050 Solec Kujawski",
+        "city": "Solec Kujawski",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.0705987,
+        "longitude": 18.2639477
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "601 684 773",
+      "email": "azyl.dla.jezy@op.pl",
+      "website": null,
+      "facebook": "https://www.facebook.com/jak.jez.z.kotem",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["hedgehogs"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): jeże",
+      "sourceId": 216,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 217,
+    "name": "Ośrodek Rehabilitacji Zwierząt Nadleśnictwa Zamrzenica (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Zamrzenica 1A, 89-510 Bysław"
+    },
+    "locations": [
+      {
+        "id": "217-1",
+        "address": "Zamrzenica 1A, 89-510 Bysław",
+        "city": "Bysław",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.5723071,
+        "longitude": 18.1484752
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "608 669 275, 666 023 348",
+      "email": "zamrzenica@torun.lasy.gov.pl",
+      "website": "https://zamrzenica.torun.lasy.gov.pl/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki ; Ośrodek zlokalizowany jest przy siedzibie Leśnictwa Jeleniagóra na terenie Gminy Cekcyn.",
+      "sourceId": 217,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 218,
+    "name": "Ośrodek Rehabilitacji Zwierząt – Fundacja Dzika Lekcja (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Kruszyny 86, 87-326 Kruszyny (koło Torunia)"
+    },
+    "locations": [
+      {
+        "id": "218-1",
+        "address": "Kruszyny 86, 87-326 Kruszyny (koło Torunia)",
+        "city": "Kruszyny (koło Torunia)",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.3071452,
+        "longitude": 19.2140156
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "667 730 271",
+      "email": "dzikalekcja@gmail.com",
+      "website": "https://dzikalekcja.pl/",
+      "facebook": "https://www.facebook.com/DzikaLekcja",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["mammals", "hedgehogs"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki (głównie jeże)",
+      "sourceId": 218,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 219,
+    "name": "Ośrodek Rehabilitacji Zwierząt przy Poleskim Parku Narodowym (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Lubelska 3a, 22-234 Urszulin"
+    },
+    "locations": [
+      {
+        "id": "219-1",
+        "address": "ul. Lubelska 3a, 22-234 Urszulin",
+        "city": "Urszulin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.3869769,
+        "longitude": 23.191826
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(82) 571 30 71",
+      "email": "poleskipn@poleskipn.pl",
+      "website": "https://polpn.gov.pl/osrodek-rehabilitacji-zwierzat",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki i gady ; lokalizacja ośrodka: Stare Załucze (ptaki) i Zawadówka (ssaki) w gm. Urszulin",
+      "sourceId": 219,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 220,
+    "name": "Fundacja Lubelska Straż Ochrony Zwierząt Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Romanówka 22, 24-204 Wojciechów"
+    },
+    "locations": [
+      {
+        "id": "220-1",
+        "address": "Romanówka 22, 24-204 Wojciechów",
+        "city": "Wojciechów",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.2240731,
+        "longitude": 22.232215
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "781 500 508",
+      "email": "info@lsoz.org",
+      "website": "http://lsoz.org/",
+      "facebook": "https://www.facebook.com/Fundacja.LSOZ/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 220,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 221,
+    "name": "Stowarzyszenie Szansa dla Bociana Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Kozubszczyzna 142, 21-030 Motycz"
+    },
+    "locations": [
+      {
+        "id": "221-1",
+        "address": "Kozubszczyzna 142, 21-030 Motycz",
+        "city": "Motycz",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.224391,
+        "longitude": 22.4247549
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "798 102 534",
+      "email": "szansadlabociana@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Stowarzyszenie-Szansa-dla-Bociana-100064821606309/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["storks"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): bocian biały, bocian czarny",
+      "sourceId": 221,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 222,
+    "name": "Ośrodek Rehabilitacji Ptaków Szponiastych (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Rogoziniec 115/2, 66-210 Zbąszynek"
+    },
+    "locations": [
+      {
+        "id": "222-1",
+        "address": "Rogoziniec 115/2, 66-210 Zbąszynek",
+        "city": "Zbąszynek",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.2998101,
+        "longitude": 15.7694244
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(68) 384 02 41",
+      "email": "sekretariat@zslrogoziniec.pl",
+      "website": "https://zslrogoziniec.pl/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste i sowy",
+      "sourceId": 222,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 223,
+    "name": "Ośrodek Rehabilitacji Zwierząt Chronionych Prawem „Ptasi Azyl” Uniwersytetu Zielonogórskiego (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Botaniczna 50a, 65-001 Zielona Góra"
+    },
+    "locations": [
+      {
+        "id": "223-1",
+        "address": "ul. Botaniczna 50a, 65-001 Zielona Góra",
+        "city": "Zielona Góra",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.9207212,
+        "longitude": 15.5000733
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "601 902 283",
+      "email": "azylzg@gmail.com",
+      "website": "https://azyl.uz.zgora.pl/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki",
+      "sourceId": 223,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 224,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt Nowa Sól (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Al. Wolności 11, 67-100 Nowa Sól"
+    },
+    "locations": [
+      {
+        "id": "224-1",
+        "address": "Al. Wolności 11, 67-100 Nowa Sól",
+        "city": "Nowa Sól",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.8003391,
+        "longitude": 15.7242587
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "500 236 871",
+      "email": "biuro@ordz.pl",
+      "website": "https://www.ordz.pl/",
+      "facebook": "https://www.facebook.com/osrodekrehabilitacjinowasol",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 224,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 225,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt Zarządu Zieleni Miejskiej (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Wycieczkowa 103, 91-518 Łódź"
+    },
+    "locations": [
+      {
+        "id": "225-1",
+        "address": "ul. Wycieczkowa 103, 91-518 Łódź",
+        "city": "Łódź",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.8346226,
+        "longitude": 19.4854362
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(42) 617 26 86, (42) 628 72 44 (w godz. 10-20),",
+      "email": "sekretariat@zzm.lodz.pl",
+      "website": "https://lckm.uml.lodz.pl/procedura/KA-01186-1",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki ; po godzinach pracy ośrodka: dzwonić na Centrum Zarządzania Kryzysowego tel. (42) 638 49 49 lub Straż Miejską tel. 986",
+      "sourceId": 225,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 226,
+    "name": "Leśny Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Koło 115, 97–330 Sulejów"
+    },
+    "locations": [
+      {
+        "id": "226-1",
+        "address": "Koło 115, 97–330 Sulejów",
+        "city": "97–330 Sulejów",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.437832,
+        "longitude": 19.8124302
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "694 408 897",
+      "email": "piotrkow@lodz.lasy.gov.pl",
+      "website": "https://piotrkow.lodz.lasy.gov.pl/",
+      "facebook": "https://www.facebook.com/p/Le%C5%9Bny-O%C5%9Brodek-Rehabilitacji-Zwierz%C4%85t-i-Le%C5%9Bna-Osada-Edukacyjna-61572635944400/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 226,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 227,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt Beata Szymczak (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Psary 30, 96-115 Nowy Kawęczyn"
+    },
+    "locations": [
+      {
+        "id": "227-1",
+        "address": "Psary 30, 96-115 Nowy Kawęczyn",
+        "city": "Nowy Kawęczyn",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.8861508,
+        "longitude": 20.3217879
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "509 396 929, 600 289 002",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki",
+      "sourceId": 227,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 228,
+    "name": "Stowarzyszenie „Pomagam Bocianom” Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Pasieka 42, 99-320 Żychlin"
+    },
+    "locations": [
+      {
+        "id": "228-1",
+        "address": "Pasieka 42, 99-320 Żychlin",
+        "city": "Żychlin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.2460819,
+        "longitude": 19.5843233
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "518 019 070",
+      "email": "kontakt@pomagambocianom.pl",
+      "website": "https://pomagambocianom.pl/",
+      "facebook": "https://www.facebook.com/0Bocian/?locale=pl_PL",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["storks"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): bocian biały, bocian czarny",
+      "sourceId": 228,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 229,
+    "name": "Fundacja Akcja dla Dzikich Zwierząt Ośrodek Rehabilitacji Zwierząt przy przychodni wet. VETIKA (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Lipska 49, 30-721 Kraków"
+    },
+    "locations": [
+      {
+        "id": "229-1",
+        "address": "ul. Lipska 49, 30-721 Kraków",
+        "city": "Kraków",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.0407923,
+        "longitude": 19.9998948
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "511 195 708",
+      "email": "akcjadladzikichzwierzat@gmail.com",
+      "website": "https://akcjadladzikich.org/",
+      "facebook": "https://www.facebook.com/AkcjaDzikieKrakow",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady, płazy",
+      "sourceId": 229,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 230,
+    "name": "Fundacja Dzikusy Salamandry Ośrodek Rehabilitacji Zwierząt przy przychodni wet. SALAMANDRA (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Nowowiejska 3, 30-052 Kraków"
+    },
+    "locations": [
+      {
+        "id": "230-1",
+        "address": "ul. Nowowiejska 3, 30-052 Kraków",
+        "city": "Kraków",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.0734588,
+        "longitude": 19.9181771
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "606 426 200 lub (12) 354 62 29",
+      "email": "przychodnia@salamandra-vet.pl, fundacja@dzikusy-salamandry.pl",
+      "website": "https://salamandra-vet.pl/",
+      "facebook": "https://www.facebook.com/FundacjaDzikusySalamandry/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady, płazy",
+      "sourceId": 230,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 231,
+    "name": "Gabinet Weterynaryjny Agama Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Minoga 181, 32-046 Minoga"
+    },
+    "locations": [
+      {
+        "id": "231-1",
+        "address": "Minoga 181, 32-046 Minoga",
+        "city": "Minoga",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.2503677,
+        "longitude": 19.9132514
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "507 739 962",
+      "email": "agama.wet@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/profile.php?id=61570020555948",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady, płazy ; FB: https://www.facebook.com/p/Gabinet-Weterynaryjny-Agama-100063639189670/",
+      "sourceId": 231,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 232,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt w Tomaszowicach (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Skotnicka 11, 32-085 Tomaszowice"
+    },
+    "locations": [
+      {
+        "id": "232-1",
+        "address": "ul. Skotnicka 11, 32-085 Tomaszowice",
+        "city": "Tomaszowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.1331227,
+        "longitude": 19.8423156
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": null,
+      "email": null,
+      "website": null,
+      "facebook": "https://www.facebook.com/ORDZTomaszowice",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady, płazy",
+      "sourceId": 232,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 233,
+    "name": "Fundacja Dziki Projekt Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Krzywa 25, 38-307 Sękowa"
+    },
+    "locations": [
+      {
+        "id": "233-1",
+        "address": "Krzywa 25, 38-307 Sękowa",
+        "city": "Sękowa",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.4995927,
+        "longitude": 21.3192598
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "515 627 608",
+      "email": "fundacjadzikiprojekt@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/dzikiprojekt",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady, płazy",
+      "sourceId": 233,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 234,
+    "name": "Ośrodek Rehabilitacji Ptaków w Kunowie (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Kunów 51, 33-300 Nowy Sącz"
+    },
+    "locations": [
+      {
+        "id": "234-1",
+        "address": "Kunów 51, 33-300 Nowy Sącz",
+        "city": "Nowy Sącz",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.5956485,
+        "longitude": 20.749896
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "789 093 096",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki",
+      "sourceId": 234,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 235,
+    "name": "Ośrodek rehabilitacji zwierząt w Racławicach przy Schronisku Psie Pole (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Racławice 91, 32-222 Racławice"
+    },
+    "locations": [
+      {
+        "id": "235-1",
+        "address": "Racławice 91, 32-222 Racławice",
+        "city": "Racławice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.3344979,
+        "longitude": 20.2308319
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "interwencje dot. dzikich zwierząt zgłaszać przez Policję/Straż Miejską",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 235,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 236,
+    "name": "Ptasi Azyl – Warszawa – Ośrodek Rehabilitacji Ptaków Chronionych (status ośrodka GDOŚ) Miejski Ogród Zoologiczny w Warszawie",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Ratuszowa 1/3, 03-461 Warszawa"
+    },
+    "locations": [
+      {
+        "id": "236-1",
+        "address": "ul. Ratuszowa 1/3, 03-461 Warszawa",
+        "city": "Warszawa",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.2581092,
+        "longitude": 21.0215756
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(022) 670 22 07",
+      "email": "azyl@zoo.waw.pl, osrodki@zoo.waw.pl",
+      "website": "https://ptasiazyl.zoo.waw.pl/",
+      "facebook": "https://www.facebook.com/profile.php?id=61560131698108",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki ; Wejście od strony Mostu Gdańskiego",
+      "sourceId": 236,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 237,
+    "name": "Lasy Miejskie – Warszawa – Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Korkowa 170A, 04–549 Warszawa"
+    },
+    "locations": [
+      {
+        "id": "237-1",
+        "address": "ul. Korkowa 170A, 04–549 Warszawa",
+        "city": "04–549 Warszawa",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.2405802,
+        "longitude": 21.1785729
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "772 008 151, (22) 756 34 75 lub Straż Miejska 986",
+      "email": "sekretariat@lasymiejskie.waw.pl",
+      "website": "https://www.lasymiejskie.waw.pl/dzikie-zwierzeta/osrodek-rehabilitacji-zwierzat",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki",
+      "sourceId": 237,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 238,
+    "name": "Ośrodek Rehabilitacji Ptaków w Mazowieckim Parku Krajobrazowym (status ośrodka GDOŚ) Mazowiecki Zespół Parków Krajobrazowych",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Sułkowskiego 11, 05-400 Otwock"
+    },
+    "locations": [
+      {
+        "id": "238-1",
+        "address": "ul. Sułkowskiego 11, 05-400 Otwock",
+        "city": "Otwock",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.0938027,
+        "longitude": 21.287937
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "693 901 462, (22) 779 26 94",
+      "email": "sekretariat@parkiotwock.pl",
+      "website": "http://parkiotwock.bip.eur.pl/public/?id=669",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki",
+      "sourceId": 238,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 239,
+    "name": "Ośrodek Rehabilitacji Zwierząt Leśnych – Nadleśnictwo Płock (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Bielska 24, 09–400 Płock"
+    },
+    "locations": [
+      {
+        "id": "239-1",
+        "address": "ul. Bielska 24, 09–400 Płock",
+        "city": "09–400 Płock",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.4783174,
+        "longitude": 19.9311298
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "606 645 015, 531 927 055, (24) 262 38 76, (24) 262 77 74",
+      "email": "plock@lodz.lasy.gov.pl",
+      "website": "https://plock.lodz.lasy.gov.pl/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki ; Ośrodek położony na terenie Leśnictwa Miszewo, Niesłuchowo 1, 09-470 Bodzanów | Konieczna uprzednia wizyta u lek. wet. i przekazanie zwierzęcia z określonym przez lekarza stopniem urazów.",
+      "sourceId": 239,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 240,
+    "name": "Jeżurkowo Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ) Fundacja Na Rzecz Dzikich Zwierząt Primum",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Orla 4, 05-101 Skierdy"
+    },
+    "locations": [
+      {
+        "id": "240-1",
+        "address": "ul. Orla 4, 05-101 Skierdy",
+        "city": "Skierdy",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.4042637,
+        "longitude": 20.813498
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "606 950 949",
+      "email": "fundacja@primum.org.pl",
+      "website": "https://www.primum.org.pl/",
+      "facebook": "https://www.facebook.com/Jezurkowo",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki (bez kopytnych)",
+      "sourceId": 240,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 241,
+    "name": "Ośrodek Rehabilitacji Jeży (status ośrodka GDOŚ) Przychodnia Weterynaryjna Szpital Zwierząt Egzotycznych OAZA",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Potocka 4, 01-652 Warszawa"
+    },
+    "locations": [
+      {
+        "id": "241-1",
+        "address": "ul. Potocka 4, 01-652 Warszawa",
+        "city": "Warszawa",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.2786508,
+        "longitude": 20.9843625
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(22) 406 68 12",
+      "email": "oazawet@wp.pl",
+      "website": null,
+      "facebook": "https://www.facebook.com/OAZA.WET",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["mammals", "hedgehogs", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): gady, płazy, ssaki (jeże, nietoperze)",
+      "sourceId": 241,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 242,
+    "name": "Fundacja Wzajemnie Pomocni – Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Słowiańska 66, 05-180 Błędowo"
+    },
+    "locations": [
+      {
+        "id": "242-1",
+        "address": "ul. Słowiańska 66, 05-180 Błędowo",
+        "city": "Błędowo",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.5363071,
+        "longitude": 20.6804261
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "602 185 497",
+      "email": "goskaszmurlo@wp.pl",
+      "website": "https://wzajemniepomocni.pl/osrodek-rehabilitacji-dzikich-zwierzat-2",
+      "facebook": "https://www.facebook.com/FundacjaWzajemniePomocni/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 242,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 243,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt „Sowi Dwór” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Jarocin 34, 09-130 Baboszewo"
+    },
+    "locations": [
+      {
+        "id": "243-1",
+        "address": "Jarocin 34, 09-130 Baboszewo",
+        "city": "Baboszewo",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.673998,
+        "longitude": 20.3311159
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "601 368 368, 723 151 115",
+      "email": "osrodek@sowidwor.org",
+      "website": "https://sowidwor.org/",
+      "facebook": "https://www.facebook.com/osrodeksowidwor/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): płazy, gady, ptaki, małe ssaki",
+      "sourceId": 243,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 244,
+    "name": "Ośrodek rehabilitacji zwierząt w Mostówce (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Zjazdowa 8, 07-230 Mostówka"
+    },
+    "locations": [
+      {
+        "id": "244-1",
+        "address": "ul. Zjazdowa 8, 07-230 Mostówka",
+        "city": "Mostówka",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.5211345,
+        "longitude": 21.4490957
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "501 087 147",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste i sowy",
+      "sourceId": 244,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 245,
+    "name": "Opolskie Centrum Leczenia i Rehabilitacji Dzikich Zwierząt „Avi” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Leśna 5, 46-024 Łubniany"
+    },
+    "locations": [
+      {
+        "id": "245-1",
+        "address": "ul. Leśna 5, 46-024 Łubniany",
+        "city": "Łubniany",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.7754051,
+        "longitude": 17.9888972
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "733 335 401 (gdy nie odbiera, napisać sms)",
+      "email": "fundacja.avi@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/OpolskieCentrumAvi",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady, płazy ; Ośrodek Rehabilitacji Zwierząt znajduje się w miejscowości Zawada | Należy dzwonić i ośrodek przekieruje do współpracującej lecznicy weterynaryjnej.",
+      "sourceId": 245,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 246,
+    "name": "Ośrodek rehabilitacji zwierząt w Suchodańcu (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Ligonia 35, 47-180 Suchodaniec"
+    },
+    "locations": [
+      {
+        "id": "246-1",
+        "address": "Ligonia 35, 47-180 Suchodaniec",
+        "city": "Suchodaniec",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.5753102,
+        "longitude": 18.2024102
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(77) 461 25 21",
+      "email": null,
+      "website": "https://wetpiskon.pl/kontakt/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki, ptaki, płazy i gady ; Kontakt: Gabinet Weterynaryjny, Opolska 32, 47-100 Strzelce Opolskie",
+      "sourceId": 246,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 247,
+    "name": "Ośrodek Rehabilitacji Zwierząt Fundacji Ada przy lecznicy dla zwierząt “ADA” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Zamoyskiego 15, 37-700 Przemyśl"
+    },
+    "locations": [
+      {
+        "id": "247-1",
+        "address": "ul. Zamoyskiego 15, 37-700 Przemyśl",
+        "city": "Przemyśl",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.7791402,
+        "longitude": 22.8071943
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(16) 678 71 68, 733 300 285",
+      "email": "lecznica.ada@op.pl, kontakt@fundacja-ada.pl, interwencje@fundacja-ada.pl",
+      "website": "https://fundacja-ada.org.pl/, https://www.lecznica-ada.pl/",
+      "facebook": "https://www.facebook.com/FundacjaADA",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady",
+      "sourceId": 247,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 248,
+    "name": "Ośrodek Rehabilitacji Ptaków „Puchacz” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Brzyska 9, 38-212 Brzyska"
+    },
+    "locations": [
+      {
+        "id": "248-1",
+        "address": "Brzyska 9, 38-212 Brzyska",
+        "city": "Brzyska",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.8194058,
+        "longitude": 21.3883971
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "530 321 604",
+      "email": "osrodekpuchacz@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Puchacz-O%C5%9Brodek-Rehabilitacji-Ptak%C3%B3w-100093699795393",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki",
+      "sourceId": 248,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 249,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt „Wiewiórka” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Przeczyca 122, 39-230 Brzostek"
+    },
+    "locations": [
+      {
+        "id": "249-1",
+        "address": "Przeczyca 122, 39-230 Brzostek",
+        "city": "Brzostek",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.9080615,
+        "longitude": 21.3448215
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "603 850 940",
+      "email": "wiewiorkaordz@gmail.com",
+      "website": "https://ordz-wiewiorka.weebly.com/",
+      "facebook": "https://www.facebook.com/WiewiorkaORDZ",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["mammals", "hedgehogs", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki (popielice, wiewiórki, jeże, nietoperze i in.), gady, płazy",
+      "sourceId": 249,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 250,
+    "name": "Ośrodek Rehabilitacji Zwierząt Białowieskiego Parku Narodowego (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Park Pałacowy 11, 17-230 Białowieża"
+    },
+    "locations": [
+      {
+        "id": "250-1",
+        "address": "Park Pałacowy 11, 17-230 Białowieża",
+        "city": "Białowieża",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.703323,
+        "longitude": 23.8468535
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(85) 682 97 00, (85) 681 20 33",
+      "email": "bpn@bpn.com.pl",
+      "website": "https://bpn.gov.pl/osrodek-rehabilitacji-zwierzat-bialowieskiego-parku-narodowego",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): duże ssaki (żubr, jeleń, łoś, sarna, dzik, wilk, ryś)",
+      "sourceId": 250,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 251,
+    "name": "Ośrodek Rehabilitacji Dzikich Ptaków i Ssaków “Przytulisko” Nadleśnictwa Krynki (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Poczopek 6D, 16-113 Szudziałowo"
+    },
+    "locations": [
+      {
+        "id": "251-1",
+        "address": "Poczopek 6D, 16-113 Szudziałowo",
+        "city": "Szudziałowo",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.2620683,
+        "longitude": 23.637464
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": null,
+      "email": null,
+      "website": "https://krynki.bialystok.lasy.gov.pl/punkt-przyjec-zwierzat-chronionych",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki (z wyłączeniem dużych gatunków), ptaki (z wyłączeniem łownych). ; Punkt Przyjęć zwierząt chronionych w Poczopku, uprzedni kontakt telefoniczny: | Pracownicy Przytulisko: Tel: 533 391 069 | Pracownicy Silvarium: Tel: 728 954 727 | Pracownicy Punktu Alarmowo-Dyspozycyjnego: Tel: (85) 722 96 64, 788 144 688",
+      "sourceId": 251,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 252,
+    "name": "Ośrodek Rehabilitacji Zwierząt – Łomżyński Park Krajobrazowy Doliny Narwi (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Drozdowo, ul. Główna 52, 18-421 Piątnica"
+    },
+    "locations": [
+      {
+        "id": "252-1",
+        "address": "Drozdowo, ul. Główna 52, 18-421 Piątnica",
+        "city": "Piątnica",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.1483933,
+        "longitude": 22.1761357
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "510 218 900, (86) 224 51 60",
+      "email": "sekretariat@lpkdn.podlaskie.eu",
+      "website": "https://lpkdn.podlaskie.eu/pl/6f7b47e2bef691f/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki (Ośrodek przyjmuje jedynie ptaki z terenu ŁPK oraz jego otuliny)",
+      "sourceId": 252,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 253,
+    "name": "Ośrodek Rehabilitacji Zwierząt Wigierskiego Parku Narodowego (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Krzywe 82, 16-402 Suwałki"
+    },
+    "locations": [
+      {
+        "id": "253-1",
+        "address": "Krzywe 82, 16-402 Suwałki",
+        "city": "Suwałki",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.0842819,
+        "longitude": 23.0098343
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(87) 563 25 40",
+      "email": "wigry_pn@wigry.org.pl",
+      "website": "https://wigpn.gov.pl/",
+      "facebook": "https://www.facebook.com/wigierski.parknarodowy",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki ; Ośrodek znajduje się w Maćkowa Ruda 57, gm. Krasnopol",
+      "sourceId": 253,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 254,
+    "name": "Ośrodek Rehabilitacji Zwierząt Biebrzańskiego Parku Narodowego (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Leśniczówka Grzędy, 19-206 Rajgród"
+    },
+    "locations": [
+      {
+        "id": "254-1",
+        "address": "Leśniczówka Grzędy, 19-206 Rajgród",
+        "city": "Rajgród",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.6315807,
+        "longitude": 22.7740652
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(85) 877 74 92",
+      "email": "dawid.wojcik@biebrza.org.pl",
+      "website": "https://bbpn.gov.pl/osrodek-rehabilitacji-zwierzat",
+      "facebook": "https://www.facebook.com/orzbiebrza/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 254,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 255,
+    "name": "Ośrodek Rehabilitacji Ptaków Drapieżnych Leśniczówka Sobieńczyce (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Porąb 27, 84-110 Porąb"
+    },
+    "locations": [
+      {
+        "id": "255-1",
+        "address": "Porąb 27, 84-110 Porąb",
+        "city": "Porąb",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.7618485,
+        "longitude": 18.1124168
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(58) 672 98 10, Leśniczy: 880 789 738",
+      "email": "wejherowo@gdansk.lasy.gov.pl",
+      "website": "https://wejherowo.gdansk.lasy.gov.pl/osrodek-rehabilitacji-ptakow",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste i sowy",
+      "sourceId": 255,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 256,
+    "name": "Ośrodek Rehabilitacji Ptaków Drapieżnych przy Technikum Leśnym w Warcinie (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Darzbór 18, Warcino, 77-230 Kępice,"
+    },
+    "locations": [
+      {
+        "id": "256-1",
+        "address": "ul. Darzbór 18, Warcino, 77-230 Kępice,",
+        "city": "",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.2186511,
+        "longitude": 16.8529369
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "518 961 010",
+      "email": "sekretariat@tlwarcino.pl",
+      "website": "https://tlwarcino.pl/szkola/osrodek-rehabilitacji-ptakow-drapieznych",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste i sowy",
+      "sourceId": 256,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 257,
+    "name": "Fundacja Pomorski Ośrodek Rehabilitacji Dzikich Zwierząt „Ostoja” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Słupia 30, 83-305 Pomieczyno"
+    },
+    "locations": [
+      {
+        "id": "257-1",
+        "address": "ul. Słupia 30, 83-305 Pomieczyno",
+        "city": "Pomieczyno",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.411404,
+        "longitude": 18.1769701
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "606 907 740",
+      "email": "biuro@ostoja.gda.pl",
+      "website": "https://ostoja.gda.pl/",
+      "facebook": "https://www.facebook.com/PORPostoja/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki (z wyłączeniem dużych gatunków) ; Nie przyjmują zgłoszeń drogą mailową i nie jeżdżą na interwencje.",
+      "sourceId": 257,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 258,
+    "name": "Ośrodek Rehabilitacji Fok – Stacja Morska Uniwersytetu Gdańskiego (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Morska 2, 84-150 Hel"
+    },
+    "locations": [
+      {
+        "id": "258-1",
+        "address": "ul. Morska 2, 84-150 Hel",
+        "city": "Hel",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.6072062,
+        "longitude": 18.7998746
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "601 889 940, (58) 675 08 36, (58) 523 35 70 lub Błękitny Patrol WWF 795 536 009",
+      "email": "hel@ug.edu.pl",
+      "website": "https://hel.ug.edu.pl/rehabilitacja/",
+      "facebook": "https://www.facebook.com/stacjamorska.ug",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): foka szara, foka pospolita, foka obrączkowana ; wejście od ul. Wiejskiej 20",
+      "sourceId": 258,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 259,
+    "name": "Fundacja Dziki Azyl – Centrum Pomocy dla Jeży i Dzikich Zwierząt Ośrodek rehabilitacji zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Franciszkańska 8, 76-251 Kobylnica"
+    },
+    "locations": [
+      {
+        "id": "259-1",
+        "address": "ul. Franciszkańska 8, 76-251 Kobylnica",
+        "city": "Kobylnica",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.4298252,
+        "longitude": 16.981761
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "577 773 776",
+      "email": "fundacja.dzikiazyl@gmail.com",
+      "website": "https://dzikiazyl.pl/",
+      "facebook": "https://www.facebook.com/dzikiazyl",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki ; Przed przywiezieniem zwierzęcia konieczny kontakt telefoniczny.",
+      "sourceId": 259,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 260,
+    "name": "Ośrodek Rehabilitacji Zwierząt – Leśne Pogotowie przy Nadleśnictwie Katowice (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Kościuszki 70, 43-190 Mikołów"
+    },
+    "locations": [
+      {
+        "id": "260-1",
+        "address": "ul. Kościuszki 70, 43-190 Mikołów",
+        "city": "Mikołów",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.1938085,
+        "longitude": 18.9174885
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "605 100 179",
+      "email": "jacek@lesnepogotowie.pl",
+      "website": "https://lesnepogotowie.pl/",
+      "facebook": "https://www.facebook.com/lesnepogotowie",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ssaki, ptaki, gady",
+      "sourceId": 260,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 261,
+    "name": "Fundacja i Ośrodek Rehabilitacji Mysikrólik – Na Pomoc Dzikim Zwierzętom (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Admiralska 10, 43-300 Bielsko-Biała"
+    },
+    "locations": [
+      {
+        "id": "261-1",
+        "address": "ul. Admiralska 10, 43-300 Bielsko-Biała",
+        "city": "Bielsko-Biała",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.8229734,
+        "longitude": 19.1189778
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "506 918 902",
+      "email": "kontakt@mysikrolik.org",
+      "website": "https://www.mysikrolik.org/",
+      "facebook": "https://www.facebook.com/mysikrolik",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, płazy, gady",
+      "sourceId": 261,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 262,
+    "name": "Śląska Fundacja „Życie dla jeży” Ośrodek rehabilitacji zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Szkolna 21A, 44-230 Stanowice"
+    },
+    "locations": [
+      {
+        "id": "262-1",
+        "address": "ul. Szkolna 21A, 44-230 Stanowice",
+        "city": "Stanowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.1291081,
+        "longitude": 18.6660835
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "512 048 555",
+      "email": "slaskafundacjazyciedlajezy@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/%C5%9Al%C4%85ska-Fundacja-%C5%BBycie-dla-Je%C5%BCy-100066749731247",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["hedgehogs"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): jeże",
+      "sourceId": 262,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 263,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt w Ossach „Buba Boob” i schronisko dla zwierząt egzotycznych (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Grzybowa 54, 42-625 Ożarowice"
+    },
+    "locations": [
+      {
+        "id": "263-1",
+        "address": "ul. Grzybowa 54, 42-625 Ożarowice",
+        "city": "Ożarowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.486794,
+        "longitude": 19.0401309
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "737 327 151, 794 367 394",
+      "email": "azylbuba@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/BubaBoob/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady",
+      "sourceId": 263,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 264,
+    "name": "Ośrodek Rehabilitacji Zwierząt „Bączek” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Przyszowice ul. Stachury 9, 44-186 Gierałtowice"
+    },
+    "locations": [
+      {
+        "id": "264-1",
+        "address": "Przyszowice ul. Stachury 9, 44-186 Gierałtowice",
+        "city": "Gierałtowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.2260393,
+        "longitude": 18.7418967
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "663 003 911, 691 208 032",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki wodne, brodzące, krukowate, szponiaste, sowy",
+      "sourceId": 264,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 265,
+    "name": "Ośrodek Rehabilitacji Zwierząt w Dąbrowie Górniczej – Fundacja Dziobem i Kłem (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Uruchomienie ośrodka planowane na połowę 2026 roku."
+    },
+    "locations": [
+      {
+        "id": "265-1",
+        "address": "Uruchomienie ośrodka planowane na połowę 2026 roku.",
+        "city": "Uruchomienie ośrodka planowane na połowę 2026 roku.",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.3477673,
+        "longitude": 19.3109027
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "668 439 378",
+      "email": null,
+      "website": null,
+      "facebook": "https://www.facebook.com/dziobemiklem/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady ; ul. Gołonoska 140, 42-523 Dąbrowa Górnicza",
+      "sourceId": 265,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 266,
+    "name": "Ośrodek Rehabilitacji Zwierząt Ptasi Azyl „Ptakolub” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Krótka 1, 28-425 Złota"
+    },
+    "locations": [
+      {
+        "id": "266-1",
+        "address": "ul. Krótka 1, 28-425 Złota",
+        "city": "Złota",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.3848116,
+        "longitude": 20.5925665
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "664 434 568",
+      "email": null,
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Ptasi-Azyl-Ptakolub-100082867345880/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 266,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 267,
+    "name": "Ośrodek Rehabilitacji Ptaków Drapieżnych przy Zespole Szkół Leśnych w Zagnańsku (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Spacerowa 4, 26-050 Zagnańsk"
+    },
+    "locations": [
+      {
+        "id": "267-1",
+        "address": "ul. Spacerowa 4, 26-050 Zagnańsk",
+        "city": "Zagnańsk",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.9786321,
+        "longitude": 20.6626905
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "603 243 885, (41) 300 11 41",
+      "email": "wiktor.wurmanski@zsl-zagnansk.pl",
+      "website": "https://www.zsl-zagnansk.pl/rehabilitacja-ptakow",
+      "facebook": "https://www.facebook.com/p/O%C5%9Brodek-Rehabilitacji-Ptak%C3%B3w-Drapie%C5%BCnych-przy-ZSL-Zagna%C5%84sk-100093143343443",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste i sowy",
+      "sourceId": 267,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 268,
+    "name": "Ośrodek Rehabilitacyjny Dzikich Zwierząt Raczyce (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Raczyce 37, 28-114 Gnojno"
+    },
+    "locations": [
+      {
+        "id": "268-1",
+        "address": "Raczyce 37, 28-114 Gnojno",
+        "city": "Gnojno",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.5774049,
+        "longitude": 20.881114
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "512 997 288",
+      "email": "malgorzata.kowalska7@op.pl",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/O%C5%9Brodek-Rehabilitacyjny-Dzikich-Zwierz%C4%85t-Raczyce-100095208785046/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 268,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 269,
+    "name": "Ośrodek Rehabilitacji Ptaków Drapieżnych Nadleśnictwa Olsztyn (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Dąbrówka Wielka 29, 11-001 Dywity"
+    },
+    "locations": [
+      {
+        "id": "269-1",
+        "address": "Dąbrówka Wielka 29, 11-001 Dywity",
+        "city": "Dywity",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.8745338,
+        "longitude": 20.5191243
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "693 982 171, (89) 513 03 91",
+      "email": "olsztyn@olsztyn.lasy.gov.pl",
+      "website": "https://olsztyn.olsztyn.lasy.gov.pl/osrodek-rehabilitacji-ptakow-drapieznych",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste i sowy",
+      "sourceId": 269,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 270,
+    "name": "Ośrodek Rehabilitacji Ptaków Dzikich – Ptasi Szpital Fundacji Albatros (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Bukwałd 45a, 11-001 Dywity"
+    },
+    "locations": [
+      {
+        "id": "270-1",
+        "address": "Bukwałd 45a, 11-001 Dywity",
+        "city": "Dywity",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.8747863,
+        "longitude": 20.3770179
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "664 950 458",
+      "email": "info@falbatros.pl, kontakt@falbatros.pl",
+      "website": "https://falbatros.pl/",
+      "facebook": "https://www.facebook.com/fundacjaalbatros",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki ; Interwencje powiat olsztyński – kontaktować się z EkoPatrolem za pośrednictwem numeru | Dyżurnego Miasta Olsztyna: (89) 522 81 12",
+      "sourceId": 270,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 271,
+    "name": "Ośrodek Rehabilitacji Zwierząt Chronionych przy Zespole Parku Krajobrazowego Pojezierza Iławskiego i Wzgórz Dylewskich (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Jerzwałd 62, 14-230 Jerzwałd"
+    },
+    "locations": [
+      {
+        "id": "271-1",
+        "address": "Jerzwałd 62, 14-230 Jerzwałd",
+        "city": "Jerzwałd",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.7813712,
+        "longitude": 19.5260447
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "512 468 145, 502 453 883",
+      "email": "zpk@zpk.warmia.mazury.pl",
+      "website": "https://zpk.warmia.mazury.pl/osrodek-rehabilitacji-zwierzat-chronionych-w-jerzwaldzie/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, nietoperze",
+      "sourceId": 271,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 272,
+    "name": "Ośrodek Rehabilitacji Zwierząt przy Nadleśnictwie Olsztynek (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Napromek 16, 14-260 Napromek (Leśnictwo Napromek)"
+    },
+    "locations": [
+      {
+        "id": "272-1",
+        "address": "Napromek 16, 14-260 Napromek (Leśnictwo Napromek)",
+        "city": "Napromek (Leśnictwo Napromek)",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.5105684,
+        "longitude": 19.8983994
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "660 477 113, (89) 645 82 41",
+      "email": "olsztynek@olsztyn.lasy.gov.pl",
+      "website": "https://olsztynek.olsztyn.lasy.gov.pl/osrodek-rehabilitacji-zwierza",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 272,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 273,
+    "name": "Ośrodek Okresowej Rehabilitacji Bocianów przy Mazurskim Parku Krajobrazowym (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Krutyń 66, 11-710 Piecki"
+    },
+    "locations": [
+      {
+        "id": "273-1",
+        "address": "Krutyń 66, 11-710 Piecki",
+        "city": "Piecki",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.6874564,
+        "longitude": 21.4308946
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(89) 742 14 05",
+      "email": "krutyn@mazurskipark.pl",
+      "website": "https://mpk.warmia.mazury.pl/osrodek-okresowej-rehabilitacji-bocianow-w-krutyni/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["storks"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): bocian biały, bocian czarny",
+      "sourceId": 273,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 274,
+    "name": "„Ośrodek Jelonki” Ośrodek Okresowej Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Nowe Monasterzysko 37, 14-420 Młynary"
+    },
+    "locations": [
+      {
+        "id": "274-1",
+        "address": "Nowe Monasterzysko 37, 14-420 Młynary",
+        "city": "Młynary",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.2168357,
+        "longitude": 19.6276938
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "503 787 538",
+      "email": "baza@osrodekjelonki.pl",
+      "website": "https://osrodekjelonki.pl/",
+      "facebook": "https://www.facebook.com/osrodekjelonki",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 274,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 275,
+    "name": "Ośrodek Rehabilitacji Ptaków Drapieżnych Polski Związek Łowiecki – Stacja Badawcza (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Sokolnicza 12, 64–020 Czempiń"
+    },
+    "locations": [
+      {
+        "id": "275-1",
+        "address": "ul. Sokolnicza 12, 64–020 Czempiń",
+        "city": "64–020 Czempiń",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.1361467,
+        "longitude": 16.7615583
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "Witold Ciężki 602 591 629",
+      "email": "sb.czempin@pzlow.pl",
+      "website": "https://czempin.pzlow.pl/ptaki-drapiezne/rehabilitacja/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): głównie ptaki szponiaste i sowy oraz inne dzikie zwierzęta.",
+      "sourceId": 275,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 276,
+    "name": "Ośrodek Rehabilitacji Zwierząt przy Nadleśnictwie Grodziec (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Leśna 50, 62–580 Grodziec"
+    },
+    "locations": [
+      {
+        "id": "276-1",
+        "address": "ul. Leśna 50, 62–580 Grodziec",
+        "city": "62–580 Grodziec",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.0291688,
+        "longitude": 18.0617349
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "694 424 229",
+      "email": "grodziec@poznan.lasy.gov.pl",
+      "website": "https://grodziec.poznan.lasy.gov.pl/zagroda-wolnosciowa-dla-zwierzat",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 276,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 277,
+    "name": "Fundacja Leśna Pomoc – Ośrodek Rehabilitacji Dzikich Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Madera 6A, 62-308 Targowa Górka"
+    },
+    "locations": [
+      {
+        "id": "277-1",
+        "address": "ul. Madera 6A, 62-308 Targowa Górka",
+        "city": "Targowa Górka",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.2844631,
+        "longitude": 17.4141789
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "517 762 882",
+      "email": "lesnapomoc@gmail.com",
+      "website": "https://www.facebook.com/profile.php?id=61579925897948",
+      "facebook": "https://www.facebook.com/lesnapomoc",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady i płazy",
+      "sourceId": 277,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 278,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt w Kościanie (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Spytkówki, ul. Polna 3, 64-000 Kościan"
+    },
+    "locations": [
+      {
+        "id": "278-1",
+        "address": "Spytkówki, ul. Polna 3, 64-000 Kościan",
+        "city": "Kościan",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.0718222,
+        "longitude": 16.7626502
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "793 103 623, 726 386 322",
+      "email": "ordz.koscian@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/zdzikiejstrony",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, płazy, gady ; Ośrodek przyjmuje też dzikie zwierzęta z Poznania.",
+      "sourceId": 278,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 279,
+    "name": "Ośrodek Rehabilitacji Ptaków – Fundacja “Ratujmy Ptaki” (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Szafera 196/18, 71-245 Szczecin"
+    },
+    "locations": [
+      {
+        "id": "279-1",
+        "address": "ul. Szafera 196/18, 71-245 Szczecin",
+        "city": "Szczecin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.4566289,
+        "longitude": 14.4966627
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "579 447 757",
+      "email": null,
+      "website": "https://www.ratujmyptaki.org/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki",
+      "sourceId": 279,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 280,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt w Warnowie (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Warnowo 5/1, 72-518 Ładzin – Wyspa Wolin"
+    },
+    "locations": [
+      {
+        "id": "280-1",
+        "address": "Warnowo 5/1, 72-518 Ładzin – Wyspa Wolin",
+        "city": "Ładzin – Wyspa Wolin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.928956,
+        "longitude": 14.536131
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "669 063 719",
+      "email": "ordzbaranska@gmail.com",
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 280,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 281,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt w Gryfinie (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Mieszka I 17, 74–100 Gryfino"
+    },
+    "locations": [
+      {
+        "id": "281-1",
+        "address": "ul. Mieszka I 17, 74–100 Gryfino",
+        "city": "74–100 Gryfino",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.243841,
+        "longitude": 14.4908755
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "693 368 837",
+      "email": "osrodekgryfino@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/osrodekgryfino",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki (przywieźć do ośrodka samodzielnie, jeśli to możliwe)",
+      "sourceId": 281,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 282,
+    "name": "Dzika Ostoja Fundacja Na Rzecz Dzikich Zwierząt – Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Łowczych 6, 70–884 Szczecin"
+    },
+    "locations": [
+      {
+        "id": "282-1",
+        "address": "ul. Łowczych 6, 70–884 Szczecin",
+        "city": "70–884 Szczecin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.3907353,
+        "longitude": 14.7667137
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "503 355 211",
+      "email": "dzikaostoja@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/DzikaOstoja",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady (z całego województwa)",
+      "sourceId": 282,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 283,
+    "name": "Zachodniopomorskie Towarzystwo Przyrodnicze – Dzika Zagroda Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Jabłonowo 42, 78-650 Mirosławiec"
+    },
+    "locations": [
+      {
+        "id": "283-1",
+        "address": "Jabłonowo 42, 78-650 Mirosławiec",
+        "city": "Mirosławiec",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.325992,
+        "longitude": 16.3049615
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "881 006 288",
+      "email": "dzika.zagroda@zubry.org",
+      "website": "https://dzika-zagroda.pl/",
+      "facebook": "https://www.facebook.com/dzika.zagroda.jablonowo",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): żubr, ryś",
+      "sourceId": 283,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 284,
+    "name": "Fundacja Dzikich Zwierząt Marzena Białowolska, Szczecin Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "Ostoja 78, 72-005 Przecław"
+    },
+    "locations": [
+      {
+        "id": "284-1",
+        "address": "Ostoja 78, 72-005 Przecław",
+        "city": "Przecław",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.4191547,
+        "longitude": 14.4699454
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "691 898 948",
+      "email": null,
+      "website": null,
+      "facebook": "https://www.facebook.com/fundacjadzikichzwierzatmarzenabialowolska",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki",
+      "sourceId": 284,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 285,
+    "name": "Ośrodek Rehabilitacji Dzikich Zwierząt „Zwierzogród” Wielgowo (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Skrzydlata 7, 70-889 Szczecin"
+    },
+    "locations": [
+      {
+        "id": "285-1",
+        "address": "ul. Skrzydlata 7, 70-889 Szczecin",
+        "city": "Szczecin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.4061176,
+        "longitude": 14.7636738
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "667 653 160 lub przez Straż Miejską tel. 986",
+      "email": "ordz.zwierzogrod@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Zwierzogr%C3%B3d-Wielgowo-61565592157681/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady – tylko gatunki chronione. ; Gatunki łowne trafiają do innych ośrodków – zgłaszać do Łowczego Miejskiego w Szczecinie przez Straż Miejską tel. 986",
+      "sourceId": 285,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 286,
+    "name": "Fundacja Peruna Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Kwiatowa 33, 32-082 Karniowice"
+    },
+    "locations": [
+      {
+        "id": "286-1",
+        "address": "ul. Kwiatowa 33, 32-082 Karniowice",
+        "city": "Karniowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.1435458,
+        "longitude": 19.7816182
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "574 523 216",
+      "email": "kontakt@peruna.org.pl",
+      "website": "https://peruna.org.pl/",
+      "facebook": "https://www.facebook.com/FundacjaPeruna",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): drobne ssaki, ptaki wróblowe, gołębie, sowy, ptaki szponiaste",
+      "sourceId": 286,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 287,
+    "name": "Fundacja dla Dzikich Zwierząt „Larus” Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Wieniawskiego 15/6, 75-528 Koszalin"
+    },
+    "locations": [
+      {
+        "id": "287-1",
+        "address": "ul. Wieniawskiego 15/6, 75-528 Koszalin",
+        "city": "Koszalin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.1963925,
+        "longitude": 16.2089244
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "501 086 300",
+      "email": "larus.fundacja@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/dladzikichLarus",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki ; Ośrodek położony w gminie Polanów",
+      "sourceId": 287,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 288,
+    "name": "Ośrodek Rehabilitacji Zwierząt w Załomiu, Szczecin (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Parkowa 3, 70-896 Załom"
+    },
+    "locations": [
+      {
+        "id": "288-1",
+        "address": "ul. Parkowa 3, 70-896 Załom",
+        "city": "Załom",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.4289032,
+        "longitude": 14.7148772
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "603 881 398, 722 386 459",
+      "email": "lupczer@wp.pl",
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki, ssaki, gady",
+      "sourceId": 288,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 289,
+    "name": "Polskie Towarzystwo Ochrony Przyrody „Salamandra” Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. Stolarska 7/3, 60-788 Poznań"
+    },
+    "locations": [
+      {
+        "id": "289-1",
+        "address": "ul. Stolarska 7/3, 60-788 Poznań",
+        "city": "Poznań",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.404662,
+        "longitude": 16.90175
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "604 836 583",
+      "email": "nietoperze@salamandra.org.pl",
+      "website": "https://www.salamandra.org.pl/",
+      "facebook": "https://www.facebook.com/PTOP.Salamandra",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): nietoperze",
+      "sourceId": 289,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 290,
+    "name": "Ośrodek Edukacyjno-Rehabilitacyjny \"Płomykówka\" Ośrodek Rehabilitacji Zwierząt (status ośrodka GDOŚ)",
+    "category": "wildlife_rehabilitation_gdos",
+    "organization": {
+      "registeredAddress": "ul. PCK 45, 41-400 Mysłowice"
+    },
+    "locations": [
+      {
+        "id": "290-1",
+        "address": "ul. PCK 45, 41-400 Mysłowice",
+        "city": "Mysłowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.181395,
+        "longitude": 19.1500323
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "502 370 998",
+      "email": "osirodek_plomykowka@poczta.fm",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/O%C5%9Brodek-Edukacyjno-Rehabilitacyjny-P%C5%82omyk%C3%B3wka-61566730273705/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_gdos",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki",
+      "sourceId": 290,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  }
+]

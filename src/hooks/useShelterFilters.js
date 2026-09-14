@@ -2,11 +2,12 @@ import { useState, useMemo } from "react";
 
 function matchesCategory(shelter, category) {
   if (category === "all") return true;
+  if (category === "wildlife") return Boolean(shelter.category);
   const types = shelter.details?.animalTypes || [];
   if (category === "dogs") return types.includes("dogs");
   if (category === "cats") return types.includes("cats");
   if (category === "other")
-    return types.some((t) => t !== "dogs" && t !== "cats");
+    return !shelter.category && types.some((t) => t !== "dogs" && t !== "cats");
   return true;
 }
 

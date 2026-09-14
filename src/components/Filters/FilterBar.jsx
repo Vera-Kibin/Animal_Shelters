@@ -4,6 +4,7 @@ const CATEGORIES = [
   { id: "all", label: "Wszystkie" },
   { id: "dogs", label: "Psy" },
   { id: "cats", label: "Koty" },
+  { id: "wildlife", label: "Dzikie zwierzęta" },
   { id: "other", label: "Inne" },
 ];
 
