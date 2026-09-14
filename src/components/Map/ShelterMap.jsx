@@ -11,17 +11,29 @@ const START_ZOOM = 6;
 const ICON_CACHE = new Map();
 
 function colorFor(shelter) {
+  if (shelter.category) return "#3498db";
   const t = shelter.details?.animalTypes || [];
   if (t.includes("dogs")) return "#f5d90a";
   if (t.includes("cats")) return "#e8a13c";
   return "#3f7d57";
 }
+function iconTypeFor(shelter) {
+  return shelter.category ? "cross" : "paw";
+}
 
-function pinIcon(color, active) {
-  const cacheKey = color + (active ? "_a" : "");
+const PAW_SVG =
+  '<ellipse cx="12" cy="16" rx="5" ry="4"/>' +
+  '<circle cx="5.5" cy="9.5" r="2"/><circle cx="9.5" cy="6" r="2"/>' +
+  '<circle cx="14.5" cy="6" r="2"/><circle cx="18.5" cy="9.5" r="2"/>';
+
+const CROSS_SVG = '<path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/>';
+
+function pinIcon(color, active, iconType = "paw") {
+  const cacheKey = color + (active ? "_a" : "") + "_" + iconType;
   if (ICON_CACHE.has(cacheKey)) return ICON_CACHE.get(cacheKey);
   const s = active ? 38 : 28;
-  const paw = s * 0.55;
+  const symbolSize = s * 0.55;
+  const symbol = iconType === "cross" ? CROSS_SVG : PAW_SVG;
   const html =
     '<div class="map-pin" style="width:' +
     s +
@@ -32,13 +44,12 @@ function pinIcon(color, active) {
     (active ? ";box-shadow:0 0 0 4px rgba(245,217,10,.35)" : "") +
     '">' +
     '<svg viewBox="0 0 24 24" width="' +
-    paw +
+    symbolSize +
     '" height="' +
-    paw +
+    symbolSize +
     '" fill="#fff">' +
-    '<ellipse cx="12" cy="16" rx="5" ry="4"/>' +
-    '<circle cx="5.5" cy="9.5" r="2"/><circle cx="9.5" cy="6" r="2"/>' +
-    '<circle cx="14.5" cy="6" r="2"/><circle cx="18.5" cy="9.5" r="2"/></svg></div>';
+    symbol +
+    "</svg></div>";
   const icon = L.divIcon({
     className: "paw-pin",
     html,
@@ -152,7 +163,11 @@ const ShelterMap = memo(function ShelterMap({
           <Marker
             key={p.key}
             position={[p.lat, p.lng]}
-            icon={pinIcon(colorFor(p.shelter), p.shelter.id === selectedId)}
+            icon={pinIcon(
+              colorFor(p.shelter),
+              p.shelter.id === selectedId,
+              iconTypeFor(p.shelter),
+            )}
             eventHandlers={{
               click: () => onSelect?.(p.shelter.id),
             }}

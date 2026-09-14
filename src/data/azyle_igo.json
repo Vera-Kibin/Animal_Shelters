@@ -1,0 +1,678 @@
+[
+  {
+    "id": 291,
+    "name": "Fundacja Szopowisko lek. wet. Grzegorz Dziwak – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Leśna 34, 55-050 Kryształowice"
+    },
+    "locations": [
+      {
+        "id": "291-1",
+        "address": "ul. Leśna 34, 55-050 Kryształowice",
+        "city": "Kryształowice",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.9516006,
+        "longitude": 16.8057938
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "513 255 595",
+      "email": "fundacjaszopowisko@gmail.com",
+      "website": "https://fundacjaszopowisko.pl/",
+      "facebook": "https://www.facebook.com/Szopowisko",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["mammals", "reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): egzotyczne ssaki, egzotyczne płazy, egzotyczne gady",
+      "sourceId": 291,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 292,
+    "name": "Fundacja Patataj Animal Sanctuary – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Łączna 12, 58-100 Świdnica"
+    },
+    "locations": [
+      {
+        "id": "292-1",
+        "address": "ul. Łączna 12, 58-100 Świdnica",
+        "city": "Świdnica",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.8516802,
+        "longitude": 16.4999835
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "536 433 179",
+      "email": "patataj.animals.sanctuary@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Patataj-Animals-Sanctuary-100085418305252/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["raccoons"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): szop pracz",
+      "sourceId": 292,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 293,
+    "name": "Egzotarium – schronisko dla zwierząt egzotycznych – Azyl dla IGO Bartłomiej Gorzkowski",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Metalurgiczna 5, 20-247 Lublin"
+    },
+    "locations": [
+      {
+        "id": "293-1",
+        "address": "ul. Metalurgiczna 5, 20-247 Lublin",
+        "city": "Lublin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.2413758,
+        "longitude": 22.6321364
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "608 175 063",
+      "email": "gorzkowski@gmail.com",
+      "website": "https://www.facebook.com/fundacja.epicrates/?locale=pl_PL",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["reptiles", "amphibians"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): egzotyczne gady, egzotyczne płazy ; we współpracy z: | Fundacja Epicrates",
+      "sourceId": 293,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 294,
+    "name": "Stowarzyszenie Leśne Przytulisko – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "Skrzynice Drugie 60, 23-114 Jabłonna"
+    },
+    "locations": [
+      {
+        "id": "294-1",
+        "address": "Skrzynice Drugie 60, 23-114 Jabłonna",
+        "city": "Jabłonna",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.1267062,
+        "longitude": 22.6687863
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "600 621 121",
+      "email": "lesnepogotowie@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/LesnePrzytulisko",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["raccoons", "raccoon_dogs", "nutria"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): szop pracz, jenot, nutria",
+      "sourceId": 294,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 295,
+    "name": "Opolskie Centrum Leczenia i Rehabilitacji Dzikich Zwierząt „Avi” – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Leśna 5, 46-024 Łubniany"
+    },
+    "locations": [
+      {
+        "id": "295-1",
+        "address": "ul. Leśna 5, 46-024 Łubniany",
+        "city": "Łubniany",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.7754594,
+        "longitude": 17.988983
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "733 335 401 lub sms",
+      "email": "fundacja.avi@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/OpolskieCentrumAvi",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["raccoons", "raccoon_dogs", "nutria"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): szop pracz, jenot, nutria",
+      "sourceId": 295,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 296,
+    "name": "Agroturystyka Jurajskie Manowce – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "Gorzków Stary 4, 42-320 Niegowa"
+    },
+    "locations": [
+      {
+        "id": "296-1",
+        "address": "Gorzków Stary 4, 42-320 Niegowa",
+        "city": "Niegowa",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.6788249,
+        "longitude": 19.4806988
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "882 013 739",
+      "email": "info@jurajskiemanowce.pl",
+      "website": "https://jurajskiemanowce.pl/zwierzeta/",
+      "facebook": "https://www.facebook.com/JuraKrakowskoCzestochowskaNoclegi/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["turtles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): żółw ozdobny, żółw jaszczurowaty",
+      "sourceId": 296,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 297,
+    "name": "Fundacja Łapa i Las – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. gen. Okulickiego 35E, 44-274 Rybnik"
+    },
+    "locations": [
+      {
+        "id": "297-1",
+        "address": "ul. gen. Okulickiego 35E, 44-274 Rybnik",
+        "city": "Rybnik",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.0567811,
+        "longitude": 18.5192395
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "889 488 466",
+      "email": "fundacjalapailas@gmail.com, nutriowisko@gmail.com",
+      "website": "https://nutriowisko.pl/",
+      "facebook": "https://www.facebook.com/p/Fundacja-%C5%81apa-i-Las-61572789737216/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["nutria"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): nutria amerykańska ; FB: https://www.facebook.com/p/Nutriowisko-61567784338718/",
+      "sourceId": 297,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 298,
+    "name": "Fundacja Oceanika – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Laskowa 95, Chrusty, 26-050 Zagnańsk"
+    },
+    "locations": [
+      {
+        "id": "298-1",
+        "address": "ul. Laskowa 95, Chrusty, 26-050 Zagnańsk",
+        "city": "Zagnańsk",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.9661512,
+        "longitude": 20.6648159
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "798 763 792",
+      "email": "rafal.maciaszek@fundacjaoceanika.pl",
+      "website": "https://fundacjaoceanika.pl/",
+      "facebook": "https://www.facebook.com/LowcaObcych?locale=pl_PL",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["turtles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): egzotyczne żółwie, ryby i inne organizmy wodne",
+      "sourceId": 298,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 299,
+    "name": "Fundacja Skrzydła Lasu – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Zadowicka 55, 62-872 Godziesze Małe"
+    },
+    "locations": [
+      {
+        "id": "299-1",
+        "address": "ul. Zadowicka 55, 62-872 Godziesze Małe",
+        "city": "Godziesze Małe",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.6583573,
+        "longitude": 18.1297803
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "577 818 997",
+      "email": "fundacjaskrzydlalasu@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Fundacja-Skrzyd%C5%82a-Lasu-61554639877773/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["birds"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): egzotyczne ptaki",
+      "sourceId": 299,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 300,
+    "name": "Stajnia Gawra Sp. z o.o. – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "Chorzępowo 42, 64-410 Sieraków"
+    },
+    "locations": [
+      {
+        "id": "300-1",
+        "address": "Chorzępowo 42, 64-410 Sieraków",
+        "city": "Sieraków",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.642227,
+        "longitude": 15.9917418
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "607 679 673",
+      "email": "chrobrowski@onet.eu",
+      "website": "https://www.puszcza-notecka.pl/",
+      "facebook": "https://www.facebook.com/AgroturystykaGawra/?locale=pl_PL",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki IGO",
+      "sourceId": 300,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 301,
+    "name": "Polskie Towarzystwo Ochrony Przyrody „Salamandra”",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Stolarska 7/3, 60-788 Poznań"
+    },
+    "locations": [
+      {
+        "id": "301-1",
+        "address": "ul. Stolarska 7/3, 60-788 Poznań",
+        "city": "Poznań",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.404662,
+        "longitude": 16.90175
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "538 436 610",
+      "email": "biuro@salamandra.org.pl",
+      "website": "https://www.salamandra.org.pl/",
+      "facebook": "https://www.facebook.com/PTOP.Salamandra",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): gatunki obce/CITES – poradnictwo",
+      "sourceId": 301,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 302,
+    "name": "Azyl Szopa Pracza – Azyl dla IGO Al Pako – Alpaki nad morzem – Fundacja Olafek",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Szkolna 59, 78-122 Charzyno"
+    },
+    "locations": [
+      {
+        "id": "302-1",
+        "address": "ul. Szkolna 59, 78-122 Charzyno",
+        "city": "Charzyno",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.0901976,
+        "longitude": 15.5410288
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "696 077 464",
+      "email": "alpakinadmorzem@gmail.com",
+      "website": "https://al-pako.pl/",
+      "facebook": "https://www.facebook.com/azylszopajenota/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["raccoons"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): szop pracz",
+      "sourceId": 302,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 303,
+    "name": "Fundacja Zwierzogród – Azyl dla IGO",
+    "category": "invasive_species_haven",
+    "organization": {
+      "registeredAddress": "ul. Skrzydlata 7, 70-889 Szczecin"
+    },
+    "locations": [
+      {
+        "id": "303-1",
+        "address": "ul. Skrzydlata 7, 70-889 Szczecin",
+        "city": "Szczecin",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.4061176,
+        "longitude": 14.7636738
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "667 653 160 lub przez Straż Miejską tel. 986",
+      "email": null,
+      "website": null,
+      "facebook": "https://www.facebook.com/p/Zwierzogr%C3%B3d-Wielgowo-61565592157681/",
+      "instagram": null
+    },
+    "details": {
+      "activity": "invasive_species_haven",
+      "animalTypes": ["raccoons", "raccoon_dogs", "turtles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): szop pracz, jenot, koati, ozdobne żółwie, obce gatunki ptaków i inne",
+      "sourceId": 303,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  }
+]

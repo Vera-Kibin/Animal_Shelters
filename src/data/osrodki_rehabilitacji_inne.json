@@ -1,0 +1,834 @@
+[
+  {
+    "id": 304,
+    "name": "Zgłoszenia ptaków, ssaków, gadów i płazów potrzebujących pomocy z Poznania - Dziki SOR",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Jugosłowiańska 23a, Poznań."
+    },
+    "locations": [
+      {
+        "id": "304-1",
+        "address": "ul. Jugosłowiańska 23a, Poznań.",
+        "city": "Poznań.",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.3928632,
+        "longitude": 16.8654584
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "Tel. 726 386 322 (lub dzwonić bezpośrednio do Ośrodka w Kościanie)",
+      "email": null,
+      "website": "https://www.poznan.pl/mim/wortals/gk/-,p,51606,51609,56934.html",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": null,
+      "sourceId": 304,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 305,
+    "name": "Stowarzyszenie Leśne Przytulisko",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Skrzynice Drugie 60, 23-114 Jabłonna"
+    },
+    "locations": [
+      {
+        "id": "305-1",
+        "address": "Skrzynice Drugie 60, 23-114 Jabłonna",
+        "city": "Jabłonna",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.1267062,
+        "longitude": 22.6687863
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "600 621 121",
+      "email": "lesnepogotowie@gmail.com",
+      "website": null,
+      "facebook": "https://www.facebook.com/LesnePrzytulisko",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": ["birds", "mammals"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki i ssaki",
+      "sourceId": 305,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 306,
+    "name": "Lecznica Weterynaryjna Zwierzyniec (w godzinach 8.00 – 24.00)",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Współpracują z ORZ „Ostoja”"
+    },
+    "locations": [
+      {
+        "id": "306-1",
+        "address": "Współpracują z ORZ „Ostoja”",
+        "city": "Współpracują z ORZ „Ostoja”",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.34648,
+        "longitude": 18.5966359
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(58) 302 00 02",
+      "email": null,
+      "website": "https://lecznicazwierzyniec.pl/kontakt/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Ul. Kartuska 249, Gdańsk | Po przybyciu do lecznicy należy skontaktować się z Gdańskim Centrum Kontaktu pod numerem telefonu 58 52 44 500. W trakcie rozmowy znalazca otrzyma indywidualny numeru sprawy, który należy przedstawić w recepcji Lecznicy.",
+      "sourceId": 306,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 307,
+    "name": "Specjalistyczny Gabinet Weterynaryjny Dla Zwierząt Nieudomowionych",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Zdrojowa 186, 43-384 Jaworze (k/ Bielsko-Białej), Lek. Wet. Dorota Bik"
+    },
+    "locations": [
+      {
+        "id": "307-1",
+        "address": "ul. Zdrojowa 186, 43-384 Jaworze (k/ Bielsko-Białej), Lek. Wet. Dorota Bik",
+        "city": "Lek. Wet. Dorota Bik",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.7963166,
+        "longitude": 18.946435
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "608 528 315",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": ["birds", "mammals", "reptiles"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): małe ssaki, ptaki, gady",
+      "sourceId": 307,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 308,
+    "name": "Azyl pod lasem (agroturystyka)",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Doraźna pomoc dzikim zwierzętom"
+    },
+    "locations": [
+      {
+        "id": "308-1",
+        "address": "Doraźna pomoc dzikim zwierzętom",
+        "city": "Doraźna pomoc dzikim zwierzętom",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.6248764,
+        "longitude": 19.9968968
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "500 065 202",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Zaryte 142a, Rabka-Zdrój",
+      "sourceId": 308,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 309,
+    "name": "Klinika Weterynaryjna 24h (w godzinach 9.00 – 22.00)",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Współpracują z ORZ „Ostoja” ul. Stryjska 25, Gdynia-Redłowo"
+    },
+    "locations": [
+      {
+        "id": "309-1",
+        "address": "Współpracują z ORZ „Ostoja” ul. Stryjska 25, Gdynia-Redłowo",
+        "city": "Gdynia-Redłowo",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 54.4917097,
+        "longitude": 18.5309858
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(58) 622 21 48",
+      "email": null,
+      "website": "https://lecznica.gdynia.pl/",
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": null,
+      "sourceId": 309,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 310,
+    "name": "Lekarz weterynarii Janusz Lewin",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Dębowa 17, 05-806 Granica"
+    },
+    "locations": [
+      {
+        "id": "310-1",
+        "address": "ul. Dębowa 17, 05-806 Granica",
+        "city": "Granica",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.1359804,
+        "longitude": 20.812078
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "602 856 978",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": ["owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): sowy ; Wymagany uprzedni kontakt telefoniczny",
+      "sourceId": 310,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 311,
+    "name": "Fundacja DZIKA KLINIKA – Centrum pomocy dla dzikich zwierząt w Krakowie",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Nie przyjmuje dzikich zwierząt ze względu na brak finansowania"
+    },
+    "locations": [
+      {
+        "id": "311-1",
+        "address": "Nie przyjmuje dzikich zwierząt ze względu na brak finansowania",
+        "city": "Nie przyjmuje dzikich zwierząt ze względu na brak finansowania",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 50.0851347,
+        "longitude": 20.0208112
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "790 369 936",
+      "email": "dzika.klinika@op.pl",
+      "website": "https://www.dzikaklinika.com/",
+      "facebook": "https://www.facebook.com/dzikaklinika",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Udziela porady w sprawach pomocy dzikim zwierzętom | Adres korespondencyjny: os. Kazimierzowskie 18/156, 31-841 Kraków",
+      "sourceId": 311,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 312,
+    "name": "Specjalistyczny gabinet weterynaryjny „Zwierzyniec” Mateusz Michałkiewicz",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Słoneczna 1, 95-002 Glinnik (koło Zgierza, k/Łodzi)"
+    },
+    "locations": [
+      {
+        "id": "312-1",
+        "address": "ul. Słoneczna 1, 95-002 Glinnik (koło Zgierza, k/Łodzi)",
+        "city": "k/Łodzi)",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.8815383,
+        "longitude": 19.4804619
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "605 405 431",
+      "email": "gabinet@zwierzyniec-vet.pl",
+      "website": "https://www.zwierzyniec-vet.pl/",
+      "facebook": "https://www.facebook.com/profile.php?id=100064366050366",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": null,
+      "sourceId": 312,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 313,
+    "name": "Przychodnia weterynaryjna Karol Kusal i Fundacja Schronisko dla zwierząt „Wesoły Kundelek”",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Piłsudskiego 48, 38-600 Lesko"
+    },
+    "locations": [
+      {
+        "id": "313-1",
+        "address": "ul. Piłsudskiego 48, 38-600 Lesko",
+        "city": "Lesko",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.4764669,
+        "longitude": 22.3255575
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "605 823 821 wewn. 2, 693 073 078, 575 400 574",
+      "email": "fundacjawesolykundelek@gmail.com, schroniskolesko@gmail.com",
+      "website": "https://wesolykundelek.pl/, https://przychodniawesolykundelek.pl/",
+      "facebook": "https://www.facebook.com/wesolykundelek",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Możliwa doraźna pomoc dla dzikich zwierząt",
+      "sourceId": 313,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 314,
+    "name": "Gabinet weterynaryjny „Cztery łapy” (ew. przyjmuje dzikie zwierzęta) lek. wet. Marta Jabłońska",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Białka 349, 34-220 Maków Podhalański"
+    },
+    "locations": [
+      {
+        "id": "314-1",
+        "address": "Białka 349, 34-220 Maków Podhalański",
+        "city": "Maków Podhalański",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 49.6925544,
+        "longitude": 19.6697757
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "502 649 726",
+      "email": null,
+      "website": "https://www.wet4lapy.pl/",
+      "facebook": "https://www.facebook.com/wet4lapy",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": null,
+      "sourceId": 314,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 315,
+    "name": "Fundacja Gruszętnik",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Barlickiego 1/1.b, 50-324 Wrocław"
+    },
+    "locations": [
+      {
+        "id": "315-1",
+        "address": "ul. Barlickiego 1/1.b, 50-324 Wrocław",
+        "city": "Wrocław",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.121143,
+        "longitude": 17.0480957
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "517 779 239, 889 844 721",
+      "email": "gruszetnik@gmail.com",
+      "website": "https://gruszetnik.pl/",
+      "facebook": "https://www.facebook.com/gruszetnik",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): porady i doraźna pomoc gołębiom oraz innym ptakom i drobnym ssakom",
+      "sourceId": 315,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 316,
+    "name": "Przychodnia Weterynaryjna “ZWIERZYNIEC”",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Bulwar Ikara 31B, 54-130 Wrocław"
+    },
+    "locations": [
+      {
+        "id": "316-1",
+        "address": "ul. Bulwar Ikara 31B, 54-130 Wrocław",
+        "city": "Wrocław",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 51.1261494,
+        "longitude": 16.9696326
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "(71) 756 80 40",
+      "email": "lecznica@wet.wroclaw.pl",
+      "website": "http://zwierzyniec.wroclaw.pl/",
+      "facebook": "https://www.facebook.com/ZwierzyniecWroclaw",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": null,
+      "sourceId": 316,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 317,
+    "name": "Polskie Stowarzyszenie Ochrony Jeży NASZE JEŻE",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "ul. Św. Trójcy 22, 61-478 Poznań"
+    },
+    "locations": [
+      {
+        "id": "317-1",
+        "address": "ul. Św. Trójcy 22, 61-478 Poznań",
+        "city": "Poznań",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 52.3744912,
+        "longitude": 16.9053493
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "603 673 647",
+      "email": "biuro@naszejeze.org",
+      "website": "https://naszejeze.org/",
+      "facebook": "https://www.facebook.com/naszejeze.org",
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": [],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Doraźna pomoc dla jeży",
+      "sourceId": 317,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 318,
+    "name": "Sokolnik w Parsowie",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Parsów 40, 74-202 Bielice k/Szczecina"
+    },
+    "locations": [
+      {
+        "id": "318-1",
+        "address": "Parsów 40, 74-202 Bielice k/Szczecina",
+        "city": "Bielice k/Szczecina",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.229821,
+        "longitude": 14.7214686
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "884 890 567",
+      "email": "n.starzyk@wp.pl",
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": ["birds", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste, sowy i poradnictwo dot. pozostałych gatunków dzikich zwierząt",
+      "sourceId": 318,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  },
+  {
+    "id": 319,
+    "name": "Gabinet Weterynaryjny „Dziki Brzeg Jezioraka” Joanna Wielogórska",
+    "category": "wildlife_rehabilitation_other",
+    "organization": {
+      "registeredAddress": "Polajny 2, 14-230 Zalewo"
+    },
+    "locations": [
+      {
+        "id": "319-1",
+        "address": "Polajny 2, 14-230 Zalewo",
+        "city": "Zalewo",
+        "county": null,
+        "voivodeship": null,
+        "latitude": 53.7965928,
+        "longitude": 19.6003577
+      }
+    ],
+    "contact": {
+      "nip": null,
+      "vetId": null,
+      "phone": "692 570 100",
+      "email": null,
+      "website": null,
+      "facebook": null,
+      "instagram": null
+    },
+    "details": {
+      "activity": "wildlife_rehabilitation_other",
+      "animalTypes": ["birds", "mammals", "storks", "owls"],
+      "services": [],
+      "description": null
+    },
+    "legal": {
+      "decisionNumber": null,
+      "decisionDate": null,
+      "decisionSubject": null
+    },
+    "status": {
+      "value": "active",
+      "registeredAt": null,
+      "removedAt": null
+    },
+    "meta": {
+      "needsManualReview": true,
+      "notes": "Gatunki (z KML): ptaki szponiaste, sowy, bociany, krukowate, ew. ssaki – do wcześniejszego uzgodnienia telefonicznego.",
+      "sourceId": 319,
+      "dataStatus": "unverified",
+      "lastVerifiedAt": "2026-09-14",
+      "verifiedBy": "Vera Kibin"
+    }
+  }
+]
