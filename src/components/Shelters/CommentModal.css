@@ -501,6 +501,58 @@
 .pyt__label {
   flex: 1;
 }
+
+/* pytania wielokrotnego wyboru: okragle babelki w skupisku (jak w kwestionariuszu) */
+.pyt__opts--bubbles {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.pyt__opts--bubbles .pyt__btn {
+  flex: none;
+  position: relative;
+  width: 104px;
+  height: 104px;
+  min-height: 0;
+  padding: 10px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  background: var(--surface-soft);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+.pyt__opts--bubbles .pyt__btn:hover {
+  border-color: var(--green);
+}
+.pyt__opts--bubbles .pyt__btn.is-on {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--surface);
+}
+.pyt__opts--bubbles .pyt__label {
+  flex: none;
+}
+/* literka chowa sie w babelkach, widoczny jest tylko ✓ przy wyborze */
+.pyt__opts--bubbles .pyt__badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 24px;
+  height: 24px;
+  font-size: 0.72rem;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+.pyt__opts--bubbles .pyt__btn.is-on .pyt__badge {
+  opacity: 1;
+}
 .intro__chips {
   display: flex;
   flex-wrap: wrap;

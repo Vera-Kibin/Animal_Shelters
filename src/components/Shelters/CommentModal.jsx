@@ -47,7 +47,7 @@ function zapiszIntro(shelterId, answers) {
 }
 
 // pojedyncze lub wielokrotne pytanie wyboru (pytania wstępne) —
-// na ekranie jedno pytanie, opcje ułożone w kolumnie na całą szerokość
+// jedno pytanie na ekran; single = pilulki w kolumnie, multi = okragle "babelki"
 function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
   const jestOn = (o) => (multi ? (value || []).includes(o) : value === o);
   const wybierz = (o) => {
@@ -61,7 +61,11 @@ function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
   return (
     <div className="pyt">
       <p className="pyt__q">{pytanie}</p>
-      <div className="pyt__opts pyt__opts--stack">
+      <div
+        className={
+          "pyt__opts " + (multi ? "pyt__opts--bubbles" : "pyt__opts--stack")
+        }
+      >
         {opcje.map((o, i) => (
           <button
             type="button"
