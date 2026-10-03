@@ -394,6 +394,12 @@
   display: flex;
   gap: 6px;
 }
+.pyt__opts--wrap {
+  flex-wrap: wrap;
+}
+.pyt__opts--wrap .pyt__btn {
+  flex: 0 0 auto;
+}
 .pyt__btn {
   flex: 1;
   cursor: pointer;

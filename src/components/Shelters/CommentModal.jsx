@@ -5,8 +5,10 @@ import {
   PYTANIA_OGOLNE,
   KATEGORIE_OCENY,
   PYTANIA_SZCZEGOLOWE,
+  PYTANIA_WSTEPNE,
   LEGENDA_OCEN,
   INFO_ANKIETY,
+  INFO_WSTEPNE,
   KLAUZULA_ZDJECIA,
 } from "../../data/surveyData";
 import { useAuth } from "../../context/AuthContext";
@@ -21,6 +23,59 @@ const KOLORY = [
   "#7cb342",
   "#3f7d57",
 ];
+
+// odpowiedzi wstępne pamiętamy w localStorage, żeby pytać tylko raz
+// na daną placówkę (przetrwują odświeżenie strony)
+const INTRO_KEY = "survey_intro_v1";
+
+function wczytajIntro(shelterId) {
+  try {
+    const all = JSON.parse(localStorage.getItem(INTRO_KEY) || "{}");
+    return all[shelterId] || null;
+  } catch {
+    return null;
+  }
+}
+
+function zapiszIntro(shelterId, answers) {
+  try {
+    const all = JSON.parse(localStorage.getItem(INTRO_KEY) || "{}");
+    all[shelterId] = { done: true, answers };
+    localStorage.setItem(INTRO_KEY, JSON.stringify(all));
+  } catch {
+    /* brak miejsca */
+  }
+}
+
+// pojedyncze lub wielokrotne pytanie wyboru (pytania wstępne)
+function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
+  const jestOn = (o) => (multi ? (value || []).includes(o) : value === o);
+  const wybierz = (o) => {
+    if (!multi) {
+      onChange(value === o ? undefined : o);
+      return;
+    }
+    const cur = value || [];
+    onChange(cur.includes(o) ? cur.filter((x) => x !== o) : [...cur, o]);
+  };
+  return (
+    <div className="pyt">
+      <p className="pyt__q">{pytanie}</p>
+      <div className="pyt__opts pyt__opts--wrap">
+        {opcje.map((o) => (
+          <button
+            type="button"
+            key={o}
+            className={"pyt__btn" + (jestOn(o) ? " is-on" : "")}
+            onClick={() => wybierz(o)}
+          >
+            {o}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // pojedyncze pytanie tak/nie/nie wiem
 function PytanieTak({ pytanie, value, onChange }) {
@@ -75,6 +130,12 @@ function SkalaOceny({ value, onChange }) {
 export default function CommentModal({ shelter, onClose, onSubmit }) {
   const { isLoggedIn } = useAuth();
   const [krok, setKrok] = useState(1);
+  const [wstepne, setWstepne] = useState(
+    () => wczytajIntro(shelter.id)?.answers || {},
+  );
+  const [introZrobione, setIntroZrobione] = useState(
+    () => !!wczytajIntro(shelter.id)?.done,
+  );
   const [ogolne, setOgolne] = useState({});
   const [oceny, setOceny] = useState({});
   const [szczegolowe, setSzczegolowe] = useState({});
@@ -97,6 +158,8 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   const setOgolneOdp = (i, val) => setOgolne((o) => ({ ...o, [i]: val }));
   const setOcena = (i, val) => setOceny((o) => ({ ...o, [i]: val }));
   const setSzczeg = (i, val) => setSzczegolowe((o) => ({ ...o, [i]: val }));
+  const setWstepnaOdp = (id, val) =>
+    setWstepne((o) => ({ ...o, [id]: val }));
 
   function handleSend() {
     if (onSubmit) {
@@ -137,6 +200,37 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
           </div>
         ) : !isLoggedIn ? (
           <LoginForm />
+        ) : !introZrobione ? (
+          <div>
+            <span className="eyebrow">Ankieta o schronisku</span>
+            <h3 className="modal__title">{shelter.name}</h3>
+            <p className="modal__intro">{INFO_WSTEPNE}</p>
+
+            <div className="krok">
+              {PYTANIA_WSTEPNE.map((p) => (
+                <PytanieWybor
+                  key={p.id}
+                  pytanie={p.pytanie}
+                  opcje={p.opcje}
+                  multi={p.multi}
+                  value={wstepne[p.id]}
+                  onChange={(v) => setWstepnaOdp(p.id, v)}
+                />
+              ))}
+            </div>
+
+            <div className="krok__nav">
+              <button
+                className="modal__send"
+                onClick={() => {
+                  zapiszIntro(shelter.id, wstepne);
+                  setIntroZrobione(true);
+                }}
+              >
+                Przejdź do pytań →
+              </button>
+            </div>
+          </div>
         ) : pokazOstrzezenie ? (
           <div className="modal__thanks">
             <span className="eyebrow">Ankieta o schronisku</span>
