@@ -398,14 +398,14 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             )}
 
             <div className="krok__nav">
-              {krok > 1 && (
-                <button
-                  className="krok__back"
-                  onClick={() => setKrok(krok - 1)}
-                >
-                  ← Wstecz
-                </button>
-              )}
+              <button
+                className="krok__back"
+                onClick={() =>
+                  krok === 1 ? setIntroZrobione(false) : setKrok(krok - 1)
+                }
+              >
+                ← Wstecz
+              </button>
               {krok < 3 ? (
                 <button
                   className="modal__send"
