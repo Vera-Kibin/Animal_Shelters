@@ -60,7 +60,7 @@ function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
   };
   return (
     <div className="pyt">
-      <p className="pyt__q">{pytanie}</p>
+      <h4 className="pyt__q">{pytanie}</h4>
       <div
         className={
           "pyt__opts " + (multi ? "pyt__opts--bubbles" : "pyt__opts--stack")
@@ -251,39 +251,41 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
               />
             </div>
 
-            <p className="intro__step">{TYTULY_WSTEPNE[introKrok]}</p>
-            {introKrok === 0 && (
-              <p className="modal__intro intro__note">{INFO_WSTEPNE}</p>
-            )}
+            <div className="intro__body" key={introKrok}>
+              <p className="intro__step">{TYTULY_WSTEPNE[introKrok]}</p>
+              {introKrok === 0 && (
+                <p className="modal__intro intro__note">{INFO_WSTEPNE}</p>
+              )}
 
-            <PytanieWybor
-              pytanie={pytWstepne.pytanie}
-              opcje={pytWstepne.opcje}
-              multi={pytWstepne.multi}
-              value={wstepne[pytWstepne.id]}
-              onChange={(v) => setWstepnaOdp(pytWstepne.id, v)}
-            />
+              <PytanieWybor
+                pytanie={pytWstepne.pytanie}
+                opcje={pytWstepne.opcje}
+                multi={pytWstepne.multi}
+                value={wstepne[pytWstepne.id]}
+                onChange={(v) => setWstepnaOdp(pytWstepne.id, v)}
+              />
 
-            {pytWstepne.multi && wybraneWstepne.length > 0 && (
-              <div className="intro__chips">
-                {wybraneWstepne.map((o) => (
-                  <button
-                    type="button"
-                    key={o}
-                    className="intro__chip"
-                    aria-label={`Usuń odpowiedź ${o}`}
-                    onClick={() =>
-                      setWstepnaOdp(
-                        pytWstepne.id,
-                        wybraneWstepne.filter((x) => x !== o),
-                      )
-                    }
-                  >
-                    {o} <span aria-hidden="true">×</span>
-                  </button>
-                ))}
-              </div>
-            )}
+              {pytWstepne.multi && wybraneWstepne.length > 0 && (
+                <div className="intro__chips">
+                  {wybraneWstepne.map((o) => (
+                    <button
+                      type="button"
+                      key={o}
+                      className="intro__chip"
+                      aria-label={`Usuń odpowiedź ${o}`}
+                      onClick={() =>
+                        setWstepnaOdp(
+                          pytWstepne.id,
+                          wybraneWstepne.filter((x) => x !== o),
+                        )
+                      }
+                    >
+                      {o} <span aria-hidden="true">×</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <div className="intro__foot">
               {introKrok > 0 && (
@@ -313,6 +315,7 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
               ) : (
                 <button
                   className="modal__send intro__cta"
+                  autoFocus={introKrok === PYTANIA_WSTEPNE.length - 1}
                   onClick={() => {
                     zapiszIntro(shelter.id, wstepne);
                     setIntroZrobione(true);

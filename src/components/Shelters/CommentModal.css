@@ -438,6 +438,16 @@
 .intro__note {
   margin: 0 0 20px;
   font-size: 0.88rem;
+  text-wrap: pretty;
+}
+/* delikatne wejście przy zmianie pytania (zabija je prefers-reduced-motion) */
+.intro__body {
+  animation: intro-step-in 0.15s ease;
+}
+@keyframes intro-step-in {
+  from {
+    opacity: 0;
+  }
 }
 .intro .pyt {
   gap: 14px;
@@ -445,6 +455,7 @@
 .intro .pyt__q {
   font-size: 1.15rem;
   font-weight: 700;
+  text-wrap: balance;
 }
 .pyt__opts--stack {
   flex-direction: column;
@@ -466,10 +477,16 @@
   transition:
     background 0.15s ease,
     border-color 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    transform 0.15s ease;
 }
-.pyt__opts--stack .pyt__btn:hover {
-  border-color: var(--green);
+@media (hover: hover) {
+  .pyt__opts--stack .pyt__btn:hover {
+    border-color: var(--green);
+  }
+}
+.pyt__opts--stack .pyt__btn:active {
+  transform: scale(0.96);
 }
 .pyt__opts--stack .pyt__btn.is-on {
   background: var(--green);
@@ -521,15 +538,21 @@
   text-align: center;
   font-size: 0.8rem;
   font-weight: 600;
-  line-height: 1.25;
+  line-height: 1.4;
   background: var(--surface-soft);
   transition:
     background 0.15s ease,
     border-color 0.15s ease,
-    color 0.15s ease;
+    color 0.15s ease,
+    transform 0.15s ease;
 }
-.pyt__opts--bubbles .pyt__btn:hover {
-  border-color: var(--green);
+@media (hover: hover) {
+  .pyt__opts--bubbles .pyt__btn:hover {
+    border-color: var(--green);
+  }
+}
+.pyt__opts--bubbles .pyt__btn:active {
+  transform: scale(0.96);
 }
 .pyt__opts--bubbles .pyt__btn.is-on {
   background: var(--green);
@@ -560,6 +583,7 @@
   margin-top: 16px;
 }
 .intro__chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -572,10 +596,25 @@
   font-size: 0.78rem;
   font-weight: 600;
   cursor: pointer;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
 }
-.intro__chip:hover {
-  border-color: var(--green);
-  color: var(--green);
+/* polecamne dotykowe ~44px bez nakładania się na sąsiednie chipy */
+.intro__chip::after {
+  content: "";
+  position: absolute;
+  inset: -8px -3px;
+}
+@media (hover: hover) {
+  .intro__chip:hover {
+    border-color: var(--green);
+    color: var(--green);
+  }
+}
+.intro__chip:active {
+  transform: scale(0.96);
 }
 .intro__foot {
   display: flex;
@@ -588,36 +627,54 @@
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
 }
+/* żółty = akcja (jak CTA); zielony rezerwujemy wyłącznie na stany odpowiedzi */
 .intro__round {
   width: 46px;
   height: 46px;
   flex: none;
   border: none;
   border-radius: 50%;
-  background: var(--green);
-  color: var(--surface);
+  background: var(--accent);
+  color: var(--accent-ink);
   font-size: 1.1rem;
   cursor: pointer;
   display: grid;
   place-items: center;
+  transition:
+    filter 0.15s ease,
+    transform 0.15s ease;
 }
-.intro__round:hover {
-  filter: brightness(1.08);
+@media (hover: hover) {
+  .intro__round:hover {
+    filter: brightness(0.95);
+  }
+}
+.intro__round:active {
+  transform: scale(0.96);
 }
 .intro__round--ghost {
   background: var(--bg);
   border: 1px solid var(--border);
   color: var(--ink-soft);
 }
-.intro__round--ghost:hover {
-  border-color: var(--green);
-  color: var(--green);
-  filter: none;
+@media (hover: hover) {
+  .intro__round--ghost:hover {
+    border-color: var(--green);
+    color: var(--green);
+    filter: none;
+  }
 }
 .intro__foot .modal__send {
   margin-top: 0;
   flex: 1;
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+.intro__foot .modal__send:active {
+  transform: scale(0.96);
 }
 
 .legenda {
