@@ -61,12 +61,9 @@ function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
   return (
     <div className="pyt">
       <h4 className="pyt__q">{pytanie}</h4>
-      <div
-        className={
-          "pyt__opts " + (multi ? "pyt__opts--bubbles" : "pyt__opts--stack")
-        }
-      >
-        {opcje.map((o, i) => (
+      {multi && <p className="pyt__hint">Możesz wybrać kilka odpowiedzi</p>}
+      <div className="pyt__opts pyt__opts--stack">
+        {opcje.map((o) => (
           <button
             type="button"
             key={o}
@@ -74,8 +71,8 @@ function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
             aria-pressed={jestOn(o)}
             onClick={() => wybierz(o)}
           >
-            <span className="pyt__badge" aria-hidden="true">
-              {jestOn(o) ? "✓" : String.fromCharCode(65 + i)}
+            <span className="pyt__dot" aria-hidden="true">
+              {jestOn(o) ? "✓" : ""}
             </span>
             <span className="pyt__label">{o}</span>
           </button>
@@ -186,9 +183,6 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
     setWstepne((o) => ({ ...o, [id]: val }));
 
   const pytWstepne = PYTANIA_WSTEPNE[introKrok];
-  const wybraneWstepne = pytWstepne.multi
-    ? wstepne[pytWstepne.id] || []
-    : [];
 
   function handleSend() {
     if (onSubmit) {
@@ -264,27 +258,6 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                 value={wstepne[pytWstepne.id]}
                 onChange={(v) => setWstepnaOdp(pytWstepne.id, v)}
               />
-
-              {pytWstepne.multi && wybraneWstepne.length > 0 && (
-                <div className="intro__chips">
-                  {wybraneWstepne.map((o) => (
-                    <button
-                      type="button"
-                      key={o}
-                      className="intro__chip"
-                      aria-label={`Usuń odpowiedź ${o}`}
-                      onClick={() =>
-                        setWstepnaOdp(
-                          pytWstepne.id,
-                          wybraneWstepne.filter((x) => x !== o),
-                        )
-                      }
-                    >
-                      {o} <span aria-hidden="true">×</span>
-                    </button>
-                  ))}
-                </div>
-              )}
             </div>
 
             <div className="intro__foot">

@@ -453,9 +453,13 @@
   gap: 14px;
 }
 .intro .pyt__q {
-  font-size: 1.15rem;
+  font-size: 1.3rem;
   font-weight: 700;
   text-wrap: balance;
+}
+.pyt__hint {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
 }
 .pyt__opts--stack {
   flex-direction: column;
@@ -464,16 +468,16 @@
 .pyt__opts--stack .pyt__btn {
   flex: none;
   width: 100%;
-  min-height: 56px;
+  min-height: 60px;
   padding: 12px 16px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 14px;
   text-align: left;
   border-radius: var(--radius-lg);
-  background: var(--bg);
+  background: var(--surface-soft);
   transition:
     background 0.15s ease,
     border-color 0.15s ease,
@@ -489,132 +493,34 @@
   transform: scale(0.96);
 }
 .pyt__opts--stack .pyt__btn.is-on {
-  background: var(--green);
+  background: var(--green-soft);
   border-color: var(--green);
-  color: var(--surface);
+  color: var(--ink);
 }
-.pyt__badge {
-  width: 30px;
-  height: 30px;
+.pyt__dot {
+  width: 24px;
+  height: 24px;
   flex: none;
   border-radius: 50%;
   display: grid;
   place-items: center;
   background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--ink-soft);
-  font-size: 0.82rem;
+  border: 1.5px solid var(--border);
+  color: transparent;
+  font-size: 0.8rem;
   font-weight: 700;
   transition:
     background 0.15s ease,
     color 0.15s ease,
     border-color 0.15s ease;
 }
-.pyt__opts--stack .pyt__btn.is-on .pyt__badge {
-  background: var(--surface);
-  border-color: var(--surface);
-  color: var(--green);
-}
-.pyt__label {
-  flex: 1;
-}
-
-/* pytania wielokrotnego wyboru: okragle babelki w skupisku (jak w kwestionariuszu) */
-.pyt__opts--bubbles {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.pyt__opts--bubbles .pyt__btn {
-  flex: none;
-  position: relative;
-  width: 104px;
-  height: 104px;
-  min-height: 0;
-  padding: 10px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  font-size: 0.8rem;
-  font-weight: 600;
-  line-height: 1.4;
-  background: var(--surface-soft);
-  transition:
-    background 0.15s ease,
-    border-color 0.15s ease,
-    color 0.15s ease,
-    transform 0.15s ease;
-}
-@media (hover: hover) {
-  .pyt__opts--bubbles .pyt__btn:hover {
-    border-color: var(--green);
-  }
-}
-.pyt__opts--bubbles .pyt__btn:active {
-  transform: scale(0.96);
-}
-.pyt__opts--bubbles .pyt__btn.is-on {
+.pyt__opts--stack .pyt__btn.is-on .pyt__dot {
   background: var(--green);
   border-color: var(--green);
   color: var(--surface);
 }
-.pyt__opts--bubbles .pyt__label {
-  flex: none;
-}
-/* literka chowa sie w babelkach, widoczny jest tylko ✓ przy wyborze */
-.pyt__opts--bubbles .pyt__badge {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 24px;
-  height: 24px;
-  font-size: 0.72rem;
-  opacity: 0;
-  transition: opacity 0.15s ease;
-}
-.pyt__opts--bubbles .pyt__btn.is-on .pyt__badge {
-  opacity: 1;
-}
-.intro__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 16px;
-}
-.intro__chip {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-pill);
-  background: var(--bg);
-  color: var(--ink-soft);
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition:
-    border-color 0.15s ease,
-    color 0.15s ease,
-    transform 0.15s ease;
-}
-/* polecamne dotykowe ~44px bez nakładania się na sąsiednie chipy */
-.intro__chip::after {
-  content: "";
-  position: absolute;
-  inset: -8px -3px;
-}
-@media (hover: hover) {
-  .intro__chip:hover {
-    border-color: var(--green);
-    color: var(--green);
-  }
-}
-.intro__chip:active {
-  transform: scale(0.96);
+.pyt__label {
+  flex: 1;
 }
 .intro__foot {
   display: flex;
