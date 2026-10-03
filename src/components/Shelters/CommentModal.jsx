@@ -127,6 +127,13 @@ function SkalaOceny({ value, onChange }) {
   );
 }
 
+// skąd pochodzi wiedza oceniającego -> pole visited w opinii
+const ZRODO_NA_VISITED = {
+  "Własne doświadczenia": "yes",
+  "Jedno i drugie": "indirect",
+  "Informacje od innych osób": "no",
+};
+
 export default function CommentModal({ shelter, onClose, onSubmit }) {
   const { isLoggedIn } = useAuth();
   const [krok, setKrok] = useState(1);
@@ -167,6 +174,8 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
         author: "Ty",
         verified: true,
         type: "ankieta",
+        wstepne,
+        visited: ZRODO_NA_VISITED[wstepne.zrodlo] || "indirect",
         ogolne,
         oceny,
         szczegolowe,
