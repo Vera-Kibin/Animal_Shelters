@@ -143,6 +143,46 @@ export const PYTANIA_SZCZEGOLOWE = [
   "Czy placówka prowadzi aktywną kampanię adopcyjną (m.in. social media, strona www)?",
 ];
 
+export const PYTANIA_WSTEPNE = [
+  {
+    id: "kontakt",
+    pytanie: "Kiedy ostatnio miałeś kontakt z ocenianą placówką?",
+    opcje: ["Ostatni miesiąc", "Ostatni rok", "Dawniej niż rok temu", "Nigdy"],
+  },
+  {
+    id: "rola",
+    pytanie:
+      "W jakiej roli miałeś z nią kontakt (możesz wybrać kilka odpowiedzi)?",
+    multi: true,
+    opcje: [
+      "Odwiedzający",
+      "Osoba adoptująca zwierzę",
+      "Wolontariusz",
+      "Pracownik",
+      "Inna",
+    ],
+  },
+  {
+    id: "zrodlo",
+    pytanie:
+      "Czy opisujesz własne doświadczenia, czy informacje uzyskane od innych osób?",
+    opcje: [
+      "Własne doświadczenia",
+      "Jedno i drugie",
+      "Informacje od innych osób",
+    ],
+  },
+  {
+    id: "zwiazek",
+    pytanie:
+      "Czy jesteś obecnie lub byłeś w przeszłości w jakikolwiek sposób związany z ocenianą placówką?",
+    opcje: ["Tak", "Nie"],
+  },
+];
+
+export const INFO_WSTEPNE =
+  "Zanim zaczniemy, kilka pytań o to, jakie masz doświadczenie z tą placówką. Dzięki temu inni wiedzą, z jakiej perspektywy pochodzi Twoja opinia. Możesz pominąć pytania i przejść dalej.";
+
 export const LEGENDA_OCEN = "1 = dramat · 3 = dostatecznie · 6 = doskonale";
 
 export const INFO_ANKIETY =
