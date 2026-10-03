@@ -394,12 +394,6 @@
   display: flex;
   gap: 6px;
 }
-.pyt__opts--wrap {
-  flex-wrap: wrap;
-}
-.pyt__opts--wrap .pyt__btn {
-  flex: 0 0 auto;
-}
 .pyt__btn {
   flex: 1;
   cursor: pointer;
@@ -415,6 +409,163 @@
   border-color: var(--green);
   background: var(--green-soft);
   color: var(--green);
+}
+
+/* ekran pytań wstępnych: jedno pytanie na ekran, opcje w kolumnie */
+.intro__bar {
+  height: 6px;
+  background: var(--surface-soft);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin: 16px 0 20px;
+}
+.intro__bar span {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  border-radius: var(--radius-pill);
+  transition: width 0.25s ease;
+}
+.intro__step {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  margin: 0 0 6px;
+}
+.intro__note {
+  margin: 0 0 20px;
+  font-size: 0.88rem;
+}
+.intro .pyt {
+  gap: 14px;
+}
+.intro .pyt__q {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.pyt__opts--stack {
+  flex-direction: column;
+  gap: 10px;
+}
+.pyt__opts--stack .pyt__btn {
+  flex: none;
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  border-radius: var(--radius-lg);
+  background: var(--bg);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+.pyt__opts--stack .pyt__btn:hover {
+  border-color: var(--green);
+}
+.pyt__opts--stack .pyt__btn.is-on {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--surface);
+}
+.pyt__badge {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+.pyt__opts--stack .pyt__btn.is-on .pyt__badge {
+  background: var(--surface);
+  border-color: var(--surface);
+  color: var(--green);
+}
+.pyt__label {
+  flex: 1;
+}
+.intro__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.intro__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--ink-soft);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.intro__chip:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+.intro__foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.intro__count {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.intro__round {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border: none;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--surface);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.intro__round:hover {
+  filter: brightness(1.08);
+}
+.intro__round--ghost {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+}
+.intro__round--ghost:hover {
+  border-color: var(--green);
+  color: var(--green);
+  filter: none;
+}
+.intro__foot .modal__send {
+  margin-top: 0;
+  flex: 1;
 }
 
 .legenda {

@@ -46,7 +46,8 @@ function zapiszIntro(shelterId, answers) {
   }
 }
 
-// pojedyncze lub wielokrotne pytanie wyboru (pytania wstępne)
+// pojedyncze lub wielokrotne pytanie wyboru (pytania wstępne) —
+// na ekranie jedno pytanie, opcje ułożone w kolumnie na całą szerokość
 function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
   const jestOn = (o) => (multi ? (value || []).includes(o) : value === o);
   const wybierz = (o) => {
@@ -60,15 +61,19 @@ function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
   return (
     <div className="pyt">
       <p className="pyt__q">{pytanie}</p>
-      <div className="pyt__opts pyt__opts--wrap">
-        {opcje.map((o) => (
+      <div className="pyt__opts pyt__opts--stack">
+        {opcje.map((o, i) => (
           <button
             type="button"
             key={o}
             className={"pyt__btn" + (jestOn(o) ? " is-on" : "")}
+            aria-pressed={jestOn(o)}
             onClick={() => wybierz(o)}
           >
-            {o}
+            <span className="pyt__badge" aria-hidden="true">
+              {jestOn(o) ? "✓" : String.fromCharCode(65 + i)}
+            </span>
+            <span className="pyt__label">{o}</span>
           </button>
         ))}
       </div>
@@ -133,6 +138,14 @@ const ZRODO_NA_VISITED = {
   "Informacje od innych osób": "no",
 };
 
+// tytuły kolejnych ekranów pytań wstępnych (jeden pytań na ekran)
+const TYTULY_WSTEPNE = [
+  "Zaczynajmy…",
+  "Kolejne pytanie…",
+  "Jeszcze chwila…",
+  "Ostatnie pytanie…",
+];
+
 export default function CommentModal({ shelter, onClose, onSubmit }) {
   const { isLoggedIn } = useAuth();
   const [krok, setKrok] = useState(1);
@@ -142,6 +155,7 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   const [introZrobione, setIntroZrobione] = useState(
     () => !!wczytajIntro(shelter.id)?.done,
   );
+  const [introKrok, setIntroKrok] = useState(0);
   const [ogolne, setOgolne] = useState({});
   const [oceny, setOceny] = useState({});
   const [szczegolowe, setSzczegolowe] = useState({});
@@ -166,6 +180,11 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   const setSzczeg = (i, val) => setSzczegolowe((o) => ({ ...o, [i]: val }));
   const setWstepnaOdp = (id, val) =>
     setWstepne((o) => ({ ...o, [id]: val }));
+
+  const pytWstepne = PYTANIA_WSTEPNE[introKrok];
+  const wybraneWstepne = pytWstepne.multi
+    ? wstepne[pytWstepne.id] || []
+    : [];
 
   function handleSend() {
     if (onSubmit) {
@@ -209,34 +228,95 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
         ) : !isLoggedIn ? (
           <LoginForm />
         ) : !introZrobione ? (
-          <div>
+          <div className="intro">
             <span className="eyebrow">Ankieta o schronisku</span>
             <h3 className="modal__title">{shelter.name}</h3>
-            <p className="modal__intro">{INFO_WSTEPNE}</p>
 
-            <div className="krok">
-              {PYTANIA_WSTEPNE.map((p) => (
-                <PytanieWybor
-                  key={p.id}
-                  pytanie={p.pytanie}
-                  opcje={p.opcje}
-                  multi={p.multi}
-                  value={wstepne[p.id]}
-                  onChange={(v) => setWstepnaOdp(p.id, v)}
-                />
-              ))}
+            <div
+              className="intro__bar"
+              role="progressbar"
+              aria-valuemin={1}
+              aria-valuemax={PYTANIA_WSTEPNE.length}
+              aria-valuenow={introKrok + 1}
+              aria-label="Postęp pytań wstępnych"
+            >
+              <span
+                style={{
+                  width: `${((introKrok + 1) / PYTANIA_WSTEPNE.length) * 100}%`,
+                }}
+              />
             </div>
 
-            <div className="krok__nav">
-              <button
-                className="modal__send"
-                onClick={() => {
-                  zapiszIntro(shelter.id, wstepne);
-                  setIntroZrobione(true);
-                }}
-              >
-                Przejdź do pytań →
-              </button>
+            <p className="intro__step">{TYTULY_WSTEPNE[introKrok]}</p>
+            {introKrok === 0 && (
+              <p className="modal__intro intro__note">{INFO_WSTEPNE}</p>
+            )}
+
+            <PytanieWybor
+              pytanie={pytWstepne.pytanie}
+              opcje={pytWstepne.opcje}
+              multi={pytWstepne.multi}
+              value={wstepne[pytWstepne.id]}
+              onChange={(v) => setWstepnaOdp(pytWstepne.id, v)}
+            />
+
+            {pytWstepne.multi && wybraneWstepne.length > 0 && (
+              <div className="intro__chips">
+                {wybraneWstepne.map((o) => (
+                  <button
+                    type="button"
+                    key={o}
+                    className="intro__chip"
+                    aria-label={`Usuń odpowiedź ${o}`}
+                    onClick={() =>
+                      setWstepnaOdp(
+                        pytWstepne.id,
+                        wybraneWstepne.filter((x) => x !== o),
+                      )
+                    }
+                  >
+                    {o} <span aria-hidden="true">×</span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            <div className="intro__foot">
+              {introKrok > 0 && (
+                <button
+                  type="button"
+                  className="intro__round intro__round--ghost"
+                  onClick={() => setIntroKrok(introKrok - 1)}
+                  aria-label="Poprzednie pytanie"
+                >
+                  ←
+                </button>
+              )}
+              {introKrok < PYTANIA_WSTEPNE.length - 1 ? (
+                <>
+                  <span className="intro__count">
+                    Pytanie {introKrok + 1} z {PYTANIA_WSTEPNE.length}
+                  </span>
+                  <button
+                    type="button"
+                    className="intro__round"
+                    onClick={() => setIntroKrok(introKrok + 1)}
+                    aria-label="Następne pytanie"
+                  >
+                    →
+                  </button>
+                </>
+              ) : (
+                <button
+                  className="modal__send intro__cta"
+                  onClick={() => {
+                    zapiszIntro(shelter.id, wstepne);
+                    setIntroZrobione(true);
+                  }}
+                >
+                  Przejdź do pytań →
+                </button>
+              )}
             </div>
           </div>
         ) : pokazOstrzezenie ? (
@@ -400,9 +480,16 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             <div className="krok__nav">
               <button
                 className="krok__back"
-                onClick={() =>
-                  krok === 1 ? setIntroZrobione(false) : setKrok(krok - 1)
-                }
+                onClick={() => {
+                  if (krok === 1) {
+                    // wracamy na ostatni ekran pytań wstępnych,
+                    // żeby jednym kliknięciem wrócić do ankiety
+                    setIntroZrobione(false);
+                    setIntroKrok(PYTANIA_WSTEPNE.length - 1);
+                  } else {
+                    setKrok(krok - 1);
+                  }
+                }}
               >
                 ← Wstecz
               </button>
