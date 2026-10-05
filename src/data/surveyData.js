@@ -146,12 +146,12 @@ export const PYTANIA_SZCZEGOLOWE = [
 export const PYTANIA_WSTEPNE = [
   {
     id: "kontakt",
-    pytanie: "Kiedy ostatnio miałeś kontakt z placówką?",
+    pytanie: "Kiedy ostatnio miałeś/miałaś kontakt z placówką?",
     opcje: ["Ostatni miesiąc", "Ostatni rok", "Dawniej niż rok temu", "Nigdy"],
   },
   {
     id: "rola",
-    pytanie: "W jakiej roli miałeś kontakt z placówką?",
+    pytanie: "W jakiej roli miałeś/miałaś kontakt z placówką?",
     multi: true,
     opcje: [
       "Odwiedzający",
@@ -172,13 +172,13 @@ export const PYTANIA_WSTEPNE = [
   },
   {
     id: "zwiazek",
-    pytanie: "Czy jesteś związany z placówką?",
+    pytanie: "Czy jesteś związany/związana z placówką?",
     opcje: ["Tak", "Nie"],
   },
 ];
 
 export const INFO_WSTEPNE =
-  "Kilka krótkich pytań o Twoje doświadczenie z placówką — dzięki temu inni wiedzą, z jakiej perspektywy pochodzi Twoja opinia. Możesz pominąć pytania.";
+  "Kilka krótkich pytań o Twoje doświadczenie z placówką — dzięki temu inni wiedzą, z jakiej perspektywy pochodzi Twoja opinia.";
 
 export const LEGENDA_OCEN = "1 = dramat · 3 = dostatecznie · 6 = doskonale";
 

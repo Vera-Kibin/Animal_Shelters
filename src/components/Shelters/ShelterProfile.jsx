@@ -85,7 +85,9 @@ function ReviewItem({ r }) {
         <span className="rv__roles">
           {r.wstepne.rola.map((rola) => (
             <span key={rola} className="rv__role">
-              {rola.toLowerCase()}
+              {rola === "Inna" && r.wstepne.rolaInna
+                ? r.wstepne.rolaInna
+                : rola.toLowerCase()}
             </span>
           ))}
         </span>

@@ -183,6 +183,17 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
     setWstepne((o) => ({ ...o, [id]: val }));
 
   const pytWstepne = PYTANIA_WSTEPNE[introKrok];
+  const odpWstepna = wstepne[pytWstepne.id];
+  // przy „Inna" doprecyzowanie roli też jest wymagane
+  const rolaBezTekstu =
+    pytWstepne.id === "rola" &&
+    Array.isArray(odpWstepna) &&
+    odpWstepna.includes("Inna") &&
+    !(wstepne.rolaInna || "").trim();
+  const brakOdp =
+    odpWstepna == null ||
+    (Array.isArray(odpWstepna) && odpWstepna.length === 0) ||
+    rolaBezTekstu;
 
   function handleSend() {
     if (onSubmit) {
@@ -258,6 +269,20 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                 value={wstepne[pytWstepne.id]}
                 onChange={(v) => setWstepnaOdp(pytWstepne.id, v)}
               />
+              {pytWstepne.id === "rola" &&
+                (wstepne.rola || []).includes("Inna") && (
+                  <input
+                    className="pyt__inna"
+                    type="text"
+                    value={wstepne.rolaInna || ""}
+                    onChange={(e) => setWstepnaOdp("rolaInna", e.target.value)}
+                    placeholder="np. opiekun tymczasowy, transport…"
+                    aria-label="Opisz swoją rolę"
+                  />
+                )}
+              <p className={"intro__req" + (brakOdp ? " is-on" : "")}>
+                {brakOdp ? "Wybierz odpowiedź, aby przejść dalej" : ""}
+              </p>
             </div>
 
             <div className="intro__foot">
@@ -279,6 +304,7 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                   <button
                     type="button"
                     className="intro__round"
+                    disabled={brakOdp}
                     onClick={() => setIntroKrok(introKrok + 1)}
                     aria-label="Następne pytanie"
                   >
@@ -288,6 +314,7 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
               ) : (
                 <button
                   className="modal__send intro__cta"
+                  disabled={brakOdp}
                   autoFocus={introKrok === PYTANIA_WSTEPNE.length - 1}
                   onClick={() => {
                     zapiszIntro(shelter.id, wstepne);

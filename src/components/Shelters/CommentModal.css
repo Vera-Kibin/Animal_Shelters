@@ -15,8 +15,13 @@
   border-radius: var(--radius-lg);
   padding: 26px;
   box-shadow: var(--shadow);
+  /* stały rozmiar okna: między ekranami zmienia się tylko treść,
+     a przyciski i nagłówek zostają na swoim miejscu */
+  height: min(90vh, 760px);
   max-height: 90vh;
-  overflow-y: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .modal__x {
   position: absolute;
@@ -159,6 +164,13 @@
 }
 .modal__send:hover {
   filter: brightness(1.03);
+}
+.modal__thanks {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .modal__thanks h3 {
   margin: 4px 0 10px;
@@ -378,6 +390,9 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .pyt {
@@ -412,6 +427,12 @@
 }
 
 /* ekran pytań wstępnych: jedno pytanie na ekran, opcje w kolumnie */
+.intro {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
 .intro__bar {
   height: 6px;
   background: var(--surface-soft);
@@ -442,6 +463,10 @@
 }
 /* delikatne wejście przy zmianie pytania (zabija je prefers-reduced-motion) */
 .intro__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 8px;
   animation: intro-step-in 0.15s ease;
 }
 @keyframes intro-step-in {
@@ -526,7 +551,9 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 24px;
+  flex: none;
+  margin-top: auto;
+  padding-top: 24px;
 }
 .intro__count {
   flex: 1;
@@ -581,6 +608,56 @@
 }
 .intro__foot .modal__send:active {
   transform: scale(0.96);
+}
+
+/* odpowiedź w pytaniu wstępnym jest wymagana */
+.intro__round:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.intro__round:disabled:active {
+  transform: none;
+}
+.intro__foot .modal__send:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.intro__foot .modal__send:disabled:active {
+  transform: none;
+}
+/* stała linijka podpowiedzi — nie zmienia wysokości okna */
+.intro__req {
+  min-height: 1.25em;
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.intro__req.is-on {
+  color: var(--ink);
+  font-weight: 600;
+}
+/* doprecyzowanie roli przy opcji „Inna" */
+.pyt__inna {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.pyt__inna::placeholder {
+  color: var(--ink-faint);
+}
+/* ekran logowania na środku stałego okna */
+.modal .login {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .legenda {
@@ -656,6 +733,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  flex: none;
   margin-top: 16px;
 }
 .krok__nav .modal__send {
