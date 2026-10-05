@@ -5,8 +5,9 @@ import {
   PYTANIA_OGOLNE,
   KATEGORIE_OCENY,
   PYTANIA_SZCZEGOLOWE,
-  LEGENDA_OCEN,
+  PYTANIA_WSTEPNE,
   INFO_ANKIETY,
+  INFO_WSTEPNE,
   KLAUZULA_ZDJECIA,
 } from "../../data/surveyData";
 import { useAuth } from "../../context/AuthContext";
@@ -21,6 +22,65 @@ const KOLORY = [
   "#7cb342",
   "#3f7d57",
 ];
+
+// odpowiedzi wstępne pamiętamy w localStorage, żeby pytać tylko raz
+// na daną placówkę (przetrwują odświeżenie strony)
+const INTRO_KEY = "survey_intro_v1";
+
+function wczytajIntro(shelterId) {
+  try {
+    const all = JSON.parse(localStorage.getItem(INTRO_KEY) || "{}");
+    return all[shelterId] || null;
+  } catch {
+    return null;
+  }
+}
+
+function zapiszIntro(shelterId, answers) {
+  try {
+    const all = JSON.parse(localStorage.getItem(INTRO_KEY) || "{}");
+    all[shelterId] = { done: true, answers };
+    localStorage.setItem(INTRO_KEY, JSON.stringify(all));
+  } catch {
+    /* brak miejsca */
+  }
+}
+
+// pojedyncze lub wielokrotne pytanie wyboru (pytania wstępne) —
+// jedno pytanie na ekran; single = pilulki w kolumnie, multi = okragle "babelki"
+function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
+  const jestOn = (o) => (multi ? (value || []).includes(o) : value === o);
+  const wybierz = (o) => {
+    if (!multi) {
+      onChange(value === o ? undefined : o);
+      return;
+    }
+    const cur = value || [];
+    onChange(cur.includes(o) ? cur.filter((x) => x !== o) : [...cur, o]);
+  };
+  return (
+    <div className="pyt">
+      <h4 className="pyt__q">{pytanie}</h4>
+      {multi && <p className="pyt__hint">Możesz wybrać kilka odpowiedzi</p>}
+      <div className="pyt__opts pyt__opts--stack">
+        {opcje.map((o) => (
+          <button
+            type="button"
+            key={o}
+            className={"pyt__btn" + (jestOn(o) ? " is-on" : "")}
+            aria-pressed={jestOn(o)}
+            onClick={() => wybierz(o)}
+          >
+            <span className="pyt__dot" aria-hidden="true">
+              {jestOn(o) ? "✓" : ""}
+            </span>
+            <span className="pyt__label">{o}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 // pojedyncze pytanie tak/nie/nie wiem
 function PytanieTak({ pytanie, value, onChange }) {
@@ -72,9 +132,31 @@ function SkalaOceny({ value, onChange }) {
   );
 }
 
+// skąd pochodzi wiedza oceniającego -> pole visited w opinii
+const ZRODO_NA_VISITED = {
+  "Własne doświadczenia": "yes",
+  "Jedno i drugie": "indirect",
+  "Informacje od innych osób": "no",
+};
+
+// tytuły kolejnych ekranów pytań wstępnych (jeden pytań na ekran)
+const TYTULY_WSTEPNE = [
+  "Zaczynajmy…",
+  "Kolejne pytanie…",
+  "Jeszcze chwila…",
+  "Ostatnie pytanie…",
+];
+
 export default function CommentModal({ shelter, onClose, onSubmit }) {
   const { isLoggedIn } = useAuth();
   const [krok, setKrok] = useState(1);
+  const [wstepne, setWstepne] = useState(
+    () => wczytajIntro(shelter.id)?.answers || {},
+  );
+  const [introZrobione, setIntroZrobione] = useState(
+    () => !!wczytajIntro(shelter.id)?.done,
+  );
+  const [introKrok, setIntroKrok] = useState(0);
   const [ogolne, setOgolne] = useState({});
   const [oceny, setOceny] = useState({});
   const [szczegolowe, setSzczegolowe] = useState({});
@@ -97,6 +179,21 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   const setOgolneOdp = (i, val) => setOgolne((o) => ({ ...o, [i]: val }));
   const setOcena = (i, val) => setOceny((o) => ({ ...o, [i]: val }));
   const setSzczeg = (i, val) => setSzczegolowe((o) => ({ ...o, [i]: val }));
+  const setWstepnaOdp = (id, val) =>
+    setWstepne((o) => ({ ...o, [id]: val }));
+
+  const pytWstepne = PYTANIA_WSTEPNE[introKrok];
+  const odpWstepna = wstepne[pytWstepne.id];
+  // przy „Inna" doprecyzowanie roli też jest wymagane
+  const rolaBezTekstu =
+    pytWstepne.id === "rola" &&
+    Array.isArray(odpWstepna) &&
+    odpWstepna.includes("Inna") &&
+    !(wstepne.rolaInna || "").trim();
+  const brakOdp =
+    odpWstepna == null ||
+    (Array.isArray(odpWstepna) && odpWstepna.length === 0) ||
+    rolaBezTekstu;
 
   function handleSend() {
     if (onSubmit) {
@@ -104,6 +201,8 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
         author: "Ty",
         verified: true,
         type: "ankieta",
+        wstepne,
+        visited: ZRODO_NA_VISITED[wstepne.zrodlo] || "indirect",
         ogolne,
         oceny,
         szczegolowe,
@@ -137,6 +236,96 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
           </div>
         ) : !isLoggedIn ? (
           <LoginForm />
+        ) : !introZrobione ? (
+          <div className="intro">
+            <span className="eyebrow">Ankieta o schronisku</span>
+            <h3 className="modal__title">{shelter.name}</h3>
+
+            <div
+              className="intro__bar"
+              role="progressbar"
+              aria-valuemin={1}
+              aria-valuemax={PYTANIA_WSTEPNE.length}
+              aria-valuenow={introKrok + 1}
+              aria-label="Postęp pytań wstępnych"
+            >
+              <span
+                style={{
+                  width: `${((introKrok + 1) / PYTANIA_WSTEPNE.length) * 100}%`,
+                }}
+              />
+            </div>
+
+            <div className="intro__body" key={introKrok}>
+              <p className="intro__step">{TYTULY_WSTEPNE[introKrok]}</p>
+              {introKrok === 0 && (
+                <p className="modal__intro intro__note">{INFO_WSTEPNE}</p>
+              )}
+
+              <PytanieWybor
+                pytanie={pytWstepne.pytanie}
+                opcje={pytWstepne.opcje}
+                multi={pytWstepne.multi}
+                value={wstepne[pytWstepne.id]}
+                onChange={(v) => setWstepnaOdp(pytWstepne.id, v)}
+              />
+              {pytWstepne.id === "rola" &&
+                (wstepne.rola || []).includes("Inna") && (
+                  <input
+                    className="pyt__inna"
+                    type="text"
+                    value={wstepne.rolaInna || ""}
+                    onChange={(e) => setWstepnaOdp("rolaInna", e.target.value)}
+                    placeholder="np. opiekun tymczasowy, transport…"
+                    aria-label="Opisz swoją rolę"
+                  />
+                )}
+              <p className={"intro__req" + (brakOdp ? " is-on" : "")}>
+                {brakOdp ? "Wybierz odpowiedź, aby przejść dalej" : ""}
+              </p>
+            </div>
+
+            <div className="intro__foot">
+              {introKrok > 0 && (
+                <button
+                  type="button"
+                  className="intro__round intro__round--ghost"
+                  onClick={() => setIntroKrok(introKrok - 1)}
+                  aria-label="Poprzednie pytanie"
+                >
+                  ←
+                </button>
+              )}
+              {introKrok < PYTANIA_WSTEPNE.length - 1 ? (
+                <>
+                  <span className="intro__count">
+                    Pytanie {introKrok + 1} z {PYTANIA_WSTEPNE.length}
+                  </span>
+                  <button
+                    type="button"
+                    className="intro__round"
+                    disabled={brakOdp}
+                    onClick={() => setIntroKrok(introKrok + 1)}
+                    aria-label="Następne pytanie"
+                  >
+                    →
+                  </button>
+                </>
+              ) : (
+                <button
+                  className="modal__send intro__cta"
+                  disabled={brakOdp}
+                  autoFocus={introKrok === PYTANIA_WSTEPNE.length - 1}
+                  onClick={() => {
+                    zapiszIntro(shelter.id, wstepne);
+                    setIntroZrobione(true);
+                  }}
+                >
+                  Przejdź do pytań →
+                </button>
+              )}
+            </div>
+          </div>
         ) : pokazOstrzezenie ? (
           <div className="modal__thanks">
             <span className="eyebrow">Ankieta o schronisku</span>
@@ -296,14 +485,21 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             )}
 
             <div className="krok__nav">
-              {krok > 1 && (
-                <button
-                  className="krok__back"
-                  onClick={() => setKrok(krok - 1)}
-                >
-                  ← Wstecz
-                </button>
-              )}
+              <button
+                className="krok__back"
+                onClick={() => {
+                  if (krok === 1) {
+                    // wracamy na ostatni ekran pytań wstępnych,
+                    // żeby jednym kliknięciem wrócić do ankiety
+                    setIntroZrobione(false);
+                    setIntroKrok(PYTANIA_WSTEPNE.length - 1);
+                  } else {
+                    setKrok(krok - 1);
+                  }
+                }}
+              >
+                ← Wstecz
+              </button>
               {krok < 3 ? (
                 <button
                   className="modal__send"

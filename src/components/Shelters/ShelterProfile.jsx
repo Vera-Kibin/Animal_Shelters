@@ -81,6 +81,17 @@ function ReviewItem({ r }) {
         </span>
       )}
       {r.visited === "no" && <span className="rv__hear">ze słyszenia</span>}
+      {r.wstepne?.rola?.length > 0 && (
+        <span className="rv__roles">
+          {r.wstepne.rola.map((rola) => (
+            <span key={rola} className="rv__role">
+              {rola === "Inna" && r.wstepne.rolaInna
+                ? r.wstepne.rolaInna
+                : rola.toLowerCase()}
+            </span>
+          ))}
+        </span>
+      )}
 
       {r.text && <p className="rv__text">{r.text}</p>}
 

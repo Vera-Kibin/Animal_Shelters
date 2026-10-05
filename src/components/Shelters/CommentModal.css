@@ -15,8 +15,13 @@
   border-radius: var(--radius-lg);
   padding: 26px;
   box-shadow: var(--shadow);
+  /* stały rozmiar okna: między ekranami zmienia się tylko treść,
+     a przyciski i nagłówek zostają na swoim miejscu */
+  height: min(90vh, 760px);
   max-height: 90vh;
-  overflow-y: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .modal__x {
   position: absolute;
@@ -159,6 +164,13 @@
 }
 .modal__send:hover {
   filter: brightness(1.03);
+}
+.modal__thanks {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .modal__thanks h3 {
   margin: 4px 0 10px;
@@ -378,6 +390,9 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .pyt {
@@ -409,6 +424,240 @@
   border-color: var(--green);
   background: var(--green-soft);
   color: var(--green);
+}
+
+/* ekran pytań wstępnych: jedno pytanie na ekran, opcje w kolumnie */
+.intro {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.intro__bar {
+  height: 6px;
+  background: var(--surface-soft);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin: 16px 0 20px;
+}
+.intro__bar span {
+  display: block;
+  height: 100%;
+  background: var(--green);
+  border-radius: var(--radius-pill);
+  transition: width 0.25s ease;
+}
+.intro__step {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  margin: 0 0 6px;
+}
+.intro__note {
+  margin: 0 0 20px;
+  font-size: 0.88rem;
+  text-wrap: pretty;
+}
+/* delikatne wejście przy zmianie pytania (zabija je prefers-reduced-motion) */
+.intro__body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-bottom: 8px;
+  animation: intro-step-in 0.15s ease;
+}
+@keyframes intro-step-in {
+  from {
+    opacity: 0;
+  }
+}
+.intro .pyt {
+  gap: 14px;
+}
+.intro .pyt__q {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-wrap: balance;
+}
+.pyt__hint {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.pyt__opts--stack {
+  flex-direction: column;
+  gap: 10px;
+}
+.pyt__opts--stack .pyt__btn {
+  flex: none;
+  width: 100%;
+  min-height: 60px;
+  padding: 12px 16px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  border-radius: var(--radius-lg);
+  background: var(--surface-soft);
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+@media (hover: hover) {
+  .pyt__opts--stack .pyt__btn:hover {
+    border-color: var(--green);
+  }
+}
+.pyt__opts--stack .pyt__btn:active {
+  transform: scale(0.96);
+}
+.pyt__opts--stack .pyt__btn.is-on {
+  background: var(--green-soft);
+  border-color: var(--green);
+  color: var(--ink);
+}
+.pyt__dot {
+  width: 24px;
+  height: 24px;
+  flex: none;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: transparent;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+.pyt__opts--stack .pyt__btn.is-on .pyt__dot {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--surface);
+}
+.pyt__label {
+  flex: 1;
+}
+.intro__foot {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: none;
+  margin-top: auto;
+  padding-top: 24px;
+}
+.intro__count {
+  flex: 1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+/* żółty = akcja (jak CTA); zielony rezerwujemy wyłącznie na stany odpowiedzi */
+.intro__round {
+  width: 46px;
+  height: 46px;
+  flex: none;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    filter 0.15s ease,
+    transform 0.15s ease;
+}
+@media (hover: hover) {
+  .intro__round:hover {
+    filter: brightness(0.95);
+  }
+}
+.intro__round:active {
+  transform: scale(0.96);
+}
+.intro__round--ghost {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--ink-soft);
+}
+@media (hover: hover) {
+  .intro__round--ghost:hover {
+    border-color: var(--green);
+    color: var(--green);
+    filter: none;
+  }
+}
+.intro__foot .modal__send {
+  margin-top: 0;
+  flex: 1;
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+.intro__foot .modal__send:active {
+  transform: scale(0.96);
+}
+
+/* odpowiedź w pytaniu wstępnym jest wymagana */
+.intro__round:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+.intro__round:disabled:active {
+  transform: none;
+}
+.intro__foot .modal__send:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.intro__foot .modal__send:disabled:active {
+  transform: none;
+}
+/* stała linijka podpowiedzi — nie zmienia wysokości okna */
+.intro__req {
+  min-height: 1.25em;
+  margin: 10px 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.intro__req.is-on {
+  color: var(--ink);
+  font-weight: 600;
+}
+/* doprecyzowanie roli przy opcji „Inna" */
+.pyt__inna {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px 14px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+.pyt__inna::placeholder {
+  color: var(--ink-faint);
+}
+/* ekran logowania na środku stałego okna */
+.modal .login {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .legenda {
@@ -484,6 +733,7 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  flex: none;
   margin-top: 16px;
 }
 .krok__nav .modal__send {
