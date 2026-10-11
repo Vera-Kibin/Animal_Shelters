@@ -190,3 +190,12 @@ export const KLAUZULA_ZDJECIA = [
   "nie naruszają praw autorskich innych osób,",
   "nie ujawniają informacji, których publikacja jest ograniczona.",
 ];
+
+export const KOMUNIKAT_ZAAWANSOWANY = {
+  pytanie: "Posiadasz bardziej zaawansowaną wiedzę na temat funkcjonowania tej placówki?",
+  opis: "Jeżeli tak, możesz przejść do kolejnego segmentu, zawierającego bardziej szczegółowe pytania. Jeżeli nie, możesz zakończyć ocenę na tym etapie.",
+  btnZakoncz: "Zakończ i wyślij",
+  btnPrzejdz: "Przejdź do szczegółowych pytań",
+  btnWroc: "Wróć do poprzednich pytań",
+};
+
