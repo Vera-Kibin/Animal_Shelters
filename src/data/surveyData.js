@@ -183,7 +183,7 @@ export const INFO_WSTEPNE =
 export const LEGENDA_OCEN = "1 = dramat · 3 = dostatecznie · 6 = doskonale";
 
 export const INFO_ANKIETY =
-  "Celem wyrażenia jak najbardziej sprawiedliwej opinii prosimy, by ankietę wypełniały jedynie osoby, które miały bezpośredni kontakt ze schroniskiem.";
+  "Prosimy o wypełnienie ankiety osoby, które miały bezpośredni kontakt ze schroniskiem";
 
 export const KLAUZULA_ZDJECIA = [
   "zdjęcia zostały wykonane zgodnie z regulaminem schroniska (jeżeli taki obowiązuje),",

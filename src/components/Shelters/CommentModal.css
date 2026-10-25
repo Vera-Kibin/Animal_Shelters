@@ -666,7 +666,6 @@
   gap: 8px;
   font-size: 0.76rem;
   color: var(--ink-soft);
-  margin: 0 0 4px;
   background: var(--surface-soft);
   padding: 8px 12px;
   border-radius: var(--radius);
@@ -798,4 +797,103 @@
   .ocena__examples {
     grid-template-columns: 1fr;
   }
+}
+
+/* Ankieta: przewijane pytania i stale dostępny postęp pod nazwą placówki. */
+.modal--review > .eyebrow { padding-right: 24px; }
+.modal--review > .modal__intro {  font-size: .80rem; }
+.modal--review .krok {
+  gap: 14px;
+  scrollbar-width: none;
+  scroll-padding: 12px;
+  animation: intro-step-in 0.15s ease;
+}
+.modal--review .krok > textarea {
+  flex-shrink: 0;
+  min-height: 8rem;
+  line-height: 1.55;
+}
+.modal--review .survey-question {
+  flex-shrink: 0;
+  padding: 16px;
+  border: 1px solid #e3e8e9;
+  border-radius: 13px;
+  background: #fff;
+  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.modal--review .survey-question.is-current,
+.modal--review .survey-question:focus-within {
+  border-color: #68856c;
+  background: #fbfdfb;
+  box-shadow: 0 0 0 2px #68856c15, 0 4px 12px #243e2910;
+}
+.modal--review .pyt__q,
+.modal--review .ocena__label { line-height: 1.6; font-weight: 600; font-size: .86rem; }
+.modal--review .survey-question .pyt__opts { gap: 8px; }
+.modal--review .survey-question .pyt__btn {
+  min-height: 42px;
+  padding: 9px 5px;
+  border-radius: 9px;
+  font-size: .76rem;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+.modal--review .pyt__btn--yes { color: #28603b; background: #f0f8f1; border-color: #c6ddcb; }
+.modal--review .pyt__btn--no { color: #a33434; background: #fff3f2; border-color: #edcfcc; }
+.modal--review .pyt__btn--unknown { color: #535e6a; background: #f2f4f6; border-color: #dce1e5; }
+.modal--review .pyt__btn--yes.is-on { background: #dceede; border-color: #367748; color: #205330; box-shadow: inset 0 0 0 1px #367748; }
+.modal--review .pyt__btn--no.is-on { background: #f7dedd; border-color: hsl(3, 47%, 49%); color: #8f2828; box-shadow: inset 0 0 0 1px #b74842; }
+.modal--review .pyt__btn--unknown.is-on { background: #ececec; border-color: #a1a1a1; color: #35404c; box-shadow: inset 0 0 0 1px #687583; }
+.modal--review button:focus-visible,
+.modal--review textarea:focus-visible { outline: 3px solid #758baf; outline-offset: 3px; }
+.modal--review .skala { border: 0; overflow: visible; gap: 4px; }
+.modal--review .skala__seg {
+  min-width: 0;
+  height: 38px;
+  border: 0;
+  border-radius: 5px;
+  opacity: 1;
+  color: #303b30;
+  background: color-mix(in srgb, var(--rating-color, #aeaeae) 30%, white) !important;
+}
+.modal--review .skala__seg.is-on { box-shadow: inset 0 0 0 2px #526952; }
+.modal--review .skala__seg--nw { padding: 0 4px; font-size: .62rem; color: #57616b; border: 1px solid #dce1e5; }
+.modal--review .legenda { flex-shrink: 0; }
+.survey-progress { flex-shrink: 0; width: 100%;background: var(--surface); }
+.survey-steps { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.survey-steps__track { position: absolute; height: 6px; left: 19px; right: 19px; top: 12px; background: #dce2dc; overflow: hidden; border-radius: 8px; }
+.survey-steps__track > span { display: block; height: 100%; background: var(--green); transition: width .45s ease; }
+.survey-steps__step { position: relative; display: flex; flex-direction: column; align-items: center; gap: 5px; background: none; border: 0; color: #707a73; cursor: pointer; padding: 0 0 3px; font-size: .7rem; font-weight: 600; }
+.survey-steps__step:first-of-type { align-items: flex-start; text-align: left; }
+.survey-steps__step:last-of-type { align-items: flex-end; text-align: right; }
+.survey-steps__icon { display: grid; place-items: center; width: 30px; height: 30px; border: 3px solid var(--surface); border-radius: 50%; background: #dce2dc; color: #637067; font-size: 19px; line-height: 1; transition: background .25s ease, box-shadow .25s ease; }
+.survey-steps__step.is-active { color: #2b6038; }
+.survey-steps__step.is-active .survey-steps__icon { background: var(--green); color: white; box-shadow: 0 0 0 3px #dcebdc; }
+.survey-steps__step.is-complete .survey-steps__icon { background: var(--green); color: white; }
+.modal--review > .krok__nav { margin-top: 16px; padding-top: 0; }
+.modal--review > .krok__nav .modal__send { flex: 1; border-radius: 10px; }
+.modal--review > .krok__nav .krok__back { border-radius: 10px; }
+@media (max-width: 560px) {
+  /* About.css also defines the generic modal classes and can load later. */
+  .modal__backdrop.modal__backdrop--review { padding: 0; }
+  .modal.modal--review {
+    width: 100%;
+    max-width: none;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    padding: max(22px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  .modal--review .modal__title { font-size: revert; }
+  .modal--review .survey-question { padding: 13px 11px; }
+  .modal--review .survey-question .pyt__opts { gap: 5px; }
+  .modal--review > .modal__intro { margin-bottom: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal--review *, .modal--review *::before, .modal--review *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.modal--review > .survey-navigation { gap: 14px;}
+.modal--review > .survey-navigation .modal__send {  border-radius: var(--radius-pill); font-size: 1rem; transition: transform 0.15s ease, filter 0.15s ease; }
+.modal--review > .survey-navigation .modal__send:active:not(:disabled) {
+  transform: scale(0.96);
 }
