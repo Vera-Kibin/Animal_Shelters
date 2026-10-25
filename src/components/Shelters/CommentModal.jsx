@@ -469,15 +469,6 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
 
                     {openHint === i && (
                       <div className="ocena__examples">
-                        <div className="ex ex--good">
-                          <div className="ex__ph" aria-hidden>
-                            przykładowe zdjęcie
-                          </div>
-                          <span className="ex__tag">
-                            na co zwracać uwagę (okej)
-                          </span>
-                          <p>{k.good}</p>
-                        </div>
                         <div className="ex ex--bad">
                           <div className="ex__ph" aria-hidden>
                             przykładowe zdjęcie
@@ -486,6 +477,15 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                             sygnały ostrzegawcze (nie okej)
                           </span>
                           <p>{k.bad}</p>
+                        </div>
+                        <div className="ex ex--good">
+                          <div className="ex__ph" aria-hidden>
+                            przykładowe zdjęcie
+                          </div>
+                          <span className="ex__tag">
+                            na co zwracać uwagę (okej)
+                          </span>
+                          <p>{k.good}</p>
                         </div>
                       </div>
                     )}
