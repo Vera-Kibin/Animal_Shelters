@@ -192,10 +192,10 @@ export const KLAUZULA_ZDJECIA = [
 ];
 
 export const KOMUNIKAT_ZAAWANSOWANY = {
-  pytanie: "Posiadasz bardziej zaawansowaną wiedzę na temat funkcjonowania tej placówki?",
-  opis: "Jeżeli tak, możesz przejść do kolejnego segmentu, zawierającego bardziej szczegółowe pytania. Jeżeli nie, możesz zakończyć ocenę na tym etapie.",
+  pytanie: "Znasz schronisko od środka?",
+  opis: "Następne pytania potrzebują bardziej szczegółowej wiedzy. Czy chcesz do nich przejść?",
   btnZakoncz: "Zakończ i wyślij",
-  btnPrzejdz: "Przejdź do szczegółowych pytań",
-  btnWroc: "Wróć do poprzednich pytań",
+  btnPrzejdz: "Przejdź do szczegółów",
+  btnWroc: "Wróć do poprzednich",
 };
 
