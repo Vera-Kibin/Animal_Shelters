@@ -9,6 +9,7 @@ import {
   INFO_ANKIETY,
   INFO_WSTEPNE,
   KLAUZULA_ZDJECIA,
+  KOMUNIKAT_ZAAWANSOWANY,
 } from "../../data/surveyData";
 import { useAuth } from "../../context/AuthContext";
 import LoginForm from "../Auth/LoginForm";
@@ -255,9 +256,20 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
     setSent(true);
   }
 
+  const handleKrokClick = (nowyKrok) => {
+    if (nowyKrok === 3 && !zaakceptowanoOstrzezenie) {
+      setPokazOstrzezenie(true);
+    } else {
+      setKrok(nowyKrok);
+    }
+  };
+
   return createPortal(
-    <div className="modal__backdrop modal__backdrop--review" onClick={onClose}>
-      <div className="modal modal--review" onClick={(e) => e.stopPropagation()}>
+    <div className="modal__backdrop" onClick={onClose}>
+      <div
+        className={`modal modal--review${pokazOstrzezenie || sent ? " modal--compact" : ""}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="modal__x" onClick={onClose} aria-label="Zamknij">
           ×
         </button>
@@ -367,27 +379,31 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             </div>
           </div>
         ) : pokazOstrzezenie ? (
-          <div className="modal__thanks">
-            <span className="eyebrow">Ankieta o schronisku</span>
-            <h3 className="modal__title">Bardziej szczegółowe pytania</h3>
-            <p className="modal__intro">
-              Kolejny segment zawiera bardziej szczegółowe i fachowe pytania o
-              placówkę (m.in. o izolatki, kwarantannę, dokumentację). Jeśli nie
-              masz takiej wiedzy możesz spokojnie wysłać ankietę teraz, a te
-              pytania zostaną potraktowane jako neutralne.
+          <div className="transition-step">
+            <span className="eyebrow">Segment pytań szczegółowych</span>
+            <h3 className="transition-step__title">
+              {KOMUNIKAT_ZAAWANSOWANY.pytanie}
+            </h3>
+            <p className="transition-step__desc">
+              {KOMUNIKAT_ZAAWANSOWANY.opis}
             </p>
-            <div className="krok__nav">
+
+            <div className="transition-step__actions">
               <button
-                className="krok__back"
+                type="button"
+                className="modal__send transition-step__btn-next"
                 onClick={() => {
                   setPokazOstrzezenie(false);
-                  handleSend();
+                  setZaakceptowanoOstrzezenie(true);
+                  setKrok(3);
                 }}
               >
-                Wyślij teraz
+                {KOMUNIKAT_ZAAWANSOWANY.btnPrzejdz} →
               </button>
+
               <button
-                className="modal__send"
+                type="button"
+                className="transition-step__btn-submit"
                 onClick={() => {
                   setPokazOstrzezenie(false);
                   setZaakceptowanoOstrzezenie(true);
@@ -395,9 +411,17 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                   setActiveQuestion("3-0");
                 }}
               >
-                Przejdź dalej →
+                {KOMUNIKAT_ZAAWANSOWANY.btnZakoncz}
               </button>
             </div>
+
+            <button
+              type="button"
+              className="transition-step__btn-back"
+              onClick={() => setPokazOstrzezenie(false)}
+            >
+              ← {KOMUNIKAT_ZAAWANSOWANY.btnWroc}
+            </button>
           </div>
         ) : (
           <>
@@ -420,6 +444,19 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             </div>
 
             <p className="modal__intro">{INFO_ANKIETY}</p>
+
+            <div className="kroki">
+              {["1. Ogólne", "2. Oceny", "3. Szczegóły"].map((etk, idx) => (
+                <button
+                  type="button"
+                  key={etk}
+                  className={"kroki__k" + (krok === idx + 1 ? " is-on" : "")}
+                  onClick={() => handleKrokClick(idx + 1)}
+                >
+                  {etk}
+                </button>
+              ))}
+            </div>
 
             {krok === 1 && (
               <div className="krok" key="ogolne">
