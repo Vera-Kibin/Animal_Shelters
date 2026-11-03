@@ -12,6 +12,7 @@ import {
   KOMUNIKAT_ZAAWANSOWANY,
 } from "../../data/surveyData";
 import { useAuth } from "../../context/AuthContext";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import LoginForm from "../Auth/LoginForm";
 
 const OPCJE = ["tak", "nie wiem", "nie"];
@@ -159,6 +160,7 @@ const TYTULY_WSTEPNE = [
 
 export default function CommentModal({ shelter, onClose, onSubmit }) {
   const { isLoggedIn } = useAuth();
+  useBodyScrollLock();
   const [krok, setKrok] = useState(1);
   const [activeQuestion, setActiveQuestion] = useState("1-0");
   const [wstepne, setWstepne] = useState(
@@ -187,14 +189,6 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   const [pokazOstrzezenie, setPokazOstrzezenie] = useState(false);
   const [zaakceptowanoOstrzezenie, setZaakceptowanoOstrzezenie] =
     useState(false);
-
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, []);
 
   useEffect(() => {
     const body = document.querySelector(".modal--review .krok");
@@ -256,18 +250,13 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
     setSent(true);
   }
 
-  const handleKrokClick = (nowyKrok) => {
-    if (nowyKrok === 3 && !zaakceptowanoOstrzezenie) {
-      setPokazOstrzezenie(true);
-    } else {
-      setKrok(nowyKrok);
-    }
-  };
-
   return createPortal(
-    <div className="modal__backdrop" onClick={onClose}>
+    <div
+      className={`modal__backdrop modal__backdrop--review${sent ? " modal__backdrop--complete" : ""}`}
+      onClick={onClose}
+    >
       <div
-        className={`modal modal--review${pokazOstrzezenie || sent ? " modal--compact" : ""}`}
+        className={`modal modal--review${sent ? " modal--compact" : ""}`}
         onClick={(e) => e.stopPropagation()}
       >
         <button className="modal__x" onClick={onClose} aria-label="Zamknij">
@@ -378,51 +367,6 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
               )}
             </div>
           </div>
-        ) : pokazOstrzezenie ? (
-          <div className="transition-step">
-            <span className="eyebrow">Segment pytań szczegółowych</span>
-            <h3 className="transition-step__title">
-              {KOMUNIKAT_ZAAWANSOWANY.pytanie}
-            </h3>
-            <p className="transition-step__desc">
-              {KOMUNIKAT_ZAAWANSOWANY.opis}
-            </p>
-
-            <div className="transition-step__actions">
-              <button
-                type="button"
-                className="modal__send transition-step__btn-next"
-                onClick={() => {
-                  setPokazOstrzezenie(false);
-                  setZaakceptowanoOstrzezenie(true);
-                  setKrok(3);
-                }}
-              >
-                {KOMUNIKAT_ZAAWANSOWANY.btnPrzejdz} →
-              </button>
-
-              <button
-                type="button"
-                className="transition-step__btn-submit"
-                onClick={() => {
-                  setPokazOstrzezenie(false);
-                  setZaakceptowanoOstrzezenie(true);
-                  setKrok(3);
-                  setActiveQuestion("3-0");
-                }}
-              >
-                {KOMUNIKAT_ZAAWANSOWANY.btnZakoncz}
-              </button>
-            </div>
-
-            <button
-              type="button"
-              className="transition-step__btn-back"
-              onClick={() => setPokazOstrzezenie(false)}
-            >
-              ← {KOMUNIKAT_ZAAWANSOWANY.btnWroc}
-            </button>
-          </div>
         ) : (
           <>
             <span className="eyebrow">Ankieta o schronisku</span>
@@ -444,19 +388,6 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             </div>
 
             <p className="modal__intro">{INFO_ANKIETY}</p>
-
-            <div className="kroki">
-              {["1. Ogólne", "2. Oceny", "3. Szczegóły"].map((etk, idx) => (
-                <button
-                  type="button"
-                  key={etk}
-                  className={"kroki__k" + (krok === idx + 1 ? " is-on" : "")}
-                  onClick={() => handleKrokClick(idx + 1)}
-                >
-                  {etk}
-                </button>
-              ))}
-            </div>
 
             {krok === 1 && (
               <div className="krok" key="ogolne">
@@ -599,6 +530,65 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                 </button>
               )}
             </div>
+
+            {pokazOstrzezenie && (
+              <div
+                className="transition-overlay"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="transition-title"
+                onClick={() => setPokazOstrzezenie(false)}
+              >
+                <div
+                  className="transition-step"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    type="button"
+                    className="transition-step__close"
+                    onClick={() => setPokazOstrzezenie(false)}
+                    aria-label="Zamknij komunikat"
+                  >
+                    ×
+                  </button>
+                  <h3 id="transition-title" className="transition-step__title">
+                    {KOMUNIKAT_ZAAWANSOWANY.pytanie}
+                  </h3>
+                  <p className="transition-step__desc">
+                    {KOMUNIKAT_ZAAWANSOWANY.opis}
+                  </p>
+
+                  <div className="transition-step__actions">
+
+                    <button
+                      type="button"
+                      className="modal__send transition-step__btn-next send__btn__green"
+                      onClick={() => {
+                        setPokazOstrzezenie(false);
+                        handleSend();
+                      }}
+                    >
+                      {KOMUNIKAT_ZAAWANSOWANY.btnZakoncz}
+                    </button>
+
+                    <button
+                      type="button"
+                      className="transition-step__btn-submit"
+                      onClick={() => {
+                        setPokazOstrzezenie(false);
+                        setZaakceptowanoOstrzezenie(true);
+                        setKrok(3);
+                        setActiveQuestion("3-0");
+                      }}
+                    >
+                      {KOMUNIKAT_ZAAWANSOWANY.btnPrzejdz} →
+                    </button>
+
+
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
       </div>

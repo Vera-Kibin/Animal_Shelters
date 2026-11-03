@@ -1,7 +1,9 @@
 import { useState } from "react";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import "./About.css";
 
 export default function RepModal({ onClose }) {
+  useBodyScrollLock();
   const [sent, setSent] = useState(false);
 
   return (

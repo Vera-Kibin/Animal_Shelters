@@ -192,10 +192,9 @@ export const KLAUZULA_ZDJECIA = [
 ];
 
 export const KOMUNIKAT_ZAAWANSOWANY = {
-  pytanie: "Znasz schronisko od środka?",
-  opis: "Następne pytania potrzebują bardziej szczegółowej wiedzy. Czy chcesz do nich przejść?",
+  pytanie: "Znasz dobrze to miejsce?",
+  opis: "Pomóż nam jeszcze bardziej i odpowiedz na 27 pytań dla osób, które blisko znają to schronisko.",
   btnZakoncz: "Zakończ i wyślij",
   btnPrzejdz: "Przejdź do szczegółów",
-  btnWroc: "Wróć do poprzednich",
 };
 

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import "./CommentModal.css";
 import "./AddAzylModal.css";
 
@@ -12,6 +13,7 @@ const PLACE_TYPES = [
 ];
 
 export default function AddAzylModal({ onClose, onSubmit }) {
+  useBodyScrollLock();
   const [name, setName] = useState("");
   const [placeType, setPlaceType] = useState("");
   const [adres, setAdres] = useState("");
@@ -20,14 +22,6 @@ export default function AddAzylModal({ onClose, onSubmit }) {
   const [showTips, setShowTips] = useState(false);
   const [placeContact, setPlaceContact] = useState("");
   const [canContactMe, setCanContactMe] = useState(false);
-
-  useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, []);
 
   const canSend = name.trim() && adres.trim();
 
