@@ -9,11 +9,13 @@ import {
   INFO_ANKIETY,
   INFO_WSTEPNE,
   KLAUZULA_ZDJECIA,
+  KOMUNIKAT_ZAAWANSOWANY,
 } from "../../data/surveyData";
 import { useAuth } from "../../context/AuthContext";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import LoginForm from "../Auth/LoginForm";
 
-const OPCJE = ["tak", "nie", "nie wiem"];
+const OPCJE = ["tak", "nie wiem", "nie"];
 const KOLORY = [
   "#c0392b",
   "#e67e22",
@@ -22,6 +24,12 @@ const KOLORY = [
   "#7cb342",
   "#3f7d57",
 ];
+
+function completeAnswers(questions, answers, defaultValue) {
+  return Object.fromEntries(
+    questions.map((_, i) => [i, answers[i] ?? defaultValue]),
+  );
+}
 
 // odpowiedzi wstępne pamiętamy w localStorage, żeby pytać tylko raz
 // na daną placówkę (przetrwują odświeżenie strony)
@@ -83,9 +91,9 @@ function PytanieWybor({ pytanie, opcje, multi, value, onChange }) {
 }
 
 // pojedyncze pytanie tak/nie/nie wiem
-function PytanieTak({ pytanie, value, onChange }) {
+function PytanieTak({ pytanie, value = "nie wiem", onChange, active, onActivate }) {
   return (
-    <div className="pyt">
+    <div className={"pyt survey-question" + (active ? " is-current" : "")} role="group" aria-label={pytanie} onFocusCapture={onActivate} onPointerDown={onActivate}>
       <p className="pyt__q">{pytanie}</p>
       <div className="pyt__opts">
         {OPCJE.map((o) => (
@@ -93,11 +101,12 @@ function PytanieTak({ pytanie, value, onChange }) {
             type="button"
             key={o}
             className={
-              "pyt__btn" + ((value || "nie wiem") === o ? " is-on" : "")
+              "pyt__btn pyt__btn--" + (o === "tak" ? "yes" : o === "nie" ? "no" : "unknown") + (value === o ? " is-on" : "")
             }
-            onClick={() => onChange(o)}
+            aria-pressed={value === o}
+            onClick={() => onChange(value === o ? undefined : o)}
           >
-            {o.toUpperCase()}
+            <span aria-hidden="true">{o === "tak" ? "✓" : o === "nie" ? "×" : "?"}</span> {o === "tak" ? "Tak" : o === "nie" ? "Nie" : "Nie wiem"}
           </button>
         ))}
       </div>
@@ -105,13 +114,14 @@ function PytanieTak({ pytanie, value, onChange }) {
   );
 }
 
-function SkalaOceny({ value, onChange }) {
+function SkalaOceny({ value = 0, onChange }) {
   return (
     <div className="skala">
       <button
         type="button"
-        className={"skala__seg skala__seg--nw" + (!value ? " is-on" : "")}
-        onClick={() => onChange(0)}
+        className={"skala__seg skala__seg--nw" + (value === 0 ? " is-on" : "")}
+        onClick={() => onChange(value === 0 ? undefined : 0)}
+        aria-pressed={value === 0}
         aria-label="nie wiem"
       >
         nie wiem
@@ -121,11 +131,12 @@ function SkalaOceny({ value, onChange }) {
           type="button"
           key={n}
           className={"skala__seg" + (value === n ? " is-on" : "")}
-          style={{ background: KOLORY[n - 1] }}
-          onClick={() => onChange(n)}
+          style={{ "--rating-color": KOLORY[n - 1] }}
+          onClick={() => onChange(value === n ? undefined : n)}
+          aria-pressed={value === n}
           aria-label={n + " z 6"}
         >
-          {value === n ? n : ""}
+          {n}
         </button>
       ))}
     </div>
@@ -149,7 +160,9 @@ const TYTULY_WSTEPNE = [
 
 export default function CommentModal({ shelter, onClose, onSubmit }) {
   const { isLoggedIn } = useAuth();
+  useBodyScrollLock();
   const [krok, setKrok] = useState(1);
+  const [activeQuestion, setActiveQuestion] = useState("1-0");
   const [wstepne, setWstepne] = useState(
     () => wczytajIntro(shelter.id)?.answers || {},
   );
@@ -161,6 +174,16 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   const [oceny, setOceny] = useState({});
   const [szczegolowe, setSzczegolowe] = useState({});
   const [text, setText] = useState("");
+  // Postęp uwzględnia jawne odpowiedzi, a nie domyślne „nie wiem”.
+  const pageAnswers = [ogolne, oceny, szczegolowe][krok - 1];
+  const pageQuestionCount = [
+    PYTANIA_OGOLNE.length,
+    KATEGORIE_OCENY.length,
+    PYTANIA_SZCZEGOLOWE.length,
+  ][krok - 1];
+  const pageCompletion = Object.keys(pageAnswers).length / pageQuestionCount;
+  const progressPercent = Math.min(100, ((krok - 1 + pageCompletion) / 2) * 100);
+
   const [openHint, setOpenHint] = useState(null);
   const [sent, setSent] = useState(false);
   const [pokazOstrzezenie, setPokazOstrzezenie] = useState(false);
@@ -168,17 +191,20 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
     useState(false);
 
   useEffect(() => {
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = prev;
-    };
-  }, []);
+    const body = document.querySelector(".modal--review .krok");
+    if (body) body.scrollTop = 0;
+  }, [krok]);
 
   // jeden setter, klucz = numer pytania
-  const setOgolneOdp = (i, val) => setOgolne((o) => ({ ...o, [i]: val }));
-  const setOcena = (i, val) => setOceny((o) => ({ ...o, [i]: val }));
-  const setSzczeg = (i, val) => setSzczegolowe((o) => ({ ...o, [i]: val }));
+  const updateAnswer = (setter, i, val) => setter((answers) => {
+    const next = { ...answers };
+    if (val === undefined) delete next[i];
+    else next[i] = val;
+    return next;
+  });
+  const setOgolneOdp = (i, val) => updateAnswer(setOgolne, i, val);
+  const setOcena = (i, val) => updateAnswer(setOceny, i, val);
+  const setSzczeg = (i, val) => updateAnswer(setSzczegolowe, i, val);
   const setWstepnaOdp = (id, val) =>
     setWstepne((o) => ({ ...o, [id]: val }));
 
@@ -195,6 +221,15 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
     (Array.isArray(odpWstepna) && odpWstepna.length === 0) ||
     rolaBezTekstu;
 
+  function goToStep(nextStep) {
+    if (nextStep === 3 && !zaakceptowanoOstrzezenie) {
+      setPokazOstrzezenie(true);
+      return;
+    }
+    setKrok(nextStep);
+    setActiveQuestion(`${nextStep}-0`);
+  }
+
   function handleSend() {
     if (onSubmit) {
       onSubmit({
@@ -203,9 +238,9 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
         type: "ankieta",
         wstepne,
         visited: ZRODO_NA_VISITED[wstepne.zrodlo] || "indirect",
-        ogolne,
-        oceny,
-        szczegolowe,
+        ogolne: completeAnswers(PYTANIA_OGOLNE, ogolne, "nie wiem"),
+        oceny: completeAnswers(KATEGORIE_OCENY, oceny, 0),
+        szczegolowe: completeAnswers(PYTANIA_SZCZEGOLOWE, szczegolowe, "nie wiem"),
         text: text.trim(),
         likes: 0,
         replies: [],
@@ -216,8 +251,14 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
   }
 
   return createPortal(
-    <div className="modal__backdrop" onClick={onClose}>
-      <div className="modal modal--review" onClick={(e) => e.stopPropagation()}>
+    <div
+      className={`modal__backdrop modal__backdrop--review${sent ? " modal__backdrop--complete" : ""}`}
+      onClick={onClose}
+    >
+      <div
+        className={`modal modal--review${sent ? " modal--compact" : ""}`}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button className="modal__x" onClick={onClose} aria-label="Zamknij">
           ×
         </button>
@@ -326,63 +367,36 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
               )}
             </div>
           </div>
-        ) : pokazOstrzezenie ? (
-          <div className="modal__thanks">
-            <span className="eyebrow">Ankieta o schronisku</span>
-            <h3 className="modal__title">Bardziej szczegółowe pytania</h3>
-            <p className="modal__intro">
-              Kolejny segment zawiera bardziej szczegółowe i fachowe pytania o
-              placówkę (m.in. o izolatki, kwarantannę, dokumentację). Jeśli nie
-              masz takiej wiedzy możesz spokojnie wysłać ankietę teraz, a te
-              pytania zostaną potraktowane jako neutralne.
-            </p>
-            <div className="krok__nav">
-              <button
-                className="krok__back"
-                onClick={() => {
-                  setPokazOstrzezenie(false);
-                  handleSend();
-                }}
-              >
-                Wyślij teraz
-              </button>
-              <button
-                className="modal__send"
-                onClick={() => {
-                  setPokazOstrzezenie(false);
-                  setZaakceptowanoOstrzezenie(true);
-                  setKrok(3);
-                }}
-              >
-                Przejdź dalej →
-              </button>
-            </div>
-          </div>
         ) : (
           <>
             <span className="eyebrow">Ankieta o schronisku</span>
             <h3 className="modal__title">{shelter.name}</h3>
-            <p className="modal__intro">{INFO_ANKIETY}</p>
 
-            <div className="kroki">
-              {["1. Ogólne", "2. Oceny", "3. Szczegóły"].map((etk, idx) => (
-                <button
-                  type="button"
-                  key={etk}
-                  className={"kroki__k" + (krok === idx + 1 ? " is-on" : "")}
-                  onClick={() => setKrok(idx + 1)}
-                >
-                  {etk}
-                </button>
-              ))}
+            <div className="survey-progress">
+              <nav className="survey-steps" aria-label="Etapy ankiety">
+                <div className="survey-steps__track" role="progressbar" aria-label="Postęp ankiety" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progressPercent)} aria-valuetext={`${["Ogólnie", "Oceny", "Szczegóły"][krok - 1]}: ${Object.keys(pageAnswers).length} z ${pageQuestionCount} odpowiedzi`}>
+                  <span style={{ width: `${progressPercent}%` }} />
+                </div>
+                {["Ogólnie", "Oceny", "Szczegóły"].map((label, i) => {
+                  const complete = i + 1 < krok;
+                  return <button type="button" key={label} className={"survey-steps__step" + (krok === i + 1 ? " is-active" : "") + (complete ? " is-complete" : "")} aria-current={krok === i + 1 ? "step" : undefined} onClick={() => goToStep(i + 1)}>
+                    <span className="survey-steps__icon" aria-hidden="true">{complete ? "✓" : ["✓", "☆", "☷"][i]}</span>
+                    <span>{i + 1}. {label}</span>
+                  </button>;
+                })}
+              </nav>
             </div>
 
+            <p className="modal__intro">{INFO_ANKIETY}</p>
+
             {krok === 1 && (
-              <div className="krok">
+              <div className="krok" key="ogolne">
                 {PYTANIA_OGOLNE.map((p, i) => (
                   <PytanieTak
                     key={i}
-                    pytanie={p}
+                    pytanie={`${i + 1}. ${p}`}
+                    active={activeQuestion === `1-${i}`}
+                    onActivate={() => setActiveQuestion(`1-${i}`)}
                     value={ogolne[i]}
                     onChange={(v) => setOgolneOdp(i, v)}
                   />
@@ -391,7 +405,7 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             )}
 
             {krok === 2 && (
-              <div className="krok">
+              <div className="krok" key="oceny">
                 <div className="legenda">
                   <span>
                     <b>1</b> dramat
@@ -404,7 +418,7 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                   </span>
                 </div>
                 {KATEGORIE_OCENY.map((k, i) => (
-                  <div className="ocena" key={i}>
+                  <div className={"ocena survey-question" + (activeQuestion === `2-${i}` ? " is-current" : "")} key={i} onFocusCapture={() => setActiveQuestion(`2-${i}`)} onPointerDown={() => setActiveQuestion(`2-${i}`)}>
                     <span className="ocena__label">
                       {k.label}
                       <button
@@ -417,21 +431,12 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                       </button>
                     </span>
                     <SkalaOceny
-                      value={oceny[i] || 0}
+                      value={oceny[i]}
                       onChange={(v) => setOcena(i, v)}
                     />
 
                     {openHint === i && (
                       <div className="ocena__examples">
-                        <div className="ex ex--good">
-                          <div className="ex__ph" aria-hidden>
-                            przykładowe zdjęcie
-                          </div>
-                          <span className="ex__tag">
-                            na co zwracać uwagę (okej)
-                          </span>
-                          <p>{k.good}</p>
-                        </div>
                         <div className="ex ex--bad">
                           <div className="ex__ph" aria-hidden>
                             przykładowe zdjęcie
@@ -440,6 +445,15 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                             sygnały ostrzegawcze (nie okej)
                           </span>
                           <p>{k.bad}</p>
+                        </div>
+                        <div className="ex ex--good">
+                          <div className="ex__ph" aria-hidden>
+                            przykładowe zdjęcie
+                          </div>
+                          <span className="ex__tag">
+                            na co zwracać uwagę (okej)
+                          </span>
+                          <p>{k.good}</p>
                         </div>
                       </div>
                     )}
@@ -452,11 +466,13 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
             )}
 
             {krok === 3 && (
-              <div className="krok">
+              <div className="krok" key="szczegolowe">
                 {PYTANIA_SZCZEGOLOWE.map((p, i) => (
                   <PytanieTak
                     key={i}
-                    pytanie={p}
+                    pytanie={`${i + 1}. ${p}`}
+                    active={activeQuestion === `3-${i}`}
+                    onActivate={() => setActiveQuestion(`3-${i}`)}
                     value={szczegolowe[i]}
                     onChange={(v) => setSzczeg(i, v)}
                   />
@@ -484,9 +500,10 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
               </div>
             )}
 
-            <div className="krok__nav">
+            <div className="krok__nav survey-navigation">
               <button
-                className="krok__back"
+                className="intro__round intro__round--ghost"
+                aria-label="Wstecz"
                 onClick={() => {
                   if (krok === 1) {
                     // wracamy na ostatni ekran pytań wstępnych,
@@ -494,22 +511,16 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                     setIntroZrobione(false);
                     setIntroKrok(PYTANIA_WSTEPNE.length - 1);
                   } else {
-                    setKrok(krok - 1);
+                    goToStep(krok - 1);
                   }
                 }}
               >
-                ← Wstecz
+                ←
               </button>
               {krok < 3 ? (
                 <button
                   className="modal__send"
-                  onClick={() => {
-                    if (krok === 2 && !zaakceptowanoOstrzezenie) {
-                      setPokazOstrzezenie(true);
-                    } else {
-                      setKrok(krok + 1);
-                    }
-                  }}
+                  onClick={() => goToStep(krok + 1)}
                 >
                   Dalej →
                 </button>
@@ -519,6 +530,65 @@ export default function CommentModal({ shelter, onClose, onSubmit }) {
                 </button>
               )}
             </div>
+
+            {pokazOstrzezenie && (
+              <div
+                className="transition-overlay"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="transition-title"
+                onClick={() => setPokazOstrzezenie(false)}
+              >
+                <div
+                  className="transition-step"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    type="button"
+                    className="transition-step__close"
+                    onClick={() => setPokazOstrzezenie(false)}
+                    aria-label="Zamknij komunikat"
+                  >
+                    ×
+                  </button>
+                  <h3 id="transition-title" className="transition-step__title">
+                    {KOMUNIKAT_ZAAWANSOWANY.pytanie}
+                  </h3>
+                  <p className="transition-step__desc">
+                    {KOMUNIKAT_ZAAWANSOWANY.opis}
+                  </p>
+
+                  <div className="transition-step__actions">
+
+                    <button
+                      type="button"
+                      className="modal__send transition-step__btn-next send__btn__green"
+                      onClick={() => {
+                        setPokazOstrzezenie(false);
+                        handleSend();
+                      }}
+                    >
+                      {KOMUNIKAT_ZAAWANSOWANY.btnZakoncz}
+                    </button>
+
+                    <button
+                      type="button"
+                      className="transition-step__btn-submit"
+                      onClick={() => {
+                        setPokazOstrzezenie(false);
+                        setZaakceptowanoOstrzezenie(true);
+                        setKrok(3);
+                        setActiveQuestion("3-0");
+                      }}
+                    >
+                      {KOMUNIKAT_ZAAWANSOWANY.btnPrzejdz} →
+                    </button>
+
+
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
       </div>

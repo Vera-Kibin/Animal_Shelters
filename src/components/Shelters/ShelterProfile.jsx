@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
 import CommentModal from "./CommentModal";
+import useBodyScrollLock from "../../hooks/useBodyScrollLock";
 import {
   getDemoReviews,
   getLocalReviews,
@@ -124,17 +125,11 @@ function ReviewItem({ r }) {
 }
 
 export default function ShelterProfile({ shelter, onClose }) {
+  useBodyScrollLock();
   const [writing, setWriting] = useState(false);
   const [localReviews, setLocalReviews] = useState(() =>
     getLocalReviews(shelter.id),
   );
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, []);
 
   const demo = getDemoReviews(shelter.id);
   const reviews = [...localReviews, ...demo];
